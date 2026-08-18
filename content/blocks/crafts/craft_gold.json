@@ -1,0 +1,20 @@
+{
+"category":"crafting"
+"craftEffect":"smeltsmoke",
+"craftTime":450, 
+"description":"A factory that makes gold",
+"displayNane":"crafting-gold",
+"consumes":{
+    
+"items":[]
+}
+"health":3600,
+"itemCapacity":40,
+"name": "craftin gold",
+"outputItem":{"item":"gold","amount":1},
+"requirements":[{"item":"gold","amount":20}],
+"size":3
+"type": "GenericCrafter",
+
+  "alwaysUnlocked": true,
+}

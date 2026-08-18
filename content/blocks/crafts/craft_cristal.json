@@ -1,0 +1,19 @@
+{
+"category":"crafting"
+"craftEffect":"smeltsmoke",
+"craftTime":1000, 
+"description":"A factory that makes cristal",
+"displayNane":"craft-cristal",
+"consumes":{
+"items":[]
+}
+"health":600,
+"itemCapacity":40,
+"name": "craft cristal",
+"outputItem":{"item":"cristal","amount":1},
+"requirements":[{"item":"cristal","amount":10}],
+"size":3
+"type": "GenericCrafter",
+
+    alwaysUnlocked: true
+}
