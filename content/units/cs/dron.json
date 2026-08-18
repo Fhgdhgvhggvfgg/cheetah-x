@@ -53,7 +53,7 @@ abilities:[
         sideAngle: -45
         sideLength: 0
         sideWidth: 3.4
-        		splashDamageRadius: 8
+        		splashDamageRadius: 50
 		splashDamage: 13
 		hitEffect: blastExplosion
         trailLength: 4
