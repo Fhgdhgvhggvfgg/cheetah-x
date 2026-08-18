@@ -1,0 +1,84 @@
+description:
+name: dron girl
+type: ItemTurret
+type: ItemTurret
+reload: 500
+rotateSpeed: 5
+targetGround: true
+targetAir: true
+targetFriendly: true
+targetHealing: true
+"outlineColor": "00000000"
+range: 160
+recoil: 0
+shootSound: bang
+size: 4
+health: 2800
+shootY: 20
+ambientSound: preparing_rifle
+shootWarmupSpeed: 10
+
+drawer: {
+  type: DrawTurret
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: -34
+moveRot: 0
+moveY: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.77
+growY: -0.77
+}
+  ]
+  }
+
+
+            shoot: {
+      shots: 1
+      shotDelay: 40
+    }
+    
+AmmoPerShot: 5
+coolant: {
+  type: ConsumeCoolant
+  allowGas: true
+  allowLiquid: true
+  amount: 0.3
+}
+
+
+ammoTypes: {
+    
+        gold: {
+        damage: 20
+        speed: 8
+        height: 20
+        width: 20
+        lifetime: 20
+        fragOnHit: true
+         "collidesTeam":true,
+         "healPercent":1,
+		fragBullets: 1
+		        fragBullet: {
+      type: BasicBulletType
+        spawnUnit: dron
+       }
+    }
+    
+
+}
+requirements: [
+elixir/45
+cristal/60
+]
+category: turret
+
+    alwaysUnlocked: true

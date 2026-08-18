@@ -1,0 +1,67 @@
+{
+alwaysUnlocked: true
+"template": "ErekirUnitType",
+alwaysUnlocked: false,
+canAttack:true,
+coreUnitDock:true,
+flying:true,
+defaultCommand: repair
+buildRange:90,
+buildSpeed:0.3,
+health:230,
+outlineColor: 00000000
+lifetime: 1000,
+hitSize: 10
+  "engineSize": 0, 
+localisedName: "reformer",
+speed: 6,
+rotateSpeed: 6
+"type":"missile",
+
+abilities:[
+
+]
+
+"weapons":[
+
+    {
+    "layerOffset": -0.0001, 
+        rotate: false
+        mirror: false
+        shootY: 3
+        x: 0
+        y: 0
+        reload: 30
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: shovelS
+        
+    bullet: {
+      type: LaserBulletType
+                      "collidesTeam":true,
+                "healPercent":1,
+        length: 50
+        width: 1
+        damage: 7
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          ff0000
+          ff0000
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 0
+        sideWidth: 3.4
+        		splashDamageRadius: 3
+		splashDamage: 13
+		hitEffect: blastExplosion
+        trailLength: 4
+                        "collidesTeam":true,
+                "healPercent":1,
+        trailColor: ff0000
+    }
+    }
+]
+alwaysUnlocked: true
+}
