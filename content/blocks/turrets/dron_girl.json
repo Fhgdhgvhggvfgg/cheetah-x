@@ -1,7 +1,6 @@
 description:
 name: dron girl
 type: ItemTurret
-type: ItemTurret
 reload: 500
 rotateSpeed: 5
 targetGround: true
