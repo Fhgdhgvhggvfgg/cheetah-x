@@ -65,6 +65,8 @@ ammoTypes: {
         fragOnHit: true
          "collidesTeam":true,
          "healPercent":1,
+         splashDamageRadius: 50
+		splashDamage: 30
 		fragBullets: 1
 		        fragBullet: {
       type: BasicBulletType
