@@ -24,12 +24,14 @@ Timer.schedule(() => {
         if (playerCore != null) {
             let randomNum = Math.floor(Math.random() * 3);
             
+            if (!Vars.state.isPaused()){
             if (randomNum == 1) {
                 playerCore.items.add(Vars.content.item("cheetah-x-cristal"), 10);
             } else if (randomNum == 2) {
                 playerCore.items.add(Vars.content.item("cheetah-x-gold"), 20);
             } else {
                 playerCore.items.add(Vars.content.item("cheetah-x-elixir"), 15);
+            }
             }
         }
     }
