@@ -4,6 +4,7 @@ alwaysUnlocked: true
 alwaysUnlocked: false,
 canAttack:true,
 coreUnitDock:true,
+useUnitCap: false
 flying:true,
 defaultCommand: repair
 buildRange:90,
