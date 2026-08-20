@@ -1,0 +1,14 @@
+{
+  "type": "Junction",
+  "name": " Junction",
+  "description": "just junction",
+  "size": 1,
+  "health": 240,
+  "requirements": [
+    {"item": "obsidian", "amount": 2}
+  ],
+  "category": "distribution",
+  "speed": 5,
+  "capacity": 4
+  alwaysUnlocked: true
+}

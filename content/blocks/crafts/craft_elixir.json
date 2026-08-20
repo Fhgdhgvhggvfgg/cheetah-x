@@ -1,7 +1,7 @@
 {
 "category":"crafting"
 "craftEffect":"smeltsmoke",
-"craftTime":600, 
+"craftTime":500, 
 "description":"A factory that makes elixir",
 "displayNane":"craft-elixir",
 "consumes":{
@@ -11,7 +11,7 @@
 "itemCapacity":40,
 "name": "craft elixir",
 "outputItem":{"item":"elixir","amount":1},
-"requirements":[{"item":"elixir","amount":15}],
+"requirements":[{"item":"elixir","amount":18}],
 "size":3
 "type": "GenericCrafter",
 
