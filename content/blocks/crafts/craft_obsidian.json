@@ -6,8 +6,8 @@
 "displayNane":"craft-obsidiqn",
 "consumes":{
 "items":[
-{"item":"gold","amount":5}
-{"item":"cristal","amount":2}
+{"item":"gold","amount":2}
+{"item":"cristal","amount":1}
 ]
 }
 "health":600,
