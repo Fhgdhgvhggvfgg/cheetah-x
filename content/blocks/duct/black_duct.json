@@ -1,0 +1,16 @@
+{
+  "type" : "duct",
+  "size" : 1,
+  "health" : 500,
+  "speed" : 2.5,
+  "research" : {
+   "parent" : "core-base", 
+   "requirements" : [ ]
+   }, 
+   "junctionReplacement": "junction" , 
+ "bridgeReplacement" : "bricon",
+  "requirements" : [
+   {"item": "obsidian", "amount": 1}
+  ]
+  alwaysUnlocked: true
+} 
