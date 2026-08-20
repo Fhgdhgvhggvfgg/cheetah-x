@@ -16,13 +16,13 @@ contorller:BuilderAI,
 coreUnitDock:true,
 defaultController: BuilderAI,
 flying:true,
-health:3000,
+health:1500,
   "engineSize": 0, 
-itemCapacity: 150,
+itemCapacity: 100,
 localisedName: "keven",
 mineFloor:true
-mineRange: 170
-"mineSpeed":20,
+mineRange: 120
+"mineSpeed":10,
 mineTier: 11
 mineWalls:true
 speed: 9,
@@ -105,7 +105,7 @@ weapons: [
       type: LaserBulletType
         length: 220
         width: 6
-        damage: 100
+        damage: 70
         hitEffect: lightningShoot
         shootEffect: lightningShoot
         colors: [

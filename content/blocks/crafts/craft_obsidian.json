@@ -15,8 +15,8 @@
 "name": "craft obsidian",
 "outputItem":{
 "item":"obsidian","amount":11},
-"requirements":[{"item":"elixir","amount":20}
-{"item":"cristal","amount":13}],
+"requirements":[{"item":"elixir","amount":18}
+{"item":"cristal","amount":4}],
 "size":2
 "type": "GenericCrafter",
 
