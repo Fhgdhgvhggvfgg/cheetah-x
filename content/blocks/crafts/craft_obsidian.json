@@ -6,8 +6,8 @@
 "displayNane":"craft-obsidiqn",
 "consumes":{
 "items":[
-{"item":"gold","amount":5}
-{"item":"cristal","amount":2}
+{"item":"gold","amount":3}
+{"item":"elixir","amount":1}
 ]
 }
 "health":600,
@@ -15,8 +15,9 @@
 "name": "craft obsidian",
 "outputItem":{
 "item":"obsidian","amount":8},
-"requirements":[{"item":"elixir","amount":20}
-{"item":"cristal","amount":13}],
+"requirements":[{"item":"elixir","amount":3}
+{"item":"cristal","amount":5}
+{"item":"gold","amount":10}],
 "size":2
 "type": "GenericCrafter",
 
