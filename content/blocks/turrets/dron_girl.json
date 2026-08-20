@@ -77,8 +77,8 @@ ammoTypes: {
 
 }
 requirements: [
-elixir/45
-cristal/60
+elixir/40
+cristal/50
 ]
 category: turret
 
