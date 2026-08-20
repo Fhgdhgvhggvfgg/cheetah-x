@@ -3,7 +3,7 @@
   "name": "cpe bricon"
   "description": " range than cpe bridge conveyor",
   "health": 600,
-  "requirements": [{"item": "elixir","amount": 14}],
+  "requirements": [{"item": "elixir","amount": 9}],
   "range": 12,
   "transportTime": 0.5,
   "hasPower": false,
