@@ -28,9 +28,9 @@ Timer.schedule(() => {
             if (randomNum == 1) {
                 playerCore.items.add(Vars.content.item("cheetah-x-cristal"), 10);
             } else if (randomNum == 2) {
-                playerCore.items.add(Vars.content.item("cheetah-x-gold"), 20);
+                playerCore.items.add(Vars.content.item("cheetah-x-cristal"), 15);
             } else {
-                playerCore.items.add(Vars.content.item("cheetah-x-elixir"), 18);
+                playerCore.items.add(Vars.content.item("cheetah-x-cristal"), 5);
             }
             }
         }
@@ -104,3 +104,21 @@ Events.on(WorldLoadEvent, () => {
             }
         }
     });
+    
+
+//===================================================================
+
+Events.on(UnitDestroyEvent, event => {
+    let unit = event.unit;
+    
+    // التأكد من أن الوحدة موجودة وتنتمي لنفس فريق اللاعب
+    if (unit != null && unit.team == Vars.player.team()) {
+        // التحقق من اسم الوحدة البري عن طريق النص لتجنب مشاكل التحميل
+        if (unit.type.name.includes("gold_alien")) {
+            let core = Vars.player.team().core();
+            if (core != null) {
+                core.items.add(Vars.content.item("cheetah-x-gold"), 40);
+            }
+        }
+    }
+});

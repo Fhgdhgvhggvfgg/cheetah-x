@@ -1,0 +1,28 @@
+{
+"type":"missile",
+alwaysUnlocked: false,
+buildRange:340,
+buildSpeed:8.5,
+accel: 0.06
+drag: 0.06
+description:.
+outlineColor: 00000000
+"template": "ErekirUnitType",
+hitSize: 25
+coreUnitDock:true,
+flying:false,
+lifetime: 600,
+health:1000,
+  "engineSize": 0, 
+localisedName: "gold alien",
+speed: 10,
+"rotateSpeed": 8.5,
+
+abilities:[
+ {
+		type: SpawnDeathAbility
+		amount: 1
+		unit: dron
+	}
+	]
+}

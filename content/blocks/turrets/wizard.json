@@ -14,7 +14,7 @@ shootSound: ccccccccc
 size: 3
 health: 2200
 shootY: 63
-maxAmmo: 80
+maxAmmo: 160
 ambientSound: preparing_rifle
 shootWarmupSpeed: 10
 
@@ -45,7 +45,7 @@ growY: -0.77
       shots: 1
       shotDelay: 0
     }
-AmmoPerShot: 50
+
 coolant: {
   type: ConsumeCoolant
   allowGas: true
@@ -57,7 +57,7 @@ coolant: {
 ammoTypes: {
     
         elixir: {
-        ammoMultiplier: 8
+        ammoMultiplier: 18
         damage: 10
         speed: 1
         height: 20

@@ -1,0 +1,32 @@
+{
+"name": "create unit",
+"category":"units",
+
+"hasPower": false
+"outputsPower": false
+
+  consumes: {
+    
+    }
+    
+    
+"plans":[
+
+
+{
+"unit":"gold_alien",
+"requirements":[
+"elixir/20"
+],
+"time":500
+}
+
+],
+
+
+"requirements":["cristal/15"],
+"size":4,
+"type":"UnitFactory",
+"unitCapModifier":5,
+    alwaysUnlocked: true
+}

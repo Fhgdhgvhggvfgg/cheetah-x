@@ -11,7 +11,7 @@
 "itemCapacity":40,
 "name": "craft elixir",
 "outputItem":{"item":"elixir","amount":1},
-"requirements":[{"item":"elixir","amount":18}],
+"requirements":[{"item":"cristal","amount":10}],
 "size":3
 "type": "GenericCrafter",
 
