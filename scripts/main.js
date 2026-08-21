@@ -30,7 +30,7 @@ Timer.schedule(() => {
             } else if (randomNum == 2) {
                 playerCore.items.add(Vars.content.item("cheetah-x-gold"), 20);
             } else {
-                playerCore.items.add(Vars.content.item("cheetah-x-elixir"), 15);
+                playerCore.items.add(Vars.content.item("cheetah-x-elixir"), 18);
             }
             }
         }
@@ -75,3 +75,32 @@ Events.on(WorldLoadEvent, () => {
     }
     try { table.setPosition(0, 230); } catch(e) {}
 });
+
+//===================================================================
+
+    Events.on(BlockDestroyEvent, event => {
+        let core = Vars.player.team().core();
+        if (event.tile.team() != Vars.player.team()) {
+            if (core != null) {
+                // تدمير الأبراج
+                if (event.tile.block() instanceof Turret) {
+                    core.items.add(Vars.content.item("cheetah-x-elixir"), 4);
+                }
+                // تدمير المصانع
+                else if (event.tile.block() instanceof GenericCrafter) {
+                    core.items.add(Vars.content.item("cheetah-x-gold"), 1);
+                }
+                // تدمير مصانع الوحدات
+                else if (event.tile.block() instanceof UnitFactory) {
+                    core.items.add(Vars.content.item("cheetah-x-cristal"), 10);
+                 
+                }
+                // تدمير النواة (الـ Core)
+                else if (event.tile.block() instanceof CoreBlock) {
+                    core.items.add(Vars.content.item("cheetah-x-cristal"), 650);
+                    core.items.add(Vars.content.item("cheetah-x-gold"), 3000);
+                    core.items.add(Vars.content.item("cheetah-x-elixir"), 2400);
+                }
+            }
+        }
+    });

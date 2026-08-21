@@ -1,0 +1,177 @@
+{
+"type":"payload",
+alwaysUnlocked: false,
+buildRange:340,
+buildSpeed:8.5,
+accel: 0.06
+drag: 0.06
+ "range": 250,
+  "maxRange": 300,
+description:Cheetah girl is a powerful superhero who launches nuclear strikes..
+outlineColor: 00000000
+"template": "ErekirUnitType",
+hitSize: 25
+canAttack:true,
+contorller:BuilderAI,
+coreUnitDock:true,
+defaultController: BuilderAI,
+flying:true,
+health:2300,
+  "engineSize": 0, 
+itemCapacity: 150,
+localisedName: "lora",
+mineFloor:true
+mineRange: 150
+"mineSpeed":17,
+mineTier: 11
+mineWalls:true
+speed: 10,
+"rotateSpeed": 8.5,
+"payloadCapacity": 1500,
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: 
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -30
+moveX: 0
+progress: warmup
+
+
+children: [
+{
+type: RegionPart
+suffix: -name
+mirror: false
+under: false
+outline: false
+x: 0
+y: -21
+moveRot: 0
+progress: warmup
+color: ffffff4d
+colorTo: ffffffb3
+}
+
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.8
+growY: -0.8
+}
+
+]
+
+}
+
+  
+
+
+{
+"layerOffset": -0.0001, 
+type: RegionPart
+suffix: -lowest
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffffff
+colorTo: ffffffff
+moveY: 0.7
+growY: 0.14
+}
+
+{
+"layerOffset": 0.0001, 
+type: RegionPart
+suffix: -top
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffffff
+colorTo: ffffffff
+moveY: -0.7
+growY: 0.1
+}
+]
+
+
+abilities:[
+
+]
+
+weapons: [
+{
+shootWarmupSpeed: 10
+    name: lightning
+    shooty: 8
+    reload: 40
+    alternate: false
+    recoil: 0
+    mirror: true
+    rotate: true
+    x: 20
+    y: -15
+    shootSound: bolt
+    bullet: {
+      type: BasicBulletType
+      speed: 5
+      trailColor: FF69B4
+      frontColor: FF69B4
+      backColor: FF69B4
+      lifetime: 40
+      damage: 70
+      width: 7
+      height: 8
+      trailWidth: 1
+      trailLength: 4
+      pierce: true
+      shrinkX: 0
+      shrinkY: 0
+      fragBullets: 10
+      fragSpread: 60
+      fragRandomSpread: 0
+      fragVelocityMin: 1
+      fragVelocityMax: 1
+      fragLifeMin: 1
+      fragLifeMax: 1
+      fragBullet: {
+      type: LightningBulletType
+          lightningColor: FF69B4
+          lightningLength: 10
+          lightningDamage: 34
+          hitSound: spark
+          despawnSound: spark
+          lifetime: 1
+    }
+}
+}
+
+   ]
+   
+   "deathSound": "lora_die",
+
+    alwaysUnlocked: true
+}

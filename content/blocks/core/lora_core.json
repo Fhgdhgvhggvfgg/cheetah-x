@@ -1,6 +1,6 @@
-name: keven core
+name: lora core
   type: CoreBlock
-  health: 20000
+  health: 24000
   size: 6
   armor: 10
   isFirstTier: false
@@ -9,19 +9,15 @@ name: keven core
   buildCostMultiplier: 0.7
   squareSprite: false
     "thrusterLength": 30
-  unitType: keven
+  unitType: lora
   "requirements": [
-    {
-      "item": "cristal",
-      "amount": 30
-    },
         {
       "item": "gold",
-      "amount": 100
+      "amount": 180
     },
             {
       "item": "elixir",
-      "amount": 45
+      "amount": 160
     },
     
   ],
