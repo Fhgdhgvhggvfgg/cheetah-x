@@ -1,0 +1,14 @@
+{
+  "name": "router 01",
+  "description": "real item capacity is always 1 for all routers. There is no use to change itemCapacity",
+  "type": "Router",
+  "dumpTime": 0.1,
+  "speed": 0,
+  "health": 300,
+  "itemCapacity": 200,
+  "size": 1,
+  "requirements": [{"item":"obsidian","amount":3}]
+  "category": "distribution",
+  
+  alwaysUnlocked: true
+}
