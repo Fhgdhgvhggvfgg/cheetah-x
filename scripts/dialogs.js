@@ -92,16 +92,23 @@
           // діалогове вікно це функція щоб упростити код та виклик цього вікна
           //саме вікно:
 // دالة عرض النافذة الترحيبية عند تشغيل اللعبة
-function showMyDialog() {
-  const d = new BaseDialog("hello");
-  
+          // دالة عرض النافذة الترحيبية عند تشغيل اللعبة
+          function showMyDialog() {
+            const d = new BaseDialog("hello");
+            
+            // استخدام الـ pane لجعل المحتوى قابلاً للتمرير والسحب
+            d.cont.pane(p => {
+              p.image(Core.atlas.find("cheetah-x-welcome_logo")).size(600, 600).pad(10).row();
+                            p.add("The mod will be ready soon. You just have to wait a little longer.").row();
+              const studyTex = Core.atlas.find("cheetah-x-study");
+              p.image(studyTex).size(600, 600).pad(10).row();
+              p.add("How to collect gold.").row();
+            }).size(1000, 1000); // حجم مساحة العرض الخاصة بالتمرير (عرض، ارتفاع)
+            
+            d.buttons.button("bye", () => d.hide()).size(210, 64);
+            d.show();
+          }
 
-  d.cont.image(Core.atlas.find("cheetah-x-welcome_logo")).size(600, 600).pad(10).row();
-  
-  d.cont.add("The mod will be ready soon. You just have to wait a little longer.").row();
-  d.buttons.button("bye", () => d.hide()).size(210, 64);
-  d.show();
-}
 
           
           // Показ вікна якщо чекбокс активний
