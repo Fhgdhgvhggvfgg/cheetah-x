@@ -26,11 +26,11 @@ Timer.schedule(() => {
             
             if (!Vars.state.isPaused()){
             if (randomNum == 1) {
-                playerCore.items.add(Vars.content.item("cheetah-x-cristal"), 10);
+                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 10);
             } else if (randomNum == 2) {
-                playerCore.items.add(Vars.content.item("cheetah-x-cristal"), 15);
+                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 15);
             } else {
-                playerCore.items.add(Vars.content.item("cheetah-x-cristal"), 5);
+                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 5);
             }
             }
         }

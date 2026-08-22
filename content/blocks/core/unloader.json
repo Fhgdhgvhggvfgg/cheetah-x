@@ -1,0 +1,17 @@
+{
+  "name": "Unloader",
+  "type": "Unloader",
+  "requirements": [
+    {
+      "item": "ram",
+      "amount": 2
+    },
+
+  ],
+  "health": 250,
+  "size": 1,
+  "category": "distribution",
+  "description": "Unloads items from adjacent containers."
+  
+      alwaysUnlocked: true
+}

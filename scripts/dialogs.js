@@ -103,6 +103,9 @@
               const studyTex = Core.atlas.find("cheetah-x-study");
               p.image(studyTex).size(600, 600).pad(10).row();
               p.add("How to collect gold.").row();
+              const studyTex2 = Core.atlas.find("cheetah-x-study2");
+              p.image(studyTex2).size(600, 600).pad(10).row();
+              p.add("The way the game starts. py ram").row();
             }).size(1000, 600); // حجم مساحة العرض الخاصة بالتمرير (عرض، ارتفاع)
             
             d.buttons.button("bye", () => d.hide()).size(210, 64);
