@@ -108,8 +108,10 @@ function showMyDialog() {
         p.image(studyTex2).size(600, 600).pad(10).row();
         p.add("The way the game starts. py ram").row();
         
+               const studyTex3 = Core.atlas.find("cheetah-x-study3");
+        p.image(studyTex3).size(600, 600).pad(10).row();
         // ✅ إضافة زر الرابط هنا
-        p.button("our page", Icon.link, () => Core.app.openURI("https://fhgdhgvhggvfgg.github.io/Cpe-cheetah-/warehouse/")).size(300, 80).padTop(10).row();
+        p.button("", Icon.link, () => Core.app.openURI("https://fhgdhgvhggvfgg.github.io/Cpe-cheetah-/warehouse/")).size(80, 80).padTop(-400).padLeft(-100).row();
         p.add("come to our page for the latest news").row();
     }).size(1000, 600);
     
