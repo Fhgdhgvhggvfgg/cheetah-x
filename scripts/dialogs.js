@@ -93,24 +93,29 @@
           //саме вікно:
 // دالة عرض النافذة الترحيبية عند تشغيل اللعبة
           // دالة عرض النافذة الترحيبية عند تشغيل اللعبة
-          function showMyDialog() {
-            const d = new BaseDialog("hello");
-            
-            // استخدام الـ pane لجعل المحتوى قابلاً للتمرير والسحب
-            d.cont.pane(p => {
-              p.image(Core.atlas.find("cheetah-x-welcome_logo")).size(600, 600).pad(10).row();
-                            p.add("The mod will be ready soon. You just have to wait a little longer.").row();
-              const studyTex = Core.atlas.find("cheetah-x-study");
-              p.image(studyTex).size(600, 600).pad(10).row();
-              p.add("How to collect gold.").row();
-              const studyTex2 = Core.atlas.find("cheetah-x-study2");
-              p.image(studyTex2).size(600, 600).pad(10).row();
-              p.add("The way the game starts. py ram").row();
-            }).size(1000, 600); // حجم مساحة العرض الخاصة بالتمرير (عرض، ارتفاع)
-            
-            d.buttons.button("bye", () => d.hide()).size(210, 64);
-            d.show();
-          }
+function showMyDialog() {
+    const d = new BaseDialog("hello");
+    
+    d.cont.pane(p => {
+        p.image(Core.atlas.find("cheetah-x-welcome_logo")).size(600, 600).pad(10).row();
+        p.add("The mod will be ready soon. You just have to wait a little longer.").row();
+        
+        const studyTex = Core.atlas.find("cheetah-x-study");
+        p.image(studyTex).size(600, 600).pad(10).row();
+        p.add("How to collect gold.").row();
+        
+        const studyTex2 = Core.atlas.find("cheetah-x-study2");
+        p.image(studyTex2).size(600, 600).pad(10).row();
+        p.add("The way the game starts. py ram").row();
+        
+        // ✅ إضافة زر الرابط هنا
+        p.button("Open Link", Icon.link, () => Core.app.openURI("https://fhgdhgvhggvfgg.github.io/Cpe-cheetah-/game_power/")).size(200, 50).padTop(10).row();
+        
+    }).size(1000, 600);
+    
+    d.buttons.button("bye", () => d.hide()).size(210, 64);
+    d.show();
+}
 
 
           
@@ -120,6 +125,7 @@
             //з викликом вікна яке тепер функція
           }
         });
+        
         
     function blockmenu() {
         const M = new BaseDialog("hello");
@@ -328,3 +334,4 @@
        DevMenu: DevMenu,
        SetApl: SetApl,
     };
+    
