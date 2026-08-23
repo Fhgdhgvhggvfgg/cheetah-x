@@ -109,8 +109,8 @@ function showMyDialog() {
         p.add("The way the game starts. py ram").row();
         
         // ✅ إضافة زر الرابط هنا
-        p.button("Open Link", Icon.link, () => Core.app.openURI("https://fhgdhgvhggvfgg.github.io/Cpe-cheetah-/game_power/")).size(200, 50).padTop(10).row();
-        
+        p.button("our page", Icon.link, () => Core.app.openURI("https://fhgdhgvhggvfgg.github.io/Cpe-cheetah-/warehouse/")).size(300, 80).padTop(10).row();
+        p.add("come to our page for the latest news").row();
     }).size(1000, 600);
     
     d.buttons.button("bye", () => d.hide()).size(210, 64);
