@@ -22,20 +22,22 @@ Timer.schedule(() => {
         
         // التحقق من أن النواة موجودة وليست فارغة
         if (playerCore != null) {
-            let randomNum = Math.floor(Math.random() * 3);
+            let randomNum = Math.floor(Math.random() * 4);
             
             if (!Vars.state.isPaused()){
             if (randomNum == 1) {
-                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 10);
+                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 2);
             } else if (randomNum == 2) {
-                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 15);
+                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 3);
+            } else if (randomNum == 3) {
+                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 1);
             } else {
-                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 5);
+            	
             }
             }
         }
     }
-}, 10, 16);
+}, 10, 6);
 
 
 
