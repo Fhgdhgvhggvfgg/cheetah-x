@@ -1,0 +1,24 @@
+{
+"category":"crafting"
+"craftEffect":"smeltsmoke",
+"craftTime":100, 
+"description":"A factory that makes obsidian",
+"displayNane":"craft-ram-c",
+"consumes":{
+"items":[
+{"item":"ram","amount":6}
+{"item":"cristal","amount":12}
+]
+}
+"health":800,
+"itemCapacity":30,
+"name": "craft ram c",
+"outputItem":{
+"item":"ram_c","amount":1},
+"requirements":[{"item":"obsidian","amount":8}
+{"item":"cristal","amount":4}],
+"size":2
+"type": "GenericCrafter",
+
+    alwaysUnlocked: true
+}

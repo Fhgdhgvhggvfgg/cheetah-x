@@ -1,7 +1,7 @@
 {
 alwaysUnlocked: true
-accel: 0.1
-drag: 0.1
+accel: 0.06
+drag: 0.06
 "template": "ErekirUnitType",
 alwaysUnlocked: false,
 canAttack:true,
@@ -11,15 +11,14 @@ flying:true,
 defaultCommand: repair
 buildRange:90,
 buildSpeed:0.3,
-health:230,
+health:800,
 outlineColor: 00000000
-lifetime: 1000,
-hitSize: 10
+hitSize: 14
   "engineSize": 0, 
-localisedName: "reformer",
+localisedName: "dron cristal",
 speed: 6,
-rotateSpeed: 6
-"type":"missile",
+rotateSpeed: 10
+"type":"flying",
 
 abilities:[
 
@@ -42,8 +41,9 @@ abilities:[
     bullet: {
       type: LaserBulletType
                       "collidesTeam":true,
+                      recoil: -3.5
                 "healPercent":1,
-        length: 50
+        length: 80
         width: 1
         damage: 7
         hitEffect: lightningShoot
