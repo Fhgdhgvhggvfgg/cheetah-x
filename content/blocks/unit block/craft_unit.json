@@ -21,6 +21,15 @@
 "time":500
 }
 
+{
+"unit":"lever",
+"requirements":[
+"obsidian/79"
+"ram/12"
+],
+"time":800
+}
+
 ],
 
 

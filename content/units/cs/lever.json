@@ -1,0 +1,17 @@
+{
+"type":"payload",
+alwaysUnlocked: false,
+accel: 0.06
+drag: 0.06
+description:lever.
+outlineColor: 00000000
+"template": "ErekirUnitType",
+hitSize: 25
+flying:true,
+health:700,
+  "engineSize": 0, 
+localisedName: "lever",
+speed: 9,
+"rotateSpeed": 8.5,
+"payloadCapacity": 2000,
+}
