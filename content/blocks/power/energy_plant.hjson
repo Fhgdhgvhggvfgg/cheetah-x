@@ -1,0 +1,24 @@
+Name: energy plant
+description: It works using elixir.
+type: ConsumeGenerator
+size: 2
+health: 1400
+hasItems: true
+hasLiquids: true
+hasPower: true
+liquidCapacity: 25
+itemDuration: 1400
+powerProduction: 2
+itemCapacity:15
+consumes: {
+     items: [
+     {"item":"elixir","amount":1},
+      ]
+}
+requirements: [
+cristal/30
+ram/10
+]
+category: power
+
+      alwaysUnlocked: true

@@ -1,0 +1,36 @@
+{
+  "researchCostMultiplier": 0.5,
+  "type": "UnitAssembler",
+  "name": "unit builder",
+  "description": "A workshop that integrates soldiers with equipment needs to place a planning device in front of the development area.
+",
+  "size": 4,
+  "configurable": true,
+  "category": "units",
+  "droneType": "assembly-drone",
+  "dronesCreated": 4,
+  "droneConstructTime": 60,
+  "requirements": [
+    "cristal/80"
+    "elixir/160"
+    "obsidian/180"
+  ],
+  "plans": [
+    
+        {
+      "type": "AssemblerUnitPlan",
+      "unit": "dron_cristal",
+      "requirements": [
+        "cheetah-x-battery/1"
+      ],
+      "time": 2000
+    }
+    
+  ],
+  "squareSprite": false,
+  "consumes": {
+    "power": 2
+  },
+  "areaSize": 18,
+  "alwaysUnlocked": false
+}

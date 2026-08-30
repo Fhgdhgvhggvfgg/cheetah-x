@@ -1,0 +1,12 @@
+category:power
+description:"power node made with cristal" 
+health:340
+laserColor1: 6ed1e7
+laserColor2: 2b67a9
+laserRange:16
+localizedName:" node" 
+maxNodes:28
+requirements:[{"item":"cristal","amount":1},{"item":"obsidian","amount":2}]
+type:PowerNode
+ 
+       alwaysUnlocked: true
