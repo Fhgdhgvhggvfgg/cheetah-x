@@ -1,0 +1,11 @@
+category:liquid 
+health:160
+"name": "tude crossing",
+liquidCapcacity:12
+localizedName: Lead enforced liquid junction 
+requirements:[cristal/2]
+research:ast_conduit_1 
+size:1
+solid:false
+type:LiquidJunction
+alwaysUnlocked: true

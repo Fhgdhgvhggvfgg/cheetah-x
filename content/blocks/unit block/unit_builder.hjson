@@ -28,9 +28,13 @@
     
   ],
   "squareSprite": false,
-  "consumes": {
-    "power": 2
-  },
+  consumes: {
+    power: 2
+        "liquid": {
+      "liquid": "elixir_iquid",
+      "amount": 0.05
+    }
+    }
   "areaSize": 18,
   "alwaysUnlocked": false
 }

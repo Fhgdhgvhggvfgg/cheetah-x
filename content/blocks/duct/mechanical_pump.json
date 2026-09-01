@@ -1,0 +1,21 @@
+{
+  "type": "Pump",
+  "name": "Mechanical Pump",
+  "health": 90,
+  "size": 1,
+  "requirements": [
+    {
+      "item": "cristal",
+      "amount": 8
+    },
+  ],
+  "liquidCapacity": 10,
+  "pumpAmount": 0.5,
+  "research": "aega_junction",
+  "category": "liquid",
+  "consumes": {
+    "power": 0.5
+  },
+  "description": "A basic pump that transfers liquids with a small amount of power consumption."
+  alwaysUnlocked: true
+}

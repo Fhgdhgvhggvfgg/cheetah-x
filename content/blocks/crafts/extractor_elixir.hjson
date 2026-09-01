@@ -1,0 +1,32 @@
+{
+  "type": "GenericCrafter",
+  "name": "extractor epixir",
+  "localizedName": "extractor elixir",
+  "description": " ",
+  "size": 2, 
+  
+  "requirements": [
+    { "item": "gold", "amount": 40}
+  ],
+  
+  "consumes": {
+    "power": 1.5, 
+    "items": {
+      "items": [
+        { "item": "elixir", "amount": 1 }
+      ],
+      "optional": false
+    },
+  },
+  
+  "outputLiquid": {
+    "liquid": "elixir_iquid",
+    "amount": 0.3
+  },
+  "craftTime": 60, 
+  "craftEffect": "steam",
+  
+  "health": 2300,
+  "category": "production", 
+   alwaysUnlocked: true
+}

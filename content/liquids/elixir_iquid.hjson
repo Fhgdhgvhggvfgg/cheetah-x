@@ -1,0 +1,7 @@
+"description": ". ",
+name: "elixir iquid",
+"gas": false,
+"cache": "water",
+heatCapacity:1.1
+"barColor": "ff00ff"
+color: ff00ff
