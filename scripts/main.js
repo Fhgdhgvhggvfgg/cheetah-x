@@ -87,22 +87,19 @@ Events.on(WorldLoadEvent, () => {
                 // تدمير الأبراج
                 if (event.tile.block() instanceof Turret) {
                     core.items.add(Vars.content.item("cheetah-x-elixir"), 4);
+                    core.items.add(Vars.content.item("cheetah-x-ram_c"), 1);
                 }
                 // تدمير المصانع
                 else if (event.tile.block() instanceof GenericCrafter) {
                     core.items.add(Vars.content.item("cheetah-x-gold"), 1);
+                    core.items.add(Vars.content.item("cheetah-x-ram"), 3);
                 }
                 // تدمير مصانع الوحدات
                 else if (event.tile.block() instanceof UnitFactory) {
-                    core.items.add(Vars.content.item("cheetah-x-cristal"), 10);
-                 
+                    core.items.add(Vars.content.item("cheetah-x-cristal"), 3);
+                 core.items.add(Vars.content.item("cheetah-x-ram"), 6);
                 }
                 // تدمير النواة (الـ Core)
-                else if (event.tile.block() instanceof CoreBlock) {
-                    core.items.add(Vars.content.item("cheetah-x-cristal"), 650);
-                    core.items.add(Vars.content.item("cheetah-x-gold"), 3000);
-                    core.items.add(Vars.content.item("cheetah-x-elixir"), 2400);
-                }
             }
         }
     });
@@ -112,16 +109,28 @@ Events.on(WorldLoadEvent, () => {
 
 Events.on(UnitDestroyEvent, event => {
     let unit = event.unit;
+    let core = Vars.player.team().core();
     
     // التأكد من أن الوحدة موجودة وتنتمي لنفس فريق اللاعب
     if (unit != null && unit.team == Vars.player.team()) {
         // التحقق من اسم الوحدة البري عن طريق النص لتجنب مشاكل التحميل
         if (unit.type.name.includes("gold_alien")) {
-            let core = Vars.player.team().core();
+            
             if (core != null) {
                 core.items.add(Vars.content.item("cheetah-x-gold"), 40);
             }
         }
     }
+    
+    if (unit != null && unit.team != Vars.player.team()) {
+    	if (unit.isFlying()) {
+    	}else {
+    	            
+            if (core != null) {
+    	core.items.add(Vars.content.item("cheetah-x-ram"), 1);
+    }
+    }
+    	
+    	}
 });
 
