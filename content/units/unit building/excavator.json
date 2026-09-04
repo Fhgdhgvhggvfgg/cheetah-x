@@ -15,17 +15,17 @@ drag: 0.90
 "singleTarget": false,
 "omniMovement": false,
 "faceTarget": false,
-itemCapacity: 30,
-mineFloor:true
-mineRange: 50
-"mineSpeed":3,
-mineTier: 11
-mineWalls:true
+  "itemCapacity": 60,
+  "mineFloor": true,
+  "mineWalls": true,
+  "mineRange": 50,
+  "mineSpeed": 3,
+  "mineTier": 11,
+  "controller": "MinerAI"
 "health": 5000,
 "armor": 20,
 "speed": 2,
 "rotateSpeed": 3,
-"itemCapacity": 0,
 "treadRects": [
     {
       "x": 49,
