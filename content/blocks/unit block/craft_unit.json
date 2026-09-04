@@ -30,6 +30,41 @@
 "time":800
 }
 
+{
+"unit":"gold_sheets",
+"requirements":[
+"gold/70"
+],
+"time":700
+}
+
+{
+"unit":"control_box",
+"requirements":[
+"ram_c/5"
+],
+"time":700
+}
+
+
+
+{
+"unit":"obsidian_alloy",
+"requirements":[
+"obsidian/20"
+],
+"time":700
+}
+
+
+{
+"unit":"wheelbox",
+"requirements":[
+"obsidian/10"
+],
+"time":700
+}
+
 ],
 
 

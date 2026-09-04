@@ -1,0 +1,164 @@
+{
+"description": 
+",
+"name":"excavator",
+buildRange:60,
+buildSpeed:3.5,
+outlineColor: 00000000
+"type": "tank",
+"hitSize": 50,
+accel: 0.90
+drag: 0.90
+"crushDamage": 0.4,
+"template": "ErekirUnitType",
+"treadPullOffset": 6,
+"singleTarget": false,
+"omniMovement": false,
+"faceTarget": false,
+itemCapacity: 30,
+mineFloor:true
+mineRange: 50
+"mineSpeed":3,
+mineTier: 11
+mineWalls:true
+"health": 5000,
+"armor": 20,
+"speed": 2,
+"rotateSpeed": 3,
+"itemCapacity": 0,
+"treadRects": [
+    {
+      "x": 49,
+      "y": -84,
+      "width": 19,
+      "height": 170
+    }
+  ],
+  
+  
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: -66
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.76
+growY: -0.76
+
+}
+  ]
+  
+  
+
+abilities:[
+
+]
+
+
+"weapons": [
+    {
+    shootWarmupSpeed: 10
+                name: head_machine
+                mirror: false
+                top: true
+                rotate: true
+		rotateSpeed: 5
+		shootY: 30
+                x: 0
+                y: 0
+                reload: 40
+                
+                
+                shoot: {
+      shots: 1
+      shotDelay: 0
+    }
+        bullet: {
+      type: LaserBulletType
+         recoil: 0
+        length: 80
+        width: 1
+        damage: 15
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          000000
+          000000
+          000000
+        ],
+        sideAngle: -45
+        sideLength: 0
+        sideWidth: 3.4
+        		splashDamageRadius: 50
+		splashDamage: 60
+		hitEffect: blastExplosion
+        trailLength: 4
+        trailColor: ff0000
+    }
+                
+                    "parts": [
+{
+type: RegionPart
+suffix: -arm
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.2, 
+x: 13
+y: 40
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: recoil
+color: ffffffff
+colorTo: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+
+children: [
+{
+type: RegionPart
+suffix: -arm2
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: 0
+moveY: 10
+moveX: 0
+moveRot: 0
+progress: recoil
+color: ffffffff
+colorTo: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+}
+]
+
+}
+  ]
+                
+}
+ 
+
+   
+
+
+  ]
+  
+      alwaysUnlocked: false
+}

@@ -19,11 +19,14 @@
     
         {
       "type": "AssemblerUnitPlan",
-      "unit": "dron_cristal",
+      "unit": "excavator",
       "requirements": [
-        "cheetah-x-battery/1"
+        "cheetah-x-gold_sheets/2"
+        "cheetah-x-control_box/1"
+        "cheetah-x-obsidian_alloy/2"
+        "cheetah-x-wheelbox/4"
       ],
-      "time": 2000
+      "time": 2500
     }
     
   ],

@@ -1,0 +1,17 @@
+{
+alwaysUnlocked: false
+"template": "ErekirUnitType",
+canAttack:false,
+lifetime: 999999999999999999,
+coreUnitDock:true,
+  "drownTimeMultiplier": 99999999999999999999,
+flying:false,
+outlineColor: 00000000
+health:600,
+hitSize: 32
+localisedName: "gold sheets",
+speed: 0,
+rotateSpeed: 0
+"type":"missile",
+"engineSize": 0, 
+}
