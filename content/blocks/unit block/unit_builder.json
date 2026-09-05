@@ -29,6 +29,17 @@
       "time": 2500
     }
     
+            {
+      "type": "AssemblerUnitPlan",
+      "unit": "valka_gate",
+      "requirements": [
+        "cheetah-x-gold_sheets/2"
+        "cheetah-x-craft_elixir/6"
+        "cheetah-x-obsidian_alloy/6"
+      ],
+      "time": 3400
+    }
+    
   ],
   "squareSprite": false,
   consumes: {

@@ -1,0 +1,158 @@
+{
+alwaysUnlocked: true
+accel: 0.06
+drag: 0.06
+  "range": 230,
+  "maxRange": 230,
+"template": "ErekirUnitType",
+alwaysUnlocked: false,
+canAttack:true,
+coreUnitDock:true,
+flying:true,
+health:3000,
+outlineColor: 00000000
+hitSize: 28
+  "engineSize": 0, 
+localisedName: "valka",
+speed: 8,
+rotateSpeed: 10
+"type":"flying",
+
+abilities:[
+
+]
+
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: -35
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.76
+growY: -0.76
+
+}
+  ]
+
+"weapons":[
+
+    {
+    shootWarmupSpeed: 10
+        rotate: true
+        mirror: true
+        x: 9
+        y: 7
+        reload: 50
+        recoil: 1
+        ejectEffect: casing2
+        shootSound: flame
+        
+                        bullet: {
+      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FF0000
+        damage: 100
+        scaleVelocity: true
+        splashDamage: 40
+        splashDamageRadius: 60
+        height: 6
+        width: 6
+        speed: 8
+        lifetime: 45
+        shrinkX: 0
+        shrinkY: 0
+        trailChance: 1
+        trailParam: 10
+        trailLength: 19
+        trailColor: FF0000
+        trailWidth: 5
+        trailEffect: {
+          type: ParticleEffect
+          particles: 10
+          length: 3
+          baseLength: 3
+          lifetime: 25
+          interp: circleOut
+          cone: 360
+          offset": 3
+          lightColor: FF0000
+          colorFrom: ff0000
+          colorTo: FF0000
+          sizeFrom: 3
+          sizeTo: 0
+        },
+        despawnEffect: [
+        {
+          type: ParticleEffect
+          particles: 6
+          lifetime: 40
+          length: 20
+          cone: 50
+          offset: 16
+          lightcolor: FF0000
+          interp: circleOut
+          lenFrom: 7
+          lenTo: 7
+          colorFrom: FF0000
+          colorTo: ff0000
+          },
+          {
+          type: ParticleEffect
+          particles: 6
+          lifetime: 14
+          length: 20
+          cone: 50
+          offset: 16
+          lightcolor: FF0000
+          interp: circleOut
+          lenFrom: 7
+          lenTo: 7
+          colorFrom: FF0000
+          colorTo: ff0000
+           },
+        ]
+       }
+        
+
+    }
+
+    {
+    shootWarmupSpeed: 10
+    name: skeletonS
+    "layerOffset": -0.0001, 
+        rotate: false
+        mirror: true
+                    shoot: {
+      shots: 4
+      shotDelay: 10
+    }
+        shootY: 3
+        x: 20
+        y: 0
+        reload: 360
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: shovelS
+        
+    bullet: {
+      type: BasicBulletType
+        spawnUnit: skeleton
+          "range": 230,
+  "maxRange": 230,
+    }
+    }
+]
+alwaysUnlocked: true
+}

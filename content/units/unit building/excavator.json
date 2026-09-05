@@ -21,7 +21,6 @@ drag: 0.90
   "mineRange": 50,
   "mineSpeed": 3,
   "mineTier": 11,
-  "controller": "MinerAI"
 "health": 5000,
 "armor": 20,
 "speed": 2,
