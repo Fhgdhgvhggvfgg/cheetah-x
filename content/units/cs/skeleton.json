@@ -18,7 +18,7 @@ lifetime: 1000,
 hitSize: 18
   "engineSize": 0, 
 localisedName: "skeleton",
-speed: 6,
+speed: 0,
 rotateSpeed: 6
 "type":"missile",
 
