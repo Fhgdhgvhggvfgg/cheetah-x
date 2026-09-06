@@ -14,7 +14,7 @@ outlineColor: 00000000
 hitSize: 28
   "engineSize": 0, 
 localisedName: "valka",
-speed: 6,
+speed: 4,
 rotateSpeed: 10
 "type":"missile",
 lifetime: 99999999999999999999,
@@ -65,21 +65,21 @@ growY: -0.76
       type: BasicBulletType
         sprite: circle-bullet
         lightRadius: 10
-        lightColor: FF0000
+        lightColor: ffffff
         damage: 140
         scaleVelocity: true
         splashDamage: 40
         splashDamageRadius: 60
         height: 6
         width: 6
-        speed: 7
-        lifetime: 30
+        speed: 9
+        lifetime: 24
         shrinkX: 0
         shrinkY: 0
         trailChance: 1
         trailParam: 10
         trailLength: 19
-        trailColor: FF0000
+        trailColor: ffffff
         trailWidth: 5
         trailEffect: {
           type: ParticleEffect
@@ -90,9 +90,9 @@ growY: -0.76
           interp: circleOut
           cone: 360
           offset": 3
-          lightColor: FF0000
-          colorFrom: ff0000
-          colorTo: FF0000
+          lightColor: ffffff
+          colorFrom: ffffff
+          colorTo: ffffff
           sizeFrom: 3
           sizeTo: 0
         },
@@ -104,12 +104,12 @@ growY: -0.76
           length: 20
           cone: 50
           offset: 16
-          lightcolor: FF0000
+          lightcolor: ffffff
           interp: circleOut
           lenFrom: 7
           lenTo: 7
-          colorFrom: FF0000
-          colorTo: ff0000
+          colorFrom: ffffff
+          colorTo: ffffff
           },
           {
           type: ParticleEffect
@@ -118,12 +118,12 @@ growY: -0.76
           length: 20
           cone: 50
           offset: 16
-          lightcolor: FF0000
+          lightcolor: ffffff
           interp: circleOut
           lenFrom: 7
           lenTo: 7
-          colorFrom: FF0000
-          colorTo: ff0000
+          colorFrom: ffffff
+          colorTo: ffffff
            },
         ]
        }

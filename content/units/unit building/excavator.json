@@ -88,7 +88,7 @@ abilities:[
          recoil: 0
         length: 80
         width: 1
-        damage: 15
+        damage: 20
         hitEffect: lightningShoot
         shootEffect: lightningShoot
         colors: [

@@ -123,36 +123,58 @@ growY: -0.76
           colorTo: ff0000
            },
         ]
+ 
        }
         
 
     }
 
+
     {
     shootWarmupSpeed: 10
     name: skeletonS
-    "layerOffset": -0.0001, 
-        rotate: false
-        mirror: true
-                    shoot: {
-      shots: 4
+    
+                   shoot: {
+                     shots: 4
       shotDelay: 10
-    }
-        shootY: 3
-        x: 20
-        y: 0
-        reload: 360
-        recoil: 0
+}
+        rotate: true
+        mirror: true
+        x: 18
+        y: 5
+        reload: 240
+        recoil: 1
         ejectEffect: casing2
-        shootSound: shovelS
+        shootSound: flame
         
-    bullet: {
+                        bullet: {
+      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FF0000
+        damage: 10
+        scaleVelocity: true
+        splashDamage: 40
+        splashDamageRadius: 60
+        height: 6
+        width: 6
+        speed: 5
+        lifetime: 4
+                  "fragBullets": 1
+                  
+  "range": 230,
+  "maxRange": 230,
+                  
+                fragBullet: {
       type: BasicBulletType
         spawnUnit: skeleton
-          "range": 230,
-  "maxRange": 230,
+       }
+       }
+        
+
     }
-    }
+
+
 ]
 alwaysUnlocked: true
 }
