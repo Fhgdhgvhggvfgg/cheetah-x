@@ -1,0 +1,62 @@
+description:
+name: wizard
+type: ItemTurret
+reload: 30
+rotateSpeed: 5
+targetGround: true
+targetAir: true
+targetFriendly: true
+targetHealing: true
+"outlineColor": "00000000"
+range: 120
+recoil: 0
+shootSound: ccccccccc
+size: 1
+health: 220
+shootY: 63
+maxAmmo: 120
+ambientSound: preparing_rifle
+shootWarmupSpeed: 10
+
+drawer: {
+  type: DrawTurret
+
+  }
+
+
+            shoot: {
+      shots: 1
+      shotDelay: 0
+    }
+
+coolant: {
+  type: ConsumeCoolant
+  allowGas: true
+  allowLiquid: true
+  amount: 0.3
+}
+
+
+ammoTypes: {
+    
+        ram: {
+        ammoMultiplier: 18
+        damage: 5
+        speed: 1
+        height: 20
+        width: 20
+        lifetime: 1
+        fragOnHit: true
+splashDamageRadius: 60
+		splashDamage: 5
+       }
+    }
+    
+
+
+requirements: [
+ram/10
+]
+category: turret
+
+    alwaysUnlocked: true
