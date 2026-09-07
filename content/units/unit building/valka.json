@@ -136,13 +136,13 @@ growY: -0.76
     
                    shoot: {
                      shots: 4
-      shotDelay: 10
+      shotDelay: 15
 }
         rotate: true
         mirror: true
         x: 18
         y: 5
-        reload: 240
+        reload: 300
         recoil: 1
         ejectEffect: casing2
         shootSound: flame

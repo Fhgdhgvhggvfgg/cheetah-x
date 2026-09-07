@@ -19,7 +19,7 @@ hitSize: 18
   "engineSize": 0, 
 localisedName: "skeleton",
 speed: 0,
-rotateSpeed: 6
+rotateSpeed: 15
 "type":"missile",
 
     "parts": [
@@ -74,7 +74,7 @@ abilities:[
         shootY: 3
         x: 0
         y: 0
-        reload: 30
+        reload: 24
         recoil: 0
         ejectEffect: casing2
         shootSound: shovelS
@@ -87,7 +87,7 @@ abilities:[
                       recoil: -5.5
         length: 80
         width: 1
-        damage: 12
+        damage: 24
         hitEffect: lightningShoot
         shootEffect: lightningShoot
         colors: [
@@ -99,7 +99,7 @@ abilities:[
         sideLength: 0
         sideWidth: 3.4
         		splashDamageRadius: 50
-		splashDamage: 20
+		splashDamage: 40
 		hitEffect: blastExplosion
         trailLength: 4
 

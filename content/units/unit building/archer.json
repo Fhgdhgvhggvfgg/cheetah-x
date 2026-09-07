@@ -15,12 +15,20 @@ hitSize: 28
   "engineSize": 0, 
 localisedName: "valka",
 speed: 4,
+stepShake: 0
+mechFrontSway: 0
+mechSideSway: 1
 rotateSpeed: 10
-"type":"missile",
-lifetime: 99999999999999999999,
+"type":"mech",
 
 abilities:[
 
+ {
+		type: SpawnDeathAbility
+		amount: 1
+		unit: skeleton
+	}
+	
 ]
 
     "parts": [
