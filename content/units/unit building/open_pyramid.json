@@ -7,7 +7,7 @@ coreUnitDock:true,
   "drownTimeMultiplier": 99999999999999999999,
 flying:false,
 outlineColor: 00000000
-health:10000,
+health:5000,
 
 abilities:[
 
@@ -44,6 +44,49 @@ abilities:[
     },
 	
 ]
+
+
+weapons: [
+{
+
+name: cannon
+y: 0
+x: 0
+    shootY: 6
+    recoil: 0
+    reload: 300
+    alternate: false
+    mirror: false
+    rotate: true
+    shootSound: cannon
+  
+    bullet: {
+                type: SolidBulletType
+                damage: 100
+                "name": arrow,
+                homing: false
+                speed: 2
+                sprite: large-bomb
+                lifetime: 570
+                knockback: -1
+                backColor: ffffff
+                frontColor: ffffff
+                mixColorFrom: ffffff
+                mixColorTo: ffffff
+                width: 50
+                height: 50
+		fragOnHit: true
+		fragBullets: 50
+		splashDamageRadius: 80
+		splashDamage: 700
+		hitEffect: blastExplosion
+        trailLength: 4
+        trailColor: ffffff
+               }
+}
+
+]
+
 
 hitSize: 80
 localisedName: "open pyramid",

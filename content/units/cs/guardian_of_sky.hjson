@@ -80,14 +80,14 @@ weapons: [
       type: BasicBulletType
         lightRadius: 10
         lightColor: C6FF6BFF
-        damage: 30
+        damage: 60
         scaleVelocity: true
         splashDamage: 20
         splashDamageRadius: 20
         height: 7.5
         width: 7.5
         speed: 8
-        lifetime: 30
+        lifetime: 45
         shrinkX: 0
         shrinkY: 0
         trailChance: 2
@@ -118,7 +118,7 @@ weapons: [
         fragBullet: {
         type: BasicBulletType
         sprite: circle-bullet
-        damage: 50
+        damage: 80
         height: 14
         width: 12
         speed: 4
@@ -155,7 +155,7 @@ weapons: [
         type: LaserBulletType
         length: 50,
         width: 20
-        damage: 30
+        damage: 80
         hitEffect: lightningShoot
         shootEffect: lightningShoot
         colors: [
