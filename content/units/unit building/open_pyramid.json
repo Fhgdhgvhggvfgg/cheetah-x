@@ -1,0 +1,54 @@
+{
+alwaysUnlocked: false
+"template": "ErekirUnitType",
+canAttack:false,
+lifetime: 18000,
+coreUnitDock:true,
+  "drownTimeMultiplier": 99999999999999999999,
+flying:false,
+outlineColor: 00000000
+health:10000,
+
+abilities:[
+
+    {
+      "type": "UnitSpawnAbility",
+      "spawnX": 70,
+      "spawnY": -70,
+      "unit": "guardian_of_sky",
+      "spawnTime": 1800
+    },
+    
+        {
+      "type": "UnitSpawnAbility",
+      "spawnX": 70,
+      "spawnY": 70,
+      "unit": "guardian_of_sky",
+      "spawnTime": 1600
+    },
+    
+            {
+      "type": "UnitSpawnAbility",
+      "spawnX": -70,
+      "spawnY": -70,
+      "unit": "guardian_of_sky",
+      "spawnTime": 1400
+    },
+    
+                {
+      "type": "UnitSpawnAbility",
+      "spawnX": -70,
+      "spawnY": 70,
+      "unit": "guardian_of_sky",
+      "spawnTime": 1200
+    },
+	
+]
+
+hitSize: 80
+localisedName: "open pyramid",
+speed: 0,
+rotateSpeed: 0
+"type":"missile",
+"engineSize": 0, 
+}

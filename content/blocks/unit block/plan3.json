@@ -1,0 +1,16 @@
+type: UnitAssemblerModule
+size: 2
+health: 1900
+  "description": "A schematic device that enhances the schematic in the super modular developer. Place it in front of the development area.
+",
+  "name": "plan3",
+alwaysUnlocked: false
+category: units
+requirements: [
+elixir/300
+gold/120
+]
+consumes: {
+  power: 1
+}
+tier: 3

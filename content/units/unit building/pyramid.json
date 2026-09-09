@@ -1,0 +1,37 @@
+{
+alwaysUnlocked: false
+"template": "ErekirUnitType",
+canAttack:false,
+lifetime: 1000,
+coreUnitDock:true,
+  "drownTimeMultiplier": 99999999999999999999,
+flying:false,
+outlineColor: 00000000
+health:1200,
+
+abilities:[
+
+ {
+		type: SpawnDeathAbility
+		amount: 1
+		unit: daiana
+	}
+		
+	 {
+		type: SpawnDeathAbility
+		amount: 1
+		unit: open_pyramid
+	}
+	
+]
+
+hitSize: 80
+localisedName: "pyramid",
+speed: 0,
+rotateSpeed: 0
+"type":"missile",
+"engineSize": 0, 
+
+
+"deathSound": "open_pyramid_",
+}

@@ -1,0 +1,176 @@
+type:missile
+flying:true
+name:guardian of sky
+"template": "ErekirUnitType",
+health:3000
+speed:0
+armor:4
+"hitSize":30
+"engineSize": 0, 
+rotateSpeed:6
+lifetime: 2400,
+useEngineElevation:false
+faceTarget:true
+
+        "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: -43
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.73
+growY: -0.73
+
+}
+  ]
+
+weapons: [
+
+    {
+    shootWarmupSpeed: 10
+        name: fire_ball
+        outlineColor: 1ED91E
+        rotate: false
+        mirror: false
+        shootY: 16
+        x: 0
+        y: 0
+        reload: 10
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: flame
+        
+        bullet: {
+          "range": 10000000000,
+  "maxRange": 10000000000,
+  
+        recoil: -10
+
+       }
+    
+    }
+
+
+    {
+    shootWarmupSpeed: 10
+        name: fire_ball
+        outlineColor: 1ED91E
+        rotate: false
+        mirror: false
+        shootY: 16
+        x: 0
+        y: 0
+        reload: 40
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: flame
+        
+        bullet: {
+      type: BasicBulletType
+        lightRadius: 10
+        lightColor: C6FF6BFF
+        damage: 30
+        scaleVelocity: true
+        splashDamage: 20
+        splashDamageRadius: 20
+        height: 7.5
+        width: 7.5
+        speed: 8
+        lifetime: 30
+        shrinkX: 0
+        shrinkY: 0
+        trailChance: 2
+        trailParam: 10
+        trailLength: 19
+        trailColor: C6FF6BFF
+        trailWidth: 5
+        trailEffect: {
+          type: ParticleEffect
+          particles: 10
+          length: 3
+          baseLength: 3
+          lifetime: 19
+          interp: circleOut
+          cone: 360
+          offset: 3
+          lightColor: FAE965
+          colorFrom: ffffff
+          colorTo: FAE965
+          sizeFrom: 2
+          sizeTo: 0
+        },
+        fragBullets: 5
+        fragVelocityMin: 0.2
+        fragRandomSpread: 180
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+        type: BasicBulletType
+        sprite: circle-bullet
+        damage: 50
+        height: 14
+        width: 12
+        speed: 4
+        lifetime: 30
+        homingPower: 0.2
+        homingDelay: 17
+        homingRange: 100
+        trailChance: 2
+        trailParam: 10
+        trailLength: 10
+        trailColor: FAE965
+        trailWidth: 5
+        trailEffect: {
+          type: ParticleEffect
+          particles: 10
+          length: 3
+          baseLength: 3
+          lifetime: 20
+          interp: circleOut
+          cone: 360
+          offset: 3
+          lightColor: FAE965
+          colorFrom: ffffff
+          colorTo: FAE965
+          sizeFrom: 2
+          sizeTo: 0
+        },
+        fragBullets: 1
+        fragVelocityMin: 0.8
+        fragLifeMin: 0.8
+        fragRandomSpread: 0
+        fragSpread: 0
+        fragBullet: {
+        type: LaserBulletType
+        length: 50,
+        width: 20
+        damage: 30
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          FAE965
+          FF00EE
+          FAE965
+        ],
+        sideAngle: -45
+        sideLength: 30
+        sideWidth: 3.4
+       }
+       }
+    }
+    }
+    
+    
+ ]
+     alwaysUnlocked: false

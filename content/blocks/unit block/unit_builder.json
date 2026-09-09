@@ -24,7 +24,7 @@
         "cheetah-x-gold_sheets/1"
         "cheetah-x-obsidian_alloy/2"
       ],
-      "time": 1300
+      "time": 1000
     }
     
     
@@ -49,6 +49,17 @@
         "cheetah-x-obsidian_alloy/6"
       ],
       "time": 3400
+    }
+    
+                {
+      "type": "AssemblerUnitPlan",
+      "unit": "pyramid",
+      "requirements": [
+        "cheetah-x-eye_triangle/1"
+        "cheetah-x-gold_sheets/4"
+        "cheetah-x-obsidian_alloy/6"
+      ],
+      "time": 4400
     }
     
   ],
