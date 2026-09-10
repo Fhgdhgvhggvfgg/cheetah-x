@@ -1,0 +1,120 @@
+"type":"payload",
+"payloadCapacity": 4000,
+"lowAltitude": true,
+flying:true
+name:jamaica
+"template": "ErekirUnitType",
+health:5600
+speed:3
+armor:4
+contorller:BuilderAI,
+defaultController: BuilderAI,
+buildRange:340,
+buildSpeed:8.5,
+accel: 0.06
+drag: 0.06
+"hitSize":67
+rotateSpeed:2.4
+useEngineElevation:false
+faceTarget:true
+outlineColor:000000
+"mineRange":200,
+"mineFloor":true,
+"mineSpeed":20,
+"mineTier":10,
+"mineWalls":true
+"itemCapacity":340,
+
+  "parts": [
+{
+type: RegionPart
+suffix: 
+mirror: false
+under: false
+outline: false
+x: 0
+y: -30
+moveY: 0
+moveX: 0
+progress: warmup
+
+
+children: [
+{
+type: RegionPart
+suffix: -name
+mirror: false
+under: false
+outline: false
+x: 0
+y: -35
+moveRot: 0
+progress: warmup
+color: ffffff4d
+colorTo: ffffffb3
+}
+
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffff
+growX: -0.72
+growY: -0.72
+}
+
+]
+
+}
+
+  ]
+
+
+"weapons": [
+
+{
+shootWarmupSpeed: 10
+                name: c_jamaica
+                mirror: true
+                top: true
+                rotate: true
+                "shootY": 17,
+		rotateSpeed: 8
+                x: 15
+                y: 12
+                reload: 30
+                shoot: {
+                    shots: 1
+                    shotDelay: 5
+            }
+            inaccuracy: 0
+            recoil: 2
+            shootSound: bolt
+            shootEffect: none
+"bullet":{
+"damage":20,
+"height":22,
+"lifetime":22,
+speed:12
+        		splashDamageRadius: 30
+		splashDamage: 50
+}
+}
+   
+   
+  ]
+
+abilities:[
+
+
+]
+
+
+     alwaysUnlocked: true

@@ -1,0 +1,38 @@
+name: Jamaica core
+  type: CoreBlock
+  health: 28000
+  size: 8
+  armor: 10
+  isFirstTier: false
+  itemCapacity: 20000
+  unitCapModifier: 60
+  buildCostMultiplier: 0.7
+  squareSprite: false
+    "thrusterLength": 30
+  unitType: jamaica
+  "requirements": [
+    {
+      "item": "obsidian",
+      "amount": 4000
+    },
+        {
+      "item": "gold",
+      "amount": 900
+    },
+            {
+      "item": "elixir",
+      "amount": 600
+    },
+    
+                {
+      "item": "cristal",
+      "amount": 400
+    },
+    
+  ],
+  "category": "units"
+
+  alwaysUnlocked: true
+  drawCracks: true
+  createRubble: true
+  category: effect
