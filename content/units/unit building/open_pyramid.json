@@ -16,7 +16,7 @@ abilities:[
       "spawnX": 70,
       "spawnY": -70,
       "unit": "guardian_of_sky",
-      "spawnTime": 1800
+      "spawnTime": 2800
     },
     
         {
@@ -24,7 +24,7 @@ abilities:[
       "spawnX": 70,
       "spawnY": 70,
       "unit": "guardian_of_sky",
-      "spawnTime": 1600
+      "spawnTime": 2600
     },
     
             {
@@ -32,7 +32,7 @@ abilities:[
       "spawnX": -70,
       "spawnY": -70,
       "unit": "guardian_of_sky",
-      "spawnTime": 1400
+      "spawnTime": 2400
     },
     
                 {
@@ -40,7 +40,7 @@ abilities:[
       "spawnX": -70,
       "spawnY": 70,
       "unit": "guardian_of_sky",
-      "spawnTime": 1200
+      "spawnTime": 2200
     },
 	
 ]

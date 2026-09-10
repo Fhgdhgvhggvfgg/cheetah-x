@@ -56,10 +56,10 @@
       "unit": "pyramid",
       "requirements": [
         "cheetah-x-eye_triangle/1"
-        "cheetah-x-gold_sheets/4"
-        "cheetah-x-obsidian_alloy/6"
+        "cheetah-x-gold_sheets/8"
+        "cheetah-x-obsidian_alloy/10"
       ],
-      "time": 4400
+      "time": 5500
     }
     
   ],

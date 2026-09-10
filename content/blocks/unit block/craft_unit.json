@@ -67,11 +67,11 @@
 {
 "unit":"eye_triangle",
 "requirements":[
-"gold/70"
+"gold/160"
 "cristal/60"
-"elixir/35"
+"elixir/70"
 ],
-"time":500
+"time":800
 }
 
 
