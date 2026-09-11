@@ -1,6 +1,6 @@
 {
 "type":"payload",
-alwaysUnlocked: false,
+alwaysUnlocked: true,
 accel: 0.06
 drag: 0.06
 outlineColor: 00000000

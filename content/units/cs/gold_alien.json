@@ -1,6 +1,6 @@
 {
 "type":"missile",
-alwaysUnlocked: false,
+alwaysUnlocked: true,
 buildRange:340,
 buildSpeed:8.5,
 accel: 0.06

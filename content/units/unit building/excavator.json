@@ -159,5 +159,5 @@ growY: 0
 
   ]
   
-      alwaysUnlocked: false
+      alwaysUnlocked: true
 }

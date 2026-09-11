@@ -173,4 +173,4 @@ weapons: [
     
     
  ]
-     alwaysUnlocked: false
+     alwaysUnlocked: true

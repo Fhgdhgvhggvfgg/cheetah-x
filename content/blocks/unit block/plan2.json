@@ -4,7 +4,7 @@ health: 1900
   "description": "A schematic device that enhances the schematic in the super modular developer. Place it in front of the development area.
 ",
   "name": "plan2",
-alwaysUnlocked: false
+alwaysUnlocked: true
 category: units
 requirements: [
 elixir/400

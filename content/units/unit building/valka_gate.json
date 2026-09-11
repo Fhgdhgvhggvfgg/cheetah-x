@@ -1,6 +1,6 @@
 {
 "type":"missile",
-alwaysUnlocked: false,
+alwaysUnlocked: true,
 description:.
 outlineColor: 00000000
 "template": "ErekirUnitType",

@@ -5,7 +5,7 @@ drag: 0.1
   "range": 10000000000,
   "maxRange": 10000000000,
 "template": "ErekirUnitType",
-alwaysUnlocked: false,
+alwaysUnlocked: true,
 canAttack:true,
 coreUnitDock:false,
 useUnitCap: false
