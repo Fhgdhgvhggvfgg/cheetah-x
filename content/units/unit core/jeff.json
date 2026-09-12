@@ -182,8 +182,8 @@ statusDuration: 540
 }
         rotate: true
         mirror: true
-        x: 18
-        y: 5
+        x: 22
+        y: 8
         reload: 500
         recoil: 1
         ejectEffect: casing2
