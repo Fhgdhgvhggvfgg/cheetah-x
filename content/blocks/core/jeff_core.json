@@ -1,0 +1,38 @@
+name: jeff core
+  type: CoreBlock
+  health: 28000
+  size: 8
+  armor: 10
+  isFirstTier: false
+  itemCapacity: 20000
+  unitCapModifier: 60
+  buildCostMultiplier: 0.7
+  squareSprite: false
+    "thrusterLength": 30
+  unitType: jeff
+  "requirements": [
+    {
+      "item": "obsidian",
+      "amount": 3000
+    },
+        {
+      "item": "gold",
+      "amount": 600
+    },
+            {
+      "item": "elixir",
+      "amount": 1200
+    },
+    
+                {
+      "item": "cristal",
+      "amount": 850
+    },
+    
+  ],
+  "category": "units"
+
+  alwaysUnlocked: true
+  drawCracks: true
+  createRubble: true
+  category: effect

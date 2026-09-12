@@ -14,7 +14,7 @@ contorller:BuilderAI,
 coreUnitDock:true,
 defaultController: BuilderAI,
 flying:true,
-health:3900,
+health:2000,
   "engineSize": 0, 
 itemCapacity: 130,
 localisedName: "jeff",
@@ -105,11 +105,11 @@ growY: -0.75
 bullet: {
       type: BasicBulletType
       status: burning
-statusDuration: 540
+statusDuration: 200
         sprite: circle-bullet
         lightRadius: 10
         lightColor: FFFFFFF
-        damage: 130
+        damage: 80
         scaleVelocity: true
         splashDamage: 40
         splashDamageRadius: 40
