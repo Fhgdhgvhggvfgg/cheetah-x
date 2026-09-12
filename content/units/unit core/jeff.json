@@ -1,0 +1,224 @@
+{
+"type":"payload",
+alwaysUnlocked: false,
+buildRange:300,
+buildSpeed:8.5,
+accel: 0.06
+drag: 0.06
+description:
+outlineColor: 00000000
+"template": "ErekirUnitType",
+hitSize: 28
+canAttack:true,
+contorller:BuilderAI,
+coreUnitDock:true,
+defaultController: BuilderAI,
+flying:true,
+health:3900,
+  "engineSize": 0, 
+itemCapacity: 130,
+localisedName: "jeff",
+mineFloor:true
+mineRange: 160
+"mineSpeed":19,
+mineTier: 11
+mineWalls:true
+speed: 8,
+"rotateSpeed": 8.5,
+"payloadCapacity": 1500,
+
+
+
+abilities:[
+
+]
+
+weapons: [
+   {
+   name: demon
+       shootWarmupSpeed: 10
+   
+     "parts": [
+  
+{
+type: RegionPart
+suffix: 
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -35
+moveX: 0
+progress: warmup
+
+
+children: [
+
+
+{
+type: RegionPart
+suffix: -name
+mirror: false
+under: false
+outline: false
+x: 0
+y: -25
+moveRot: 0
+progress: warmup
+color: ffffff4d
+colorTo: ffffffb3
+}
+
+{
+
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.75
+growY: -0.75
+}
+
+]
+}
+  ]
+  
+    x: 0
+    y: 0
+    reload: 54
+    recoil: 0
+     "heatTime": 90,
+  "heatColor": "FFFFFF",
+    alternate: true
+    shootY: 16
+    mirror: false
+    rotate: false
+    shootSound: flame
+bullet: {
+      type: BasicBulletType
+      status: burning
+statusDuration: 540
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FFFFFFF
+        damage: 130
+        scaleVelocity: true
+        splashDamage: 40
+        splashDamageRadius: 40
+        height: 6
+        width: 6
+        speed: 7
+        lifetime: 30
+        shrinkX: 0
+        shrinkY: 0
+        trailChance: 1
+        trailParam: 10
+        trailLength: 19
+        trailColor: ADD8E6
+        trailWidth: 5
+        trailEffect: {
+          type: ParticleEffect
+          particles: 10
+          length: 3
+          baseLength: 3
+          lifetime: 25
+          interp: circleOut
+          cone: 360
+          offset": 3
+          lightColor: FFFFFFF
+          colorFrom: FFFFFFF
+          colorTo: ADD8E6
+          sizeFrom: 3
+          sizeTo: 0
+        },
+        despawnEffect: [
+        {
+          type: ParticleEffect
+          particles: 6
+          lifetime: 20
+          length: 20
+          cone: 50
+          offset: 16
+          lightcolor: ADD8E6
+          interp: circleOut
+          lenFrom: 7
+          lenTo: 7
+          colorFrom: ADD8E6
+          colorTo: FFFFFFF
+          },
+          {
+          type: ParticleEffect
+          particles: 6
+          lifetime: 14
+          length: 20
+          cone: 50
+          offset: 16
+          lightcolor: ADD8E6
+          interp: circleOut
+          lenFrom: 7
+          lenTo: 7
+          colorFrom: FFFFFFF
+          colorTo: ADD8E6
+           },
+        ]
+       }
+}
+
+
+    {
+    name: skeletonS
+    
+                   shoot: {
+                     shots: 1
+      shotDelay: 12
+}
+        rotate: true
+        mirror: true
+        x: 18
+        y: 5
+        reload: 500
+        recoil: 1
+        ejectEffect: casing2
+        shootSound: flame
+        
+                        bullet: {
+      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FF0000
+        damage: 10
+        scaleVelocity: true
+        splashDamage: 40
+        splashDamageRadius: 60
+        height: 6
+        width: 6
+        speed: 5
+        lifetime: 4
+                  "fragBullets": 1
+                  
+  "range": 230,
+  "maxRange": 230,
+                  
+                fragBullet: {
+      type: BasicBulletType
+        spawnUnit: skeleton
+       }
+       }
+    }
+
+
+   ]
+   
+   "deathSound": "jeff_die",
+
+
+    alwaysUnlocked: true
+}
