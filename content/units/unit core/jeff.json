@@ -182,7 +182,7 @@ statusDuration: 540
 }
         rotate: true
         mirror: true
-        x: 22
+        x: 24
         y: 8
         reload: 500
         recoil: 1
