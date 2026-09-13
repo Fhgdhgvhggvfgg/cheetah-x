@@ -14,6 +14,8 @@ localisedName: "valka gate",
 speed: 0,
 "rotateSpeed": 0,
 
+"deathSound": "valka_gate_o",
+
 abilities:[
  {
 		type: SpawnDeathAbility

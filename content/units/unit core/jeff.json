@@ -187,7 +187,7 @@ statusDuration: 200
         reload: 500
         recoil: 1
         ejectEffect: casing2
-        shootSound: flame
+        shootSound: skeleton_r
         
                         bullet: {
       type: BasicBulletType

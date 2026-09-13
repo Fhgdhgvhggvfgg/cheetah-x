@@ -77,7 +77,7 @@ abilities:[
         reload: 24
         recoil: 0
         ejectEffect: casing2
-        shootSound: shovelS
+        shootSound: cccccccccccccc
         
     bullet: {
       "range": 10000000000,

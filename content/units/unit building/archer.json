@@ -140,5 +140,8 @@ growY: -0.76
     }
 
 ]
+
+
+"deathSound": "skeleton_r",
 alwaysUnlocked: true
 }

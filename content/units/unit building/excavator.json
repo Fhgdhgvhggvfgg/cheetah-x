@@ -67,6 +67,7 @@ abilities:[
 
 "weapons": [
     {
+    shootSound: shovelS
     shootWarmupSpeed: 10
                 name: head_machine
                 mirror: false
