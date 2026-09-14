@@ -1,9 +1,9 @@
 {
   "type": "ItemBridge",
   "name": "cpe bricon"
-  "description": " range than cpe bridge conveyor",
+  "description": " range than cristal bridge conveyor",
   "health": 600,
-  "requirements": [{"item": "elixir","amount": 9}],
+  "requirements": [{"item": "cristal","amount": 3}],
   "range": 12,
   "transportTime": 0.5,
   "hasPower": false,
