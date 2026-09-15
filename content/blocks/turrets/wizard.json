@@ -10,7 +10,7 @@ targetHealing: true
 "outlineColor": "00000000"
 range: 120
 recoil: 0
-shootSound: ccccccccc
+shootSound: call
 size: 3
 health: 2200
 shootY: 63
