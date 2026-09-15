@@ -10,12 +10,12 @@ targetHealing: true
 "outlineColor": "00000000"
 range: 160
 recoil: 0
-shootSound: bang
+shootSound: dron_m
 maxAmmo: 1
 size: 4
 health: 2800
 shootY: 20
-ambientSound: dron_m
+ambientSound: xxxxxcccc
 shootWarmupSpeed: 10
 
 drawer: {
