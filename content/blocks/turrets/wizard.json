@@ -93,7 +93,7 @@ splashDamageRadius: 60
 
 requirements: [
 elixir/10
-gold/30
+cristal/5
 ]
 category: turret
 

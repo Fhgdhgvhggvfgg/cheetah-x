@@ -15,7 +15,7 @@ maxAmmo: 1
 size: 4
 health: 2800
 shootY: 20
-ambientSound: preparing_rifle
+ambientSound: dron_m
 shootWarmupSpeed: 10
 
 drawer: {
