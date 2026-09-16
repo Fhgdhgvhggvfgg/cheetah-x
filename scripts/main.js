@@ -134,3 +134,77 @@ Events.on(UnitDestroyEvent, event => {
     	}
 });
 
+//========================================================
+
+Events.on(ClientLoadEvent, function() {
+    var iconTable = new Table();
+    iconTable.top().left();
+    iconTable.setFillParent(true);
+    iconTable.touchable = Touchable.disabled;
+   
+    iconTable.update(function() {
+        iconTable.clearChildren();
+        
+        if (Vars.ui != null && Vars.player != null && Vars.player.unit() != null) {
+            var playerUnit = Vars.player.unit();
+            let si = 200;
+            let siy = 96;
+            let left = 0;
+            let top = 150;
+            
+            if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-keven")) {
+                
+                // استخدام نفس الأمر مباشرة داخل الجدول
+                iconTable.image(Core.atlas.find("cheetah-x-keven_p"))
+                      .size(si)
+                      .padLeft(left)
+                      .padTop(top);
+                      
+                                      iconTable.image(Core.atlas.find("cheetah-x-keven-name"))
+                      .size(si,siy)
+                      .padLeft(left - 200)
+                      .padTop(top + 245);
+            }else if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-jeff")) {
+                
+                // استخدام نفس الأمر مباشرة داخل الجدول
+                iconTable.image(Core.atlas.find("cheetah-x-jeff_p"))
+                      .size(si)
+                      .padLeft(left)
+                      .padTop(top);
+                      
+                                      iconTable.image(Core.atlas.find("cheetah-x-demon-name"))
+                      .size(si,siy)
+                      .padLeft(left - 200)
+                      .padTop(top + 245);
+            }else if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-jamaica")) {
+                
+                // استخدام نفس الأمر مباشرة داخل الجدول
+                iconTable.image(Core.atlas.find("cheetah-x-jamaica_p"))
+                      .size(si)
+                      .padLeft(left)
+                      .padTop(top);
+                      
+                                      iconTable.image(Core.atlas.find("cheetah-x-jamaica-name"))
+                      .size(si,siy)
+                      .padLeft(left - 200)
+                      .padTop(top + 245);
+                      
+            }else if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-lora")) {
+                
+                // استخدام نفس الأمر مباشرة داخل الجدول
+                iconTable.image(Core.atlas.find("cheetah-x-lora_p"))
+                      .size(si)
+                      .padLeft(left)
+                      .padTop(top);
+                                      iconTable.image(Core.atlas.find("cheetah-x-par-name"))
+                      .size(si,siy)
+                      .padLeft(left - 200)
+                      .padTop(top + 245);
+            }
+            
+            
+        }
+    });
+
+    Core.scene.add(iconTable);
+});
