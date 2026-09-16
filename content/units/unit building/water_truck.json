@@ -60,6 +60,14 @@ abilities:[
       "unit": "water_sprayer",
       "spawnTime": 800
     },
+    
+        {
+      "type": "UnitSpawnAbility",
+      "spawnX": 0,
+      "spawnY": -22,
+      "unit": "water_sprayer",
+      "spawnTime": 800
+    },
 ]
 
 

@@ -83,6 +83,16 @@
 "time":700
 }
 
+
+{
+"unit":"water_sprayer",
+"requirements":[
+"obsidian/8"
+"ram/2"
+],
+"time":70
+}
+
 ],
 
 
