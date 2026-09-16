@@ -1,0 +1,98 @@
+{
+"description": "",
+"name":"water truck",
+"type": "tank",
+"hitSize": 50,
+accel: 0.05
+drag: 0.07
+"crushDamage": 1,
+"template": "ErekirUnitType",
+"treadPullOffset": 6,
+"singleTarget": false,
+"omniMovement": false,
+"faceTarget": false,
+"health": 5600,
+"armor": 20,
+"speed": 6,
+"rotateSpeed": 5,
+"itemCapacity": 0,
+"outlineColor": "00000000",
+"treadRects": [
+    {
+      "x": 80,
+      "y": -84,
+      "width": 19,
+      "height": 170
+    }
+  ],
+  
+  
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: -65
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.72
+growY: -0.72
+
+}
+  ]
+
+  
+
+abilities:[
+    {
+      "type": "UnitSpawnAbility",
+      "spawnX": 0,
+      "spawnY": -22,
+      "unit": "water_sprayer",
+      "spawnTime": 800
+    },
+]
+
+
+"weapons": [
+  {
+  "name": water_sprayer,
+  shootWarmupSpeed: 10
+    "x": 0,
+    "y": 13,
+    "recoil": 0
+    "shootY": 13
+    "rotate": true,
+    "mirror": false,
+    "rotateSpeed": 6,
+    "reload": 0.5,
+    "shootSound": "water",
+    "inaccuracy": 10,
+                    shoot: {
+      shots: 6
+      shotDelay: 1
+    }
+    "bullet": {
+      "type": "LiquidBulletType",
+      "liquid": "water",
+      "damage": 6,
+      "collidesTeam":true,
+      "orbSize": 1.5
+      "speed": 6,
+      "lifetime": 50,
+      "statusDuration": 60
+    }
+  }
+  ]
+  
+      alwaysUnlocked: true
+}

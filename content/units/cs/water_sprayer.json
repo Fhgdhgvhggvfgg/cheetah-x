@@ -1,0 +1,60 @@
+{
+name: Water sprayer
+alwaysUnlocked: true
+"template": "ErekirUnitType",
+alwaysUnlocked: false,
+canAttack:true,
+coreUnitDock:true,
+useUnitCap: false
+flying:true,
+defaultCommand: repair
+health: 800,
+hitSize: 16
+localisedName: "reformer",
+commands: [move, repair]
+speed: 6,
+rotateSpeed: 6
+lifetime: 1000,
+"type":"missile",
+  "engineSize": 0, 
+
+abilities:[
+
+]
+
+"weapons": [
+  {
+  "name": xxxxxxx,
+    "x": 0,
+    "y": 0,
+    "recoil": 0
+    "shootY": 11
+    "rotate": false
+    "mirror": false,
+    "rotateSpeed": 5,
+    "baseRotation": 0.0, 
+    "rotationLimit": 70.0,
+    "reload": 0.1,
+    "shootSound": "water",
+    "inaccuracy": 10,
+    
+    "bullet": {
+      "type": "LiquidBulletType",
+      "liquid": "water",
+          "collidesTeam":true,
+      "healPercent":1,
+      "damage": 1,
+      "collidesTeam":true,
+      "orbSize": 1.5
+      "speed": 3,
+      "lifetime": 40,
+      "status": "wet",
+      "statusDuration": 60
+    }
+  }
+  
+
+]
+alwaysUnlocked: true
+
+}

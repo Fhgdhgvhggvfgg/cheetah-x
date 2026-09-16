@@ -1,0 +1,46 @@
+{
+  "researchCostMultiplier": 0.5,
+  "type": "UnitAssembler",
+  "name": "unit builder x",
+  "description": "A workshop that integrates soldiers with equipment needs to place a planning device in front of the development area.
+",
+  "size": 4,
+  "configurable": true,
+  "category": "units",
+  "droneType": "assembly-drone",
+  "dronesCreated": 4,
+  "droneConstructTime": 60,
+  "requirements": [
+    "gold/350"
+    "obsidian/600"
+  ],
+  "plans": [
+    
+            {
+      "type": "AssemblerUnitPlan",
+      "unit": "water_truck",
+      "requirements": [
+        "cheetah-x-control_box/2"
+        "cheetah-x-wheelbox/6"
+        "cheetah-x-craft_elixir/4"
+        "cheetah-x-gold_sheets/2"
+        "cheetah-x-obsidian_alloy/3"
+      ],
+      "time": 3200
+    }
+    
+    
+    
+    
+  ],
+  "squareSprite": false,
+  consumes: {
+    power: 1.2
+        "liquid": {
+      "liquid": "elixir_iquid",
+      "amount": 0.07
+    }
+    }
+  "areaSize": 18,
+  "alwaysUnlocked": true
+}

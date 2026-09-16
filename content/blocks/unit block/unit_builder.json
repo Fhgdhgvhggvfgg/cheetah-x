@@ -65,7 +65,7 @@
   ],
   "squareSprite": false,
   consumes: {
-    power: 2
+    power: 1
         "liquid": {
       "liquid": "elixir_iquid",
       "amount": 0.05

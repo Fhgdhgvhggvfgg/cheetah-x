@@ -1,0 +1,22 @@
+{
+  "type": "Constructor",
+  "name": "ConstructorP",
+  "description": "Creates 1x1 and 10x10 blocks.
+",
+  "size": 5,
+  "itemCapacity": 30,
+  "buildSpeed": 0.5,
+  "maxBlockSize": 10,
+  "minBlockSize": 1,
+  "hasPower": true,
+  "consumes": {
+    "power": 1.2
+  },
+  "regionSuffix": "-dark",
+  "category": "units",
+  "requirements": [
+    "obsidian/560",
+  ]
+  
+      alwaysUnlocked: false
+}
