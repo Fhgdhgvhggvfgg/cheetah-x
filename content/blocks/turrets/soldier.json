@@ -1,0 +1,77 @@
+
+name: soldier
+type: ItemTurret
+reload: 240
+rotateSpeed: 5
+targetGround: true
+targetAir: true
+"outlineColor": "00000000"
+range: 320
+recoil: 0
+shootSound: bang
+size: 5
+health: 3400
+shootY: 20
+ambientSound: preparing_rifle
+shootWarmupSpeed: 10
+
+drawer: {
+  type: DrawTurret
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: -38
+moveRot: 0
+moveY: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.77
+growY: -0.77
+}
+  ]
+  }
+
+
+
+            shoot: {
+      shots: 24
+      shotDelay: 5
+    }
+    
+AmmoPerShot: 5
+coolant: {
+  type: ConsumeCoolant
+  allowGas: true
+  allowLiquid: true
+  amount: 0.3
+}
+
+
+ammoTypes: {
+    
+        obsidian: {
+        damage: 40
+        speed: 9
+        height: 9
+        width: 3
+        lifetime: 38
+        fragOnHit: true
+		fragBullets: 50
+    }
+    
+
+}
+requirements: [
+obsidian/320
+cristal/70
+elixir/90
+]
+category: turret
+
+    alwaysUnlocked: true
