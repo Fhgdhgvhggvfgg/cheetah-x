@@ -62,9 +62,20 @@ ammoTypes: {
         width: 3
         lifetime: 38
         fragOnHit: true
-		fragBullets: 50
+		fragBullets: 1
     }
     
+        cristal: {
+        damage: 70
+        speed: 9
+        height: 14
+        width: 6
+        lifetime: 38
+        fragOnHit: true
+		fragBullets: 1
+		splashDamageRadius: 25
+		splashDamage: 50
+    }
 
 }
 requirements: [
