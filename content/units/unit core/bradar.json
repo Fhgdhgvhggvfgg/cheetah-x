@@ -1,0 +1,156 @@
+{
+"type":"payload",
+alwaysUnlocked: false,
+buildRange:300,
+buildSpeed:8.5,
+accel: 0.06
+drag: 0.06
+outlineColor: ffffff00
+"template": "ErekirUnitType",
+hitSize: 28
+canAttack:true,
+contorller:BuilderAI,
+coreUnitDock:true,
+defaultController: BuilderAI,
+flying:true,
+health:5000,
+  "engineSize": 0, 
+itemCapacity: 130,
+localisedName: "bradar",
+mineFloor:true
+mineRange: 160
+"mineSpeed":19,
+mineTier: 11
+mineWalls:true
+speed: 8,
+"rotateSpeed": 8.5,
+"payloadCapacity": 1500,
+
+     "parts": [
+  
+  {
+  "type": "RegionPart",
+  "suffix": "-heat",
+  "mirror": false,
+  "under": false,
+  "outline": false,
+  "x": 0,
+  "y": 0,
+  "progress": "recoil",
+  "growProgress": "recoil",
+  "color": "ffffff00",
+  "colorTo": "ffffffff",
+  "growX": -0.7,
+  "growY": -0.7,
+  "blending": "additive"
+}
+  
+{
+type: RegionPart
+suffix: 
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -35
+moveX: 0
+progress: warmup
+
+
+children: [
+
+
+{
+type: RegionPart
+suffix: -name
+mirror: false
+under: false
+outline: false
+x: 0
+y: -25
+moveRot: 0
+progress: warmup
+color: ffffff4d
+colorTo: ffffffb3
+}
+
+{
+
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.75
+growY: -0.75
+}
+
+]
+}
+  ]
+
+abilities:[
+
+]
+
+weapons: [
+
+
+    {
+    
+    name: boxing
+    "layerOffset": 0.0001, 
+    shootWarmupSpeed: 10
+        rotate: false
+          "recoilTime": 5,
+        mirror: false
+        shootY: 3
+        x: 0
+        y: 0
+        reload: 24
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: cccccccccccccc
+        
+    bullet: {
+      "range": 55,
+  "maxRange": 55,
+    
+      type: LaserBulletType
+                      recoil: -1
+        length: 1
+        width: 1
+        damage: 50
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          ff0000
+          ff0000
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 0
+        sideWidth: 3.4
+        		splashDamageRadius: 75
+		splashDamage: 160
+		hitEffect: blastExplosion
+        trailLength: 4
+
+        trailColor: ff0000
+    }
+    }
+
+   ]
+   
+   "deathSound": "jeff_die",
+
+
+    alwaysUnlocked: true
+}
