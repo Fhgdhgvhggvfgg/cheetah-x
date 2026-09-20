@@ -31,7 +31,7 @@
     
                 {
       "type": "AssemblerUnitPlan",
-      "unit": "water_truck",
+      "unit": "tank_girl",
       "requirements": [
         "cheetah-x-control_box/2"
         "cheetah-x-wheelbox/8"
