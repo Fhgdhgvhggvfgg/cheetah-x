@@ -29,6 +29,19 @@
       "time": 3200
     }
     
+                {
+      "type": "AssemblerUnitPlan",
+      "unit": "water_truck",
+      "requirements": [
+        "cheetah-x-control_box/2"
+        "cheetah-x-wheelbox/8"
+        "cheetah-x-gold_sheets/2"
+        "cheetah-x-obsidian_alloy/8"
+         "cheetah-x-wall_cristal/10"
+      ],
+      "time": 3600
+    }
+    
     
     
     

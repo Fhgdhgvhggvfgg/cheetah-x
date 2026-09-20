@@ -1,0 +1,11 @@
+{
+  "name": "wall cristal",
+  "description": "A strong wall stands in the way of any defense",
+  "type": "Wall",
+  "health": 4600,
+  "size": 1,
+  "requirements": [{"item": "cristal","amount": 10}],
+  "category": "defense",
+  
+    alwaysUnlocked: true
+}

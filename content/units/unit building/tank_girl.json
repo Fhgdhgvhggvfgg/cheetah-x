@@ -1,0 +1,128 @@
+{
+"description": 
+",
+"name":"tank girl",
+outlineColor: 00000000
+"type": "tank",
+"hitSize": 80,
+accel: 0.90
+drag: 0.90
+"crushDamage": 1.5,
+"template": "ErekirUnitType",
+"treadPullOffset": 6,
+"singleTarget": false,
+"omniMovement": false,
+"faceTarget": false,
+"health": 22000,
+"armor": 20,
+"speed": 1,
+"rotateSpeed": 1,
+"treadRects": [
+    {
+      "x": 72,
+      "y": -84,
+      "width": 19,
+      "height": 170
+    }
+  ],
+  
+  
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: -64
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.7
+growY: -0.7
+
+}
+  ]
+  
+  
+
+abilities:[
+
+]
+
+weapons: [
+
+{
+shootWarmupSpeed: 10
+"layerOffset": +0.2, 
+"rotateSpeed": 2,
+name: tank_cannon
+y: 0
+x: 0
+    shootY: 6
+    recoil: 0
+    reload: 300
+    alternate: false
+    mirror: false
+    rotate: true
+    shootSound: cannon
+  
+      "parts": [
+{
+type: RegionPart
+suffix: -p
+mirror: false
+under: false
+outline: false
+"layerOffset": -0.1, 
+x: 0
+y: 0
+moveY: -3
+moveX: 0
+moveRot: 0
+progress: recoil
+color: ffffffff
+colorTo: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+
+}
+  ]
+  
+    bullet: {
+                type: SolidBulletType
+                damage: 100
+                homing: false
+                speed: 8
+                sprite: large-bomb
+                pierce: true
+                lifetime: 50
+                knockback: -1
+                backColor: ffffff
+                frontColor: ffffff
+                mixColorFrom: ffffff
+                mixColorTo: ffffff
+                width: 15
+                height: 50
+		fragOnHit: true
+		fragBullets: 50
+		splashDamageRadius: 80
+		splashDamage: 700
+		hitEffect: blastExplosion
+        trailLength: 4
+        trailColor: ffffff
+               }
+}
+
+]
+
+  
+      alwaysUnlocked: true
+}
