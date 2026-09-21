@@ -121,6 +121,49 @@ growY: 0
                }
 }
 
+    {
+    shootWarmupSpeed: 10
+    
+                   shoot: {
+                     shots: 4
+      shotDelay: 15
+}
+        rotate: true
+        mirror: false
+        x: 0
+        y: -40
+        reload: 300
+        recoil: 1
+        ejectEffect: casing2
+        shootSound: saw_sound
+        
+                        bullet: {
+      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FF0000
+        damage: 10
+        scaleVelocity: true
+        splashDamage: 40
+        splashDamageRadius: 60
+        height: 6
+        width: 6
+        speed: 5
+        lifetime: 4
+                  "fragBullets": 1
+                  
+  "range": 230,
+  "maxRange": 230,
+                  
+                fragBullet: {
+      type: BasicBulletType
+        spawnUnit: saw
+       }
+       }
+        
+
+    }
+
 ]
 
   
