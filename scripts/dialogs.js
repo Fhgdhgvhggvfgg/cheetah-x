@@ -54,7 +54,8 @@ function showMyDialog() {
                const studyTex3 = Core.atlas.find("cheetah-x-study3");
         p.image(studyTex3).size(600, 600).pad(10).row();
         // ✅ إضافة زر الرابط هنا
-        p.button("", Icon.link, () => Core.app.openURI("https://fhgdhgvhggvfgg.github.io/Cpe-cheetah-/warehouse/")).size(80, 80).padTop(-400).padLeft(-100).row();
+        p.button("keven 01", Icon.link, () => Core.app.openURI("https://fhgdhgvhggvfgg.github.io/Cpe-cheetah-/warehouse/")).size(160, 80).padTop(-400).padLeft(-100).row();
+        p.button("mindustry", Icon.link, () => Core.app.openURI("https://fhgdhgvhggvfgg.github.io/Cpe-cheetah-/cheetah-m/")).size(160, 80).padTop(-200).padLeft(-100).row();
         p.add("come to our page for the latest news").row();
     }).size(1000, 600);
     
