@@ -93,14 +93,6 @@
 "time":70
 }
 
-{
-"unit":"saw",
-"requirements":[
-"cristal/18"
-"ram/4"
-],
-"time":200
-}
 
 ],
 
