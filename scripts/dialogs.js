@@ -1,5 +1,5 @@
         Events.on(ClientLoadEvent, e => {
-          Vars.ui.settings.addCategory("JSM", Icon.file, cons(t => {
+          Vars.ui.settings.addCategory(">> (Instructions page) <<", Icon.file, cons(t => {
             
             // чек бокс
             t.check("Initial Message", Core.settings.getBool("mess", true), v => {
