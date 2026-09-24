@@ -92,7 +92,7 @@ weapons: [
    name: nuclear
     x: 3
     y: 0
-    reload: 60
+    reload: 50
     recoil: 0
      "heatTime": 90,
     "heatColor": "FFFFFF",
@@ -142,7 +142,7 @@ weapons: [
         lightColor: FF0000
         damage: 10
         scaleVelocity: true
-        splashDamage: 160
+        splashDamage: 70
         splashDamageRadius: 90
         height: 20
         width: 20

@@ -7,7 +7,7 @@ outlineColor: 00000000
 "hitSize": 80,
 accel: 0.90
 drag: 0.90
-"crushDamage": 1.5,
+"crushDamage": 0.8,
 "template": "ErekirUnitType",
 "treadPullOffset": 6,
 "singleTarget": false,
@@ -125,7 +125,7 @@ growY: 0
     shootWarmupSpeed: 10
     
                    shoot: {
-                     shots: 4
+                     shots: 2
       shotDelay: 15
 }
         rotate: true
@@ -133,7 +133,7 @@ growY: 0
         x: 0
         y: -30
         shootY: 0
-        reload: 300
+        reload: 360
         recoil: 1
         ejectEffect: casing2
         shootSound: saw_sound
