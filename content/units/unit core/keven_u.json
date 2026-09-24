@@ -1,0 +1,162 @@
+{
+"type":"payload",
+alwaysUnlocked: false,
+buildRange:340,
+buildSpeed:8.5,
+accel: 0.06
+drag: 0.06
+ "range": 250,
+  "maxRange": 300,
+description:Cheetah is a laser-launching engineer and leader.
+outlineColor: 00000000
+"template": "ErekirUnitType",
+hitSize: 25
+canAttack:true,
+contorller:BuilderAI,
+coreUnitDock:true,
+defaultController: BuilderAI,
+flying:true,
+health:2300,
+  "engineSize": 0, 
+itemCapacity: 100,
+localisedName: "keven u",
+mineFloor:true
+mineRange: 120
+"mineSpeed":10,
+mineTier: 11
+mineWalls:true
+speed: 9,
+"rotateSpeed": 8.5,
+"payloadCapacity": 1500,
+
+
+  "parts": [
+{
+type: RegionPart
+suffix: 
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -30
+moveX: 0
+progress: warmup
+
+
+children: [
+{
+type: RegionPart
+suffix: -name
+mirror: false
+under: false
+outline: false
+x: 0
+y: -21
+moveRot: 0
+progress: warmup
+color: ffffff4d
+colorTo: ffffffb3
+}
+
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.8
+growY: -0.8
+}
+
+]
+
+}
+
+  ]
+
+
+abilities:[
+
+]
+
+weapons: [
+   {
+   shootWarmupSpeed: 10
+   name: nuclear
+    x: 3
+    y: 0
+    reload: 60
+    recoil: 0
+     "heatTime": 90,
+    "heatColor": "FFFFFF",
+    alternate: true
+    shootY: 16
+    mirror: true
+    rotate: false
+    shootSound: bolt
+                        bullet: {
+      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FF0000
+        damage: 10
+        scaleVelocity: true
+        splashDamage: 20
+        splashDamageRadius: 10
+        height: 20
+        width: 20
+        speed: 10
+        lifetime: 10
+                  
+  "range": 230,
+  "maxRange": 230,
+                  fragBullets: 5
+                  fragCone: 15
+  fragAngle: 0
+  fragRandomSpread: 30
+                fragBullet: {
+                      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FF0000
+        damage: 10
+        scaleVelocity: true
+        splashDamage: 20
+        splashDamageRadius: 10
+        height: 20
+        width: 20
+        speed: 10
+        lifetime: 18
+        fragBullets: 1
+                        fragBullet: {
+                      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FF0000
+        damage: 10
+        scaleVelocity: true
+        splashDamage: 160
+        splashDamageRadius: 90
+        height: 20
+        width: 20
+        speed: 0
+        lifetime: 160
+       }
+       }
+}
+}
+
+
+   ]
+   
+"deathSound": "keven_die",
+
+    alwaysUnlocked: true
+}

@@ -1,0 +1,38 @@
+name: keven core
+  type: CoreBlock
+  health: 40000
+  size: 10
+  armor: 10
+  isFirstTier: false
+  itemCapacity: 10000
+  unitCapModifier: 90
+  buildCostMultiplier: 0.7
+  squareSprite: false
+    "thrusterLength": 30
+  unitType: keven_u
+  "requirements": [
+    {
+      "item": "cristal",
+      "amount": 3500
+    },
+        {
+      "item": "gold",
+      "amount": 490
+    },
+            {
+      "item": "obsidian",
+      "amount": 500
+    },
+    
+                {
+      "item": "elixir",
+      "amount": 700
+    },
+    
+  ],
+  "category": "units"
+
+  alwaysUnlocked: true
+  drawCracks: true
+  createRubble: true
+  category: effect
