@@ -59,7 +59,7 @@ function showMyDialog() {
         p.add("come to our page for the latest news").row();
     }).size(1000, 600);
     
-    d.buttons.button("gooo", () => d.hide()).size(210, 64);
+    d.buttons.button("gooo to game", () => d.hide()).size(300, 100);
     d.show();
 }
 
