@@ -47,10 +47,11 @@
       "unit": "CCA_bus",
       "requirements": [
         "cheetah-x-control_box/1"
-        "cheetah-x-wheelbox/6"
-        "cheetah-x-obsidian_alloy/4"
+        "cheetah-x-wheelbox/12"
+        "cheetah-x-obsidian_alloy/8"
+        "cheetah-x-extractor_elixir/8"
       ],
-      "time": 1800
+      "time": 2600
     }
     
     

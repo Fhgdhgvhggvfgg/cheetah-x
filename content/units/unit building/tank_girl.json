@@ -53,6 +53,11 @@ growY: -0.7
   
 
 abilities:[
+ {
+		type: SpawnDeathAbility
+		amount: 8
+		unit: saw
+	}
 
 ]
 
@@ -67,7 +72,7 @@ y: 0
 x: 0
     shootY: 6
     recoil: 0
-    reload: 300
+    reload: 320
     alternate: false
     mirror: false
     rotate: true
@@ -98,7 +103,7 @@ growY: 0
   
     bullet: {
                 type: SolidBulletType
-                damage: 100
+                damage: 200
                 homing: false
                 speed: 8
                 sprite: large-bomb
@@ -114,7 +119,7 @@ growY: 0
 		fragOnHit: true
 		fragBullets: 50
 		splashDamageRadius: 80
-		splashDamage: 700
+		splashDamage: 1000
 		hitEffect: blastExplosion
         trailLength: 4
         trailColor: ffffff
