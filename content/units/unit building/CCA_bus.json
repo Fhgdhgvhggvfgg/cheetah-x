@@ -74,10 +74,10 @@ abilities:[
     rotateSpeed: 10
         rotate: true
         mirror: true
-        x: 22
-        y: 0
+        x: 25
+        y: 10
         reload: 12
-        shootY: 15
+        shootY: 23
         recoil: 1
         ejectEffect: casing2
         shootSound: bang
@@ -107,10 +107,10 @@ abilities:[
     rotateSpeed: 10
         rotate: true
         mirror: true
-        x: 22
-        y: -36
+        x: 25
+        y: -28
         reload: 12
-        shootY: 15
+        shootY: 23
         recoil: 1
         ejectEffect: casing2
         shootSound: bang

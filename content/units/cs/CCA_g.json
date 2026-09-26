@@ -44,7 +44,7 @@ weapons: [
         rotate: false
         mirror: false
         x: 0
-        y: 15
+        y: 21
         reload: 25
         recoil: 1
         ejectEffect: casing2
