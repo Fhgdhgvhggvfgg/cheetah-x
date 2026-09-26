@@ -1,0 +1,73 @@
+name: CCA g
+"template": "ErekirUnitType",
+type: mech 
+mechLegColor: 565666FF
+health: 1200
+armor: 1
+hitSize: 20
+speed: 3
+coreUnitDock:true,
+rotateSpeed: 7
+accel: 0.15
+mechSideSway: 0.25
+itemCapacity: 12
+outlineColor: 00000000
+
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: -35
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.76
+growY: -0.76
+
+}
+]
+
+
+
+weapons: [
+    {
+    shootWarmupSpeed: 10
+        rotate: false
+        mirror: false
+        x: 0
+        y: 15
+        reload: 25
+        recoil: 1
+        ejectEffect: casing2
+        shootSound: bang
+        
+    bullet: {
+                type: SolidBulletType
+                damage: 80
+                homing: false
+                speed: 9
+                sprite: large-bomb
+                lifetime: 30
+                knockback: -1
+                backColor: FAE965
+                frontColor: FAE965
+                mixColorFrom: FAE965
+                mixColorTo: FAE965
+                width: 8
+                height: 8
+
+               }
+    }
+ ]
+
+
+    alwaysUnlocked: true

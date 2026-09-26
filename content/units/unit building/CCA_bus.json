@@ -1,0 +1,138 @@
+{
+"description": "",
+"name":"CCA bus",
+"type": "tank",
+"hitSize": 50,
+accel: 0.05
+drag: 0.07
+"crushDamage": 1,
+"template": "ErekirUnitType",
+"treadPullOffset": 6,
+"singleTarget": false,
+"omniMovement": false,
+"faceTarget": false,
+"health": 8000,
+"armor": 20,
+"speed": 6,
+"rotateSpeed": 5,
+"itemCapacity": 0,
+"outlineColor": "00000000",
+"treadRects": [
+    {
+      "x": 80,
+      "y": -84,
+      "width": 19,
+      "height": 170
+    }
+  ],
+  
+  
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: -65
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.72
+growY: -0.72
+
+}
+  ]
+
+  
+
+abilities:[
+ {
+		type: SpawnDeathAbility
+		amount: 6
+		unit: CCA_m
+	}
+	
+	 {
+		type: SpawnDeathAbility
+		amount: 6
+		unit: CCA_g
+	}
+]
+
+
+"weapons": [
+    {
+    name: CCA_g
+    shootWarmupSpeed: 10
+    rotateSpeed: 10
+        rotate: true
+        mirror: true
+        x: 22
+        y: 0
+        reload: 12
+        shootY: 15
+        recoil: 1
+        ejectEffect: casing2
+        shootSound: bang
+        
+    bullet: {
+                type: SolidBulletType
+                damage: 180
+                homing: false
+                speed: 9
+                sprite: large-bomb
+                lifetime: 30
+                knockback: -1
+                backColor: FAE965
+                frontColor: FAE965
+                mixColorFrom: FAE965
+                mixColorTo: FAE965
+                width: 8
+                height: 8
+
+               }
+    }
+    
+    
+        {
+    name: CCA_g
+    shootWarmupSpeed: 10
+    rotateSpeed: 10
+        rotate: true
+        mirror: true
+        x: 22
+        y: -36
+        reload: 12
+        shootY: 15
+        recoil: 1
+        ejectEffect: casing2
+        shootSound: bang
+        
+    bullet: {
+                type: SolidBulletType
+                damage: 180
+                homing: false
+                speed: 9
+                sprite: large-bomb
+                lifetime: 30
+                knockback: -1
+                backColor: FAE965
+                frontColor: FAE965
+                mixColorFrom: FAE965
+                mixColorTo: FAE965
+                width: 8
+                height: 8
+
+               }
+    }
+  ]
+  
+      alwaysUnlocked: true
+}

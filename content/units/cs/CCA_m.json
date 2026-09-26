@@ -1,0 +1,138 @@
+{
+name: CCA m
+alwaysUnlocked: true
+accel: 0.06
+drag: 0.06
+"template": "ErekirUnitType",
+alwaysUnlocked: false,
+canAttack:true,
+coreUnitDock:true,
+flying:true,
+health:3000,
+outlineColor: 00000000
+hitSize: 28
+  "engineSize": 0, 
+localisedName: "CCA m",
+speed: 0,
+rotateSpeed: 10
+"type":"flying",
+
+abilities:[
+
+]
+
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: -35
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.76
+growY: -0.76
+
+}
+
+    {
+type: RegionPart
+suffix: -so
+mirror: true
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 3
+y: -1
+moveY: 0
+moveX: 0
+moveRot: 60
+progress: recoil
+color: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+
+}
+  ]
+
+"weapons":[
+
+    {
+    shootWarmupSpeed: 10
+    "layerOffset": -0.0001, 
+        rotate: false
+        mirror: false
+        shootY: 8
+        x: 0
+        y: 0
+        reload: 24
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: shaft
+        
+    bullet: {
+      "range": 100,
+  "maxRange": 100,
+    
+      type: LaserBulletType
+                      recoil: -2
+        length: 40
+        width: 1
+        damage: 70
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          ff0000
+          ff0000
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 0
+        sideWidth: 3.4
+        		splashDamageRadius: 70
+		splashDamage: 200
+		hitEffect: blastExplosion
+        trailLength: 4
+
+        trailColor: ff0000
+    }
+    }
+
+
+    {
+    shootWarmupSpeed: 10
+        outlineColor: 1ED91E
+        rotate: false
+        mirror: false
+        shootY: -16
+        x: 0
+        y: 0
+        reload: 2
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: dgdhfhfjfynghhghj
+        
+        bullet: {
+          "range": 10000000000,
+  "maxRange": 10000000000,
+  lifetime: 0
+        recoil: -1
+    "layerOffset": -0.001, 
+       }
+    
+    }
+
+]
+
+
+alwaysUnlocked: true
+}

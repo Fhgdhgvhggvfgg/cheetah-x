@@ -33,13 +33,24 @@
       "type": "AssemblerUnitPlan",
       "unit": "tank_girl",
       "requirements": [
-        "cheetah-x-control_box/2"
-        "cheetah-x-wheelbox/8"
-        "cheetah-x-gold_sheets/2"
+        "cheetah-x-control_box/4"
+        "cheetah-x-wheelbox/12"
+        "cheetah-x-gold_sheets/4"
         "cheetah-x-obsidian_alloy/8"
          "cheetah-x-wall_cristal/10"
       ],
       "time": 3600
+    }
+    
+                {
+      "type": "AssemblerUnitPlan",
+      "unit": "CCA_bus",
+      "requirements": [
+        "cheetah-x-control_box/1"
+        "cheetah-x-wheelbox/6"
+        "cheetah-x-obsidian_alloy/4"
+      ],
+      "time": 1800
     }
     
     
