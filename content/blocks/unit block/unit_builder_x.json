@@ -54,7 +54,18 @@
       "time": 2600
     }
     
-    
+                    {
+      "type": "AssemblerUnitPlan",
+      "unit": "aircraft_b",
+      "requirements": [
+        "cheetah-x-wall_cristal/16"
+        "cheetah-x-soldier/1"
+        "cheetah-x-control_box/6"
+        "cheetah-x-gold_sheets/12"
+        "cheetah-x-obsidian_alloy/24"
+      ],
+      "time": 5000
+    }
     
     
   ],
@@ -66,6 +77,6 @@
       "amount": 0.07
     }
     }
-  "areaSize": 18,
+  "areaSize": 20,
   "alwaysUnlocked": true
 }
