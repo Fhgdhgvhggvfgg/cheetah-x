@@ -93,6 +93,16 @@
 "time":70
 }
 
+{
+"unit":"nuclear_battery",
+"requirements":[
+"obsidian/30"
+"cristal/400"
+"gold/800"
+"ram/4"
+],
+"time":4000
+}
 
 ],
 
