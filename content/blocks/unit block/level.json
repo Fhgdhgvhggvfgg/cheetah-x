@@ -1,0 +1,31 @@
+{
+  type: "Reconstructor"
+  size: 6
+  constructTime: 1800
+  name: level
+  consumes: {
+    power: 1.2
+     items: [
+     {"item":"gold","amount":220},
+     {"item":"elixir","amount":120},
+     {"item":"obsidian","amount":100},
+      ]
+  }
+  requirements: [
+     {"item":"gold","amount":190},
+     {"item":"cristal","amount":100},
+     {"item":"obsidian","amount":300},
+    ]
+  upgrades: [
+    
+    
+    [
+    valka
+    valka_queen
+    ]
+    
+    
+  ]
+  category: units
+      alwaysUnlocked: true
+}
