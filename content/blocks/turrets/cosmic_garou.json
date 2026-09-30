@@ -1,0 +1,104 @@
+
+name: cosmic garou
+type: ItemTurret
+reload: 150
+rotateSpeed: 4
+targetGround: true
+targetAir: true
+targetFriendly: true
+targetHealing: true
+"outlineColor": "00000000"
+range: 199
+recoil: 0
+shootSound: valka_gate_o
+size: 6
+"recoilTime": 13,
+health: 13000
+shootY: 100
+maxAmmo: 160
+ambientSound: preparing_rifle
+shootWarmupSpeed: 10
+
+drawer: {
+  type: DrawTurret
+  
+  
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: -46
+moveRot: 0
+moveY: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.7
+growY: -0.7
+}
+
+{
+  "type": "RegionPart",
+  "suffix": "-ex",
+  "mirror": false,
+  "under": false,
+  "outline": false,
+  "x": 0,
+  "y": 100,
+  moveRot: 160
+  "progress": "recoil",
+  "growProgress": "recoil",
+  "color": "ffffff00",
+  "colorTo": "ffffffff",
+  "growX": -0.9,
+  "growY": -0.9,
+  "blending": "additive"
+}
+
+  ]
+  }
+
+
+            shoot: {
+      shots: 1
+      shotDelay: 0
+    }
+
+coolant: {
+  type: ConsumeCoolant
+  allowGas: true
+  allowLiquid: true
+  amount: 0.3
+}
+
+
+ammoTypes: {
+    
+        elixir: {
+        ammoMultiplier: 1
+        damage: 7
+        speed: 1
+        height: 20
+        width: 20
+        lifetime: 1
+        fragOnHit: true
+splashDamageRadius: 100
+		splashDamage: 800
+       }
+    }
+    
+
+
+requirements: [
+elixir/800
+cristal/80
+gold/2000
+obsidian/900
+]
+category: turret
+
+    alwaysUnlocked: true
