@@ -9,6 +9,7 @@
      {"item":"gold","amount":220},
      {"item":"elixir","amount":120},
      {"item":"obsidian","amount":100},
+     {"item":"cristal","amount":100}, 
       ]
   }
   requirements: [
@@ -22,6 +23,11 @@
     [
     valka
     valka_queen
+    ]
+    
+    [
+    archer
+    archer_cristal
     ]
     
     

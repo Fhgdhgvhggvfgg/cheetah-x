@@ -7,11 +7,11 @@ alwaysUnlocked: false,
 canAttack:true,
 coreUnitDock:true,
 flying:false,
-health:3000,
+health:7000,
 outlineColor: 00000000
 hitSize: 28
   "engineSize": 0, 
-localisedName: "archer",
+localisedName: "archer cristal",
 speed: 4,
 stepShake: 0
 mechFrontSway: 0
@@ -24,7 +24,7 @@ abilities:[
  {
 		type: SpawnDeathAbility
 		amount: 1
-		unit: skeleton
+		unit: archer
 	}
 	
 ]
@@ -53,26 +53,29 @@ growY: -0.76
   ]
 
 "weapons":[
-
-    {
-    name: bow
-    shootWarmupSpeed: 10
+{
+        name: bow
+        shootWarmupSpeed: 10
         rotate: false
         mirror: false
         x: 0
         y: 0
-        reload: 50
-        recoil: 0
+        reload: 40
         shootY: 16
+        recoil: 0
         ejectEffect: casing2
         shootSound: flame
-        
+        "inaccuracy": 20,
+            shoot: {
+      shots: 5
+      shotDelay: 0
+    }
                         bullet: {
       type: BasicBulletType
         sprite: circle-bullet
         lightRadius: 10
         lightColor: ffffff
-        damage: 140
+        damage: 100
         scaleVelocity: true
         splashDamage: 40
         splashDamageRadius: 60
@@ -133,13 +136,10 @@ growY: -0.76
            },
         ]
        }
-        
-
     }
-
 ]
 
 
-"deathSound": "skeleton_r",
+"deathSound": "shovelS",
 alwaysUnlocked: true
 }
