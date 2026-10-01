@@ -13,10 +13,10 @@ contorller:BuilderAI,
 coreUnitDock:true,
 defaultController: BuilderAI,
 flying:true,
-health:3000,
+health:2300,
   "engineSize": 0, 
 itemCapacity: 130,
-localisedName: "bradar",
+localisedName: "jeen",
 mineFloor:true
 mineRange: 160
 "mineSpeed":19,
@@ -28,21 +28,41 @@ speed: 8,
 
      "parts": [
   
-  {
-  "type": "RegionPart",
-  "suffix": "-heat",
-  "mirror": false,
-  "under": false,
-  "outline": false,
-  "x": 0,
-  "y": 0,
-  "progress": "recoil",
-  "growProgress": "recoil",
-  "color": "ffffff00",
-  "colorTo": "ffffffff",
-  "growX": -0.7,
-  "growY": -0.7,
-  "blending": "additive"
+      {
+type: RegionPart
+suffix: -head
+mirror: true
+under: false
+outline: false
+"layerOffset": +0.11, 
+x: 0
+y: 0
+moveY: 0
+moveX: 0
+progress: recoil
+color: ffffffff
+scl: 0.1
+
+}
+  
+    {
+type: RegionPart
+suffix: -so
+mirror: true
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: -3
+y: 0
+moveY: 0
+moveX: 0
+moveRot: -90
+progress: recoil
+color: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+
 }
   
 {
@@ -102,32 +122,28 @@ abilities:[
 
 weapons: [
 
-
     {
-    
-    name: boxing
-    "layerOffset": 0.0001, 
     shootWarmupSpeed: 10
+    "layerOffset": -0.0001, 
         rotate: false
-          "recoilTime": 5,
         mirror: false
-        shootY: 3
+        shootY: 8
         x: 0
         y: 0
-        reload: 24
+        reload: 35
         recoil: 0
         ejectEffect: casing2
-        shootSound: cccccccccccccc
+        shootSound: shaft
         
     bullet: {
-      "range": 55,
-  "maxRange": 55,
+      "range": 100,
+  "maxRange": 100,
     
       type: LaserBulletType
-                      recoil: -1
-        length: 1
+                      recoil: -2
+        length: 40
         width: 1
-        damage: 50
+        damage: 70
         hitEffect: lightningShoot
         shootEffect: lightningShoot
         colors: [
@@ -138,8 +154,8 @@ weapons: [
         sideAngle: -45
         sideLength: 0
         sideWidth: 3.4
-        		splashDamageRadius: 75
-		splashDamage: 160
+        		splashDamageRadius: 70
+		splashDamage: 220
 		hitEffect: blastExplosion
         trailLength: 4
 
@@ -149,7 +165,7 @@ weapons: [
 
    ]
    
-   "deathSound": "jeff_die",
+   "deathSound": "jeen_die",
 
 
     alwaysUnlocked: true
