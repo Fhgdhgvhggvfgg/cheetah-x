@@ -20,10 +20,6 @@ name: jeen core
       "amount": 800
     },
             {
-      "item": "cristal",
-      "amount": 450
-    },
-            {
       "item": "elixir",
       "amount": 1500
     },
