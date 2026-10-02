@@ -123,8 +123,9 @@ abilities:[
 weapons: [
 
     {
+    name: wing_j
     shootWarmupSpeed: 10
-    "layerOffset": -0.0001, 
+    "layerOffset": 0.0001, 
         rotate: false
         mirror: false
         shootY: 8
