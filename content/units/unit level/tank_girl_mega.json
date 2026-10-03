@@ -4,7 +4,7 @@
 "name":"tank girl",
 outlineColor: 00000000
 "type": "tank",
-"hitSize": 80,
+"hitSize": 110,
 accel: 0.90
 drag: 0.90
 "crushDamage": 0.8,
@@ -13,7 +13,7 @@ drag: 0.90
 "singleTarget": false,
 "omniMovement": false,
 "faceTarget": false,
-"health": 22000,
+"health": 2700,
 "armor": 20,
 "speed": 1,
 "rotateSpeed": 1,
@@ -67,10 +67,10 @@ weapons: [
 shootWarmupSpeed: 10
 "layerOffset": +0.2, 
 "rotateSpeed": 2,
-name: tank_cannon
+name: tank_cannon_mega
 y: 0
 x: 0
-    shootY: 6
+    shootY: 24
     recoil: 0
     reload: 320
     alternate: false
@@ -114,15 +114,32 @@ growY: 0
                 frontColor: ffffff
                 mixColorFrom: ffffff
                 mixColorTo: ffffff
-                width: 15
+                width: 25
                 height: 50
-		fragOnHit: true
-		fragBullets: 50
 		splashDamageRadius: 80
 		splashDamage: 1000
 		hitEffect: blastExplosion
         trailLength: 4
         trailColor: ffffff
+        	   "status": "heat_same"
+        splashDamageRadius: 80
+    	fragOnHit: true
+		fragBullets: 30
+                        fragBullet: {
+                      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FF0000
+        damage: 10
+        	   "status": "heat_same"
+        scaleVelocity: true
+        splashDamage: 180
+        splashDamageRadius: 10
+        height: 10
+        width: 10
+        speed: 15
+        lifetime: 18
+        }
                }
 }
 
@@ -130,7 +147,7 @@ growY: 0
     shootWarmupSpeed: 10
     
                    shoot: {
-                     shots: 2
+                     shots: 4
       shotDelay: 15
 }
         rotate: true
@@ -138,7 +155,7 @@ growY: 0
         x: 0
         y: -20
         shootY: 0
-        reload: 360
+        reload: 450
         recoil: 1
         ejectEffect: casing2
         shootSound: saw_sound

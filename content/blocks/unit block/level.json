@@ -1,20 +1,20 @@
 {
   type: "Reconstructor"
-  size: 6
+  size: 8
   constructTime: 1800
   name: level
   consumes: {
     power: 1.2
      items: [
-     {"item":"gold","amount":220},
+     {"item":"gold","amount":1100},
      {"item":"elixir","amount":120},
      {"item":"obsidian","amount":100},
      {"item":"cristal","amount":100}, 
       ]
   }
   requirements: [
-     {"item":"gold","amount":190},
-     {"item":"cristal","amount":100},
+     {"item":"gold","amount":300},
+     {"item":"cristal","amount":200},
      {"item":"obsidian","amount":300},
     ]
   upgrades: [
@@ -30,7 +30,10 @@
     archer_cristal
     ]
     
-    
+    [
+    tank_girl
+    tank_girl_mega
+    ]
   ]
   category: units
       alwaysUnlocked: true
