@@ -6,16 +6,16 @@
   consumes: {
     power: 1.2
      items: [
-     {"item":"gold","amount":1100},
+     {"item":"gold","amount":200},
      {"item":"elixir","amount":120},
      {"item":"obsidian","amount":100},
      {"item":"cristal","amount":100}, 
       ]
   }
   requirements: [
-     {"item":"gold","amount":300},
+     {"item":"gold","amount":2000},
      {"item":"cristal","amount":200},
-     {"item":"obsidian","amount":300},
+     {"item":"obsidian","amount":700},
     ]
   upgrades: [
     
