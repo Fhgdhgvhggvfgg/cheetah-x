@@ -104,6 +104,17 @@
 "time":4000
 }
 
+{
+"unit":"speed_machin",
+"requirements":[
+"obsidian/600"
+"cristal/100"
+"gold/80"
+"ram_c/2"
+],
+"time":2200
+}
+
 ],
 
 

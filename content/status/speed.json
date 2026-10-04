@@ -1,0 +1,18 @@
+{
+  "damage": 0,
+  "speedMultiplier": 1.5,
+  "reloadMultiplier": 1.5,
+  "alwaysUnlocked": true,
+  "effect": {
+    "type": "ParticleEffect",
+    "particles": 2,
+    "length": 8,
+    "lifetime": 50,
+    "colorFrom": "00ffffb3",
+    "colorTo": "00000000",
+    "sizeFrom": 2,
+    "sizeTo": 10,
+    "cone": 400
+  },
+  "effectChance": 2
+}

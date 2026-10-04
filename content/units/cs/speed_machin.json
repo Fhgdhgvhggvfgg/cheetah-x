@@ -1,0 +1,60 @@
+{
+alwaysUnlocked: true
+accel: 0.1
+drag: 0.1
+  "range": 10000000000,
+  "maxRange": 10000000000,
+"template": "ErekirUnitType",
+alwaysUnlocked: true,
+canAttack:true,
+coreUnitDock:false,
+flying:true,
+health:2000,
+outlineColor: 00000000
+lifetime: 1000,
+hitSize: 18
+  "engineSize": 0, 
+localisedName: "speed machin",
+speed: 8,
+rotateSpeed: 15
+"type":"flying",
+
+    "parts": [
+  {
+  "type": "RegionPart",
+  "suffix": "-heat",
+  "mirror": false,
+  "under": false,
+  "outline": false,
+  "x": 0,
+  "y": 0,
+  "progress": "recoil",
+  "growProgress": "recoil",
+  "color": "ffffff00",
+  "colorTo": "ffffffff",
+  "growX": 0,
+  "growY": 0,
+  "blending": "additive"
+}
+  ]
+
+abilities:[
+
+  {
+    "type": "StatusFieldAbility",
+    "effect": "speed",
+    "reload": 20,
+        "duration": 400,
+    "range": 200,
+    "applyToTeam": true,
+    "applyToEnemy": false
+  }
+
+
+]
+
+"weapons":[
+
+]
+alwaysUnlocked: true
+}
