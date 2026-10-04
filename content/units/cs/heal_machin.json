@@ -9,7 +9,7 @@ alwaysUnlocked: true,
 canAttack:true,
 coreUnitDock:false,
 flying:true,
-health:2000,
+health:1200,
 outlineColor: 00000000
 lifetime: 1000,
 hitSize: 18
@@ -42,9 +42,9 @@ abilities:[
 
   {
     "type": "StatusFieldAbility",
-    "effect": "speed",
+    "effect": "heal_same",
     "reload": 20,
-        "duration": 560,
+        "duration": 800,
     "range": 200,
     "applyToTeam": true,
     "applyToEnemy": false

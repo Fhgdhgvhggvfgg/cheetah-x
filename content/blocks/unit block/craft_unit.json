@@ -115,6 +115,17 @@
 "time":2200
 }
 
+{
+"unit":"speed_machin",
+"requirements":[
+"elixir/120"
+"cristal/10"
+"gold/80"
+"ram_c/1"
+],
+"time":2200
+}
+
 ],
 
 

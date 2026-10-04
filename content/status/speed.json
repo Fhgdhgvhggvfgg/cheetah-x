@@ -7,12 +7,12 @@
     "type": "ParticleEffect",
     "particles": 2,
     "length": 8,
-    "lifetime": 50,
+    "lifetime": 10,
     "colorFrom": "00ffffb3",
     "colorTo": "00000000",
     "sizeFrom": 2,
     "sizeTo": 10,
     "cone": 400
   },
-  "effectChance": 2
+  "effectChance": 0.2
 }
