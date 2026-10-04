@@ -19,12 +19,24 @@ if(!Vars.headless) updateZoom(minZoomLim, maxZoomLim);
 Timer.schedule(() => {
     if (Vars.state.isGame()) {
         let playerCore = Vars.player.team().core();
-        
+                let playerUnit = Vars.player.unit();
         // التحقق من أن النواة موجودة وليست فارغة
         if (playerCore != null) {
             let randomNum = Math.floor(Math.random() * 4);
-            
+            if (playerUnit.type != null && (playerUnit.type.name.endsWith("cheetah-x-keven") || playerUnit.type.name.endsWith("cheetah-x-keven_u"))){
             if (!Vars.state.isPaused()){
+            if (randomNum == 1) {
+                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 4);
+            } else if (randomNum == 2) {
+                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 3);
+            } else if (randomNum == 3) {
+                playerCore.items.add(Vars.content.item("cheetah-x-ram"), 5);
+            } else {
+            	
+            }
+            }
+            }else {
+            	            if (!Vars.state.isPaused()){
             if (randomNum == 1) {
                 playerCore.items.add(Vars.content.item("cheetah-x-ram"), 2);
             } else if (randomNum == 2) {
@@ -35,6 +47,8 @@ Timer.schedule(() => {
             	
             }
             }
+            
+            	}
         }
     }
 }, 10, 4);

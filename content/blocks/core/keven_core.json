@@ -13,7 +13,7 @@ name: keven core
   "requirements": [
     {
       "item": "cristal",
-      "amount": 30
+      "amount": 70
     },
         {
       "item": "gold",
@@ -21,7 +21,7 @@ name: keven core
     },
             {
       "item": "elixir",
-      "amount": 45
+      "amount": 56
     },
     
   ],
