@@ -4,7 +4,7 @@
 "name":"tank girl",
 outlineColor: 00000000
 "type": "tank",
-"hitSize": 110,
+"hitSize": 88,
 accel: 0.90
 drag: 0.90
 "crushDamage": 0.8,
@@ -13,7 +13,7 @@ drag: 0.90
 "singleTarget": false,
 "omniMovement": false,
 "faceTarget": false,
-"health": 2700,
+"health": 27000,
 "armor": 20,
 "speed": 1,
 "rotateSpeed": 1,
