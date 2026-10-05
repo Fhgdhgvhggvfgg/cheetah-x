@@ -1,0 +1,38 @@
+name: lora queen core
+  type: CoreBlock
+  health: 40000
+  size: 10
+  armor: 10
+  isFirstTier: false
+  itemCapacity: 10000
+  unitCapModifier: 100
+  buildCostMultiplier: 0.7
+  squareSprite: false
+    "thrusterLength": 30
+  unitType: lora_queen
+  "requirements": [
+    {
+      "item": "cristal",
+      "amount": 2000
+    },
+        {
+      "item": "gold",
+      "amount": 4000
+    },
+            {
+      "item": "obsidian",
+      "amount": 1000
+    },
+    
+                {
+      "item": "elixir",
+      "amount": 1200
+    },
+    
+  ],
+  "category": "units"
+
+  alwaysUnlocked: true
+  drawCracks: true
+  createRubble: true
+  category: effect

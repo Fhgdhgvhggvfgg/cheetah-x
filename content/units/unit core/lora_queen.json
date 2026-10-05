@@ -1,0 +1,195 @@
+{
+"type":"payload",
+alwaysUnlocked: false,
+buildRange:340,
+buildSpeed:11,
+accel: 0.06
+drag: 0.06
+outlineColor: 00000000
+"template": "ErekirUnitType",
+hitSize: 25
+canAttack:true,
+contorller:BuilderAI,
+coreUnitDock:true,
+defaultController: BuilderAI,
+flying:true,
+health:2400,
+  "engineSize": 0, 
+itemCapacity: 150,
+localisedName: "lora",
+mineFloor:true
+mineRange: 150
+"mineSpeed":17,
+mineTier: 11
+mineWalls:true
+speed: 10,
+"rotateSpeed": 8.5,
+"payloadCapacity": 1500,
+
+
+  "parts": [
+
+  
+
+
+{
+"layerOffset": -0.0001, 
+shootWarmupSpeed: 1
+type: RegionPart
+suffix: -lowest
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffffff
+colorTo: ffffffff
+moveY: 0.7
+growY: 0.14
+}
+
+{
+"layerOffset": 0.0001, 
+shootWarmupSpeed: 1
+type: RegionPart
+suffix: -top
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffffff
+colorTo: ffffffff
+moveY: -0.7
+growY: 0.1
+}
+]
+
+
+abilities:[
+
+]
+
+weapons: [
+{
+    name: guard
+    shootY: 15
+    reload: 40
+    alternate: false
+    recoil: 0
+    mirror: true
+    rotate: true
+    x: 20
+    y: -15
+    shootSound: fire_ball_a
+    bullet:{
+        ammoMultiplier: 1
+        damage: 10
+        speed: 8
+        height: 25
+        width: 25
+        lifetime: 25
+        fragOnHit: true
+         splashDamageRadius: 40
+        "status": "burn"
+		splashDamage: 30
+		fragBullets: 8
+		        fragBullet: {
+        ammoMultiplier: 1
+        damage: 20
+        speed: 3
+        height: 15
+        width: 15
+        "status": "burn"
+        lifetime: 15
+         splashDamageRadius: 20
+		splashDamage: 10
+       }
+    }
+}
+
+{
+shootWarmupSpeed: 10
+
+  "parts": [
+{
+type: RegionPart
+suffix: 
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -40
+moveX: 0
+progress: warmup
+
+
+children: [
+{
+type: RegionPart
+suffix: -name
+mirror: false
+under: false
+outline: false
+x: 0
+y: -21
+moveRot: 0
+progress: warmup
+color: ffffff4d
+colorTo: ffffffb3
+}
+
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.8
+growY: -0.8
+}
+
+]
+
+}
+]
+
+    name: para
+    shooty: 99999999999999999
+    reload: 9999999999999999
+    alternate: false
+    recoil: 0
+    mirror: false
+    rotate: false
+    x: 0
+    y: 0
+    shootSound: gggghgggghghj
+    bullet: {
+      type: BasicBulletType
+      speed: 5
+      trailColor: FF69B4
+      frontColor: FF69B4
+      backColor: FF69B4
+      lifetime: 1
+      }
+}
+
+
+
+   ]
+   
+   "deathSound": "lora_die",
+
+    alwaysUnlocked: true
+}

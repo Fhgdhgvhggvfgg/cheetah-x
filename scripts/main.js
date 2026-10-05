@@ -233,6 +233,17 @@ Events.on(ClientLoadEvent, function() {
                       .size(si,siy)
                       .padLeft(left - 200)
                       .padTop(top + 245);
+            }else if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-lora_queen")) {
+                
+                // استخدام نفس الأمر مباشرة داخل الجدول
+                iconTable.image(Core.atlas.find("cheetah-x-lora_queen_p"))
+                      .size(si)
+                      .padLeft(left)
+                      .padTop(top);
+                                      iconTable.image(Core.atlas.find("cheetah-x-para-name"))
+                      .size(si,siy)
+                      .padLeft(left - 200)
+                      .padTop(top + 245);
             }
       
         }
