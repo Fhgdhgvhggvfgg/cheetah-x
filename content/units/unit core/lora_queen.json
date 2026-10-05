@@ -87,6 +87,8 @@ weapons: [
     y: -15
     shootSound: fire_ball_a
     bullet:{
+      "range": 230,
+  "maxRange": 230,
         ammoMultiplier: 1
         damage: 10
         speed: 8
@@ -176,6 +178,8 @@ growY: -0.8
     y: 0
     shootSound: gggghgggghghj
     bullet: {
+      "range": 230,
+  "maxRange": 230,
       type: BasicBulletType
       speed: 5
       trailColor: FF69B4
