@@ -34,6 +34,12 @@
     tank_girl
     tank_girl_mega
     ]
+    
+    [
+    CCA_bus
+    CCA_bus_power
+    ]
+    
   ]
   category: units
       alwaysUnlocked: true

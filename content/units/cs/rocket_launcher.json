@@ -1,0 +1,92 @@
+name: CCA cannon
+"template": "ErekirUnitType",
+type: mech 
+mechLegColor: 565666FF
+health: 2300
+armor: 1
+hitSize: 20
+speed: 3
+coreUnitDock:true,
+rotateSpeed: 7
+accel: 0.15
+mechSideSway: 0.25
+itemCapacity: 12
+outlineColor: 00000000
+
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: -35
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.76
+growY: -0.76
+
+}
+]
+
+
+
+weapons: [
+    {
+
+    shootWarmupSpeed: 10
+    rotateSpeed: 10
+        rotate: true
+        mirror: true
+        x: 0
+        y: 0
+        reload: 200
+        shootY: 18
+        shootX: 6
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: cannon
+        
+                           shoot: {
+                     shots: 4
+      shotDelay: 8
+}
+        
+    bullet:{
+      "range": 230,
+  "maxRange": 230,
+        ammoMultiplier: 1
+        damage: 10
+        speed: 11
+        height: 25
+        width: 10
+        lifetime: 33
+        fragOnHit: true
+         splashDamageRadius: 40
+        "status": "burn"
+		splashDamage: 30
+		fragBullets: 8
+		        fragBullet: {
+        ammoMultiplier: 1
+        damage: 20
+        speed: 3
+        height: 15
+        width: 15
+        "status": "burn"
+        lifetime: 15
+         splashDamageRadius: 20
+		splashDamage: 10
+       }
+    }
+    }
+ ]
+
+
+    alwaysUnlocked: true
