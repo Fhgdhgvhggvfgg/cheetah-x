@@ -75,6 +75,7 @@ abilities:[
                 rotate: true
 		rotateSpeed: 5
 		shootY: 30
+		shootX: 13
                 x: 0
                 y: 0
                 reload: 40
