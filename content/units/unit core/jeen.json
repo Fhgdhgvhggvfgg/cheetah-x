@@ -3,6 +3,8 @@
 alwaysUnlocked: false,
 buildRange:300,
 buildSpeed:8.5,
+  "range": 100,
+  "maxRange": 100,
 accel: 0.06
 drag: 0.06
 outlineColor: ffffff00
@@ -44,26 +46,7 @@ color: ffffffff
 scl: 0.1
 
 }
-  
-    {
-type: RegionPart
-suffix: -so
-mirror: true
-under: false
-outline: false
-"layerOffset": +0.1, 
-x: -3
-y: 0
-moveY: 0
-moveX: 0
-moveRot: -90
-progress: recoil
-color: ffffffff
-scl: 0.1
-growX: 0
-growY: 0
-
-}
+ 
   
 {
 type: RegionPart
@@ -136,6 +119,29 @@ weapons: [
         ejectEffect: casing2
         shootSound: shaft
         
+        "parts":    [
+            {
+type: RegionPart
+suffix: -so
+mirror: true
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: -3
+y: 0
+moveY: 0
+moveX: 0
+moveRot: -90
+progress: recoil
+color: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+
+}
+]
+        
+        
     bullet: {
       "range": 100,
   "maxRange": 100,
@@ -163,6 +169,140 @@ weapons: [
         trailColor: ff0000
     }
     }
+
+
+    {
+    name: status_w
+    shootWarmupSpeed: 10
+    "layerOffset": 0.0001, 
+        rotate: false
+        mirror: false
+        shootStatus: shield
+        shootStatusDuration: 600
+        shootY: 0
+        x: 0
+        y: 0
+        reload: 1800
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: call
+        alwaysShooting: true
+        
+                "parts":    [
+                
+            {
+type: RegionPart
+suffix: -shi
+mirror: true
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: -3
+y: 0
+moveY: 0
+moveX: 0
+moveRot: -270
+progress: recoil
+color: ffffffff
+scl: 0.1
+growX: 0
+growY: 0
+
+}
+]
+        
+            bullet: {
+      type: LaserBulletType
+                      recoil: 0
+        length: 1
+        width: 1
+        damage: 1
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          ff0000
+          ff0000
+          FFFFFF
+        ],
+        sideAngle: -1
+        sideLength: 0
+        sideWidth: 1
+        trailLength: 4
+
+        trailColor: ff0000
+    }
+        }
+
+
+
+
+
+
+    {
+    name: relo
+    shootWarmupSpeed: 10
+    "layerOffset": 0.0001, 
+        rotate: false
+        mirror: false
+        shootY: 0
+        "recoilTime": 45
+        x: 0
+        y: 0
+        reload: 1800
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: call
+        alwaysShooting: true
+        
+                "parts":    [
+                
+                  {
+  "type": "RegionPart",
+  "suffix": "-heat",
+  "mirror": false,
+  "under": false,
+  "outline": false,
+  "x": 0,
+  "y": 0,
+  "progress": "recoil",
+  "layerOffset": +0.4, 
+  "growProgress": "recoil",
+  "color": "ffffff00",
+  "colorTo": "ffffffff",
+  "growX": -0.7,
+  "growY": -0.7,
+  "blending": "additive"
+  shootWarmupSpeed: 1
+}
+                
+]
+        
+            bullet: {
+      type: LaserBulletType
+                      recoil: 0
+        length: 1
+        width: 1
+        damage: 1
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          ff0000
+          ff0000
+          FFFFFF
+        ],
+        sideAngle: -1
+        sideLength: 0
+        sideWidth: 1
+        trailLength: 4
+
+        trailColor: ff0000
+    }
+        }
+
+
+
+
+
 
    ]
    
