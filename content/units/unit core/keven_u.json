@@ -114,7 +114,7 @@ weapons: [
         width: 20
         speed: 10
         lifetime: 10
-                  
+                  buildingDamageMultiplier: 0.6
   "range": 230,
   "maxRange": 230,
                   fragBullets: 5

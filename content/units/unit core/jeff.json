@@ -203,7 +203,7 @@ statusDuration: 200
         speed: 5
         lifetime: 4
                   "fragBullets": 1
-                  
+                  buildingDamageMultiplier: 0.7
   "range": 230,
   "maxRange": 230,
                   

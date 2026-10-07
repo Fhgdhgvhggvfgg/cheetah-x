@@ -81,6 +81,7 @@ growY: -0.72
 
 {
 shootWarmupSpeed: 10
+buildingDamageMultiplier: 0.7
                 name: c_jamaica
                 mirror: true
                 top: true

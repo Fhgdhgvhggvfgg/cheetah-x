@@ -148,6 +148,7 @@ growY: 0
     
       type: LaserBulletType
                       recoil: -2
+                      buildingDamageMultiplier: 0.6
         length: 40
         width: 1
         damage: 70
@@ -162,7 +163,7 @@ growY: 0
         sideLength: 0
         sideWidth: 3.4
         		splashDamageRadius: 70
-		splashDamage: 220
+		splashDamage: 140
 		hitEffect: blastExplosion
         trailLength: 4
 

@@ -91,6 +91,7 @@ weapons: [
     shootSound: bolt
     bullet: {
       type: BasicBulletType
+      buildingDamageMultiplier: 0.8
       speed: 5
       trailColor: FF69B4
       frontColor: FF69B4

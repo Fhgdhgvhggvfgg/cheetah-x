@@ -90,6 +90,7 @@ weapons: [
    {
    shootWarmupSpeed: 10
    name: nuclear
+   buildingDamageMultiplier: 0.9
     x: 3
     y: 0
     reload: 34
