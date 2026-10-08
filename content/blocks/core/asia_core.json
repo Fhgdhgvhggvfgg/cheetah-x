@@ -1,0 +1,30 @@
+name: keven core
+  type: CoreBlock
+  health: 15000
+  size: 5
+  armor: 10
+  isFirstTier: false
+  itemCapacity: 6000
+  unitCapModifier: 35
+  buildCostMultiplier: 0.7
+  squareSprite: false
+    "thrusterLength": 30
+  unitType: asia
+  "requirements": [
+    {
+      "item": "cristal",
+      "amount": 20
+    },
+        
+            {
+      "item": "elixir",
+      "amount": 40
+    },
+    
+  ],
+  "category": "units"
+
+  alwaysUnlocked: true
+  drawCracks: true
+  createRubble: true
+  category: effect

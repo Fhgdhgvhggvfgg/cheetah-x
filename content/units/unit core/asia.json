@@ -1,0 +1,128 @@
+{
+  "singleTarget": true,
+  "template": "ErekirUnitType",
+  "localizedName": "asia",
+  buildRange:240,
+buildSpeed:5,
+itemCapacity: 70,
+mineFloor:true
+mineRange: 90
+"mineSpeed":6,
+mineTier: 11
+mineWalls:true
+canAttack:true,
+contorller:BuilderAI,
+  "drawShields": false,
+  "research": { },
+  "lightRadius": 200,
+  "type": "legs",
+  "drownTimeMultiplier": 99999999999999999999,
+  "legCount": 6,
+  "legLength": 30,
+  "legSpeed": 0.5,
+  "legExtension": -7,
+  "legForwardScl": 0,
+  "legMoveSpace": 0.9,
+  "legPairOffset": 2,
+  "rotateSpeed": 5,
+  "speed": 1,
+  "accel": 0.4,
+  "drag": 0.4,
+  "aimDst": 340,
+  "outlineColor": "00000000",
+  "faceTarget": true,
+  "flying": false,
+  "health": 1200,
+  "hitSize": 18,
+  "lowAltitude": true,
+  
+    "parts": [
+{
+type: RegionPart
+suffix: 
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveY: -30
+moveX: 0
+progress: warmup
+
+
+children: [
+{
+type: RegionPart
+suffix: -name
+mirror: false
+under: false
+outline: false
+x: 0
+y: -21
+moveRot: 0
+progress: warmup
+color: ffffff4d
+colorTo: ffffffb3
+}
+
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.8
+growY: -0.8
+}
+
+]
+
+}
+
+  ]
+  
+  "weapons": [
+   {
+   shootWarmupSpeed: 10
+   name: nuclear
+   buildingDamageMultiplier: 0.9
+    x: 3
+    y: 0
+    reload: 60
+    recoil: 0
+     "heatTime": 90,
+    "heatColor": "FFFFFF",
+    alternate: true
+    shootY: 12
+    mirror: true
+    rotate: false
+    shootSound: bolt
+       bullet: {
+      type: LaserBulletType
+        length: 160
+        width: 6
+        damage: 90
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          8DEEEB
+          8DEEEB
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 30
+        sideWidth: 3.4
+    }
+}
+
+
+  ]
+  
+      alwaysUnlocked: true
+}
