@@ -72,6 +72,18 @@ growY: 0
 
 "weapons":[
 
+	{
+      "type": "RepairBeamWeapon",
+      "name": "repair-point",
+      "mirror": "false",
+      "x": 0,
+      "y": -7,
+      "beamWidth": 0.6,
+      "repairSpeed": 6,
+      "bullet": {
+        "maxRange": 300
+      }
+    },
 
     {
     shootWarmupSpeed: 10

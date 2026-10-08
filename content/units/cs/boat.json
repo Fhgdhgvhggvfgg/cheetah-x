@@ -1,0 +1,71 @@
+type: naval
+name:boat
+health:1800
+speed:2.5
+armor:4
+hitSize:12
+rotateSpeed:6
+useEngineElevation:false
+faceTarget:true
+outlineColor:00000000
+"template": "ErekirUnitType",
+
+abilities:[
+
+
+
+]
+
+"weapons": [
+
+	{
+      "type": "RepairBeamWeapon",
+      "name": "repair-point",
+      "mirror": "false",
+      "x": 0,
+      "y": 7,
+      "beamWidth": 0.6,
+      "repairSpeed": 2,
+      "bullet": {
+        "maxRange": 150
+      }
+    },
+
+    {
+                name: gun_b
+                mirror: false
+                top: true
+                rotate: true
+		rotateSpeed: 5
+                x: 0
+                y: 0
+                reload: 40
+                
+                
+                shoot: {
+      shots: 1
+      shotDelay: 3
+    }
+    bullet: {
+      type: BasicBulletType
+      speed: 8
+      trailColor: ffffff
+      frontColor: 00C1FC
+      backColor: 00C1FC
+      lifetime: 34
+      damage: 50
+      width: 10
+      height: 15
+      trailWidth: 1
+      trailLength: 4
+      pierce: true
+      shrinkX: 0
+      shrinkY: 0
+
+}
+                
+}
+ 
+ ]
+ 
+ alwaysUnlocked: true

@@ -126,6 +126,15 @@
 "time":2200
 }
 
+{
+"unit":"boat",
+"requirements":[
+"obsidian/100"
+"elixir/30"
+],
+"time":1300
+}
+
 ],
 
 
