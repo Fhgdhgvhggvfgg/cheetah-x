@@ -1,6 +1,6 @@
 type: naval
 name:boat
-health:1800
+health:800
 speed:2.5
 armor:4
 hitSize:12
