@@ -173,4 +173,6 @@ weapons: [
     
     
  ]
+ 
+    "deathSound": "call",
      alwaysUnlocked: true

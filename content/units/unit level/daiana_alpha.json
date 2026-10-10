@@ -5,7 +5,7 @@ accel: 0.06
 drag: 0.06
 outlineColor: 00000000
 "template": "ErekirUnitType",
-hitSize: 30
+hitSize: 34
 canAttack:true,
 coreUnitDock:true,
 flying:true,
@@ -321,7 +321,49 @@ growY: -0.73
 }
 
 
+    {
+    shootWarmupSpeed: 10
+    
+                   shoot: {
+                     shots: 4
+      shotDelay: 15
+}
+        rotate: true
+        mirror: false
+        x: 0
+        y: -60
+        shootY: 0
+        reload: 450
+        recoil: 1
+        ejectEffect: casing2
+        shootSound: call
+        
+                        bullet: {
+      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FF0000
+        damage: 10
+        scaleVelocity: true
+        splashDamage: 40
+        splashDamageRadius: 60
+        height: 6
+        width: 6
+        speed: 5
+        lifetime: 4
+                  "fragBullets": 1
+                  
+  "range": 300,
+  "maxRange": 300,
+                  
+                fragBullet: {
+      type: BasicBulletType
+        spawnUnit: guardian_of_sky
+       }
+       }
+        
 
+    }
 
 ]
 
