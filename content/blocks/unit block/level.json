@@ -40,6 +40,11 @@
     CCA_bus_power
     ]
     
+    [
+    daiana
+    daiana_alpha
+    ]
+    
   ]
   category: units
       alwaysUnlocked: true

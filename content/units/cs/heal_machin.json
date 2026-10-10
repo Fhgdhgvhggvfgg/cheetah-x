@@ -19,24 +19,6 @@ speed: 8,
 rotateSpeed: 15
 "type":"flying",
 
-    "parts": [
-  {
-  "type": "RegionPart",
-  "suffix": "-heat",
-  "mirror": false,
-  "under": false,
-  "outline": false,
-  "x": 0,
-  "y": 0,
-  "progress": "recoil",
-  "growProgress": "recoil",
-  "color": "ffffff00",
-  "colorTo": "ffffffff",
-  "growX": 0,
-  "growY": 0,
-  "blending": "additive"
-}
-  ]
 
 abilities:[
 
