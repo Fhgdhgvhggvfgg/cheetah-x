@@ -86,6 +86,7 @@ abilities:[
       shotDelay: 0
     }
         bullet: {
+        buildingDamageMultiplier: 1.7
       type: LaserBulletType
          recoil: 0
         length: 80

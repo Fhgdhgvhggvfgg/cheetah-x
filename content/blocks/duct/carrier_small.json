@@ -1,0 +1,12 @@
+type: PayloadConveyor
+size: 1
+moveTime: 20
+moveForce: 300
+payloadLimit: 5
+category: units
+requirements: [
+cristal/10
+obsidian/18
+]
+
+alwaysUnlocked: true
