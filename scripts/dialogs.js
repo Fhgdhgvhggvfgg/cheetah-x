@@ -51,6 +51,10 @@ function showMyDialog() {
         p.image(studyTex2).size(600, 600).pad(10).row();
         p.add("The way the game starts. py ram").row();
         
+                const studyTexD = Core.atlas.find("cheetah-x-developer");
+        p.image(studyTexD).size(600, 600).pad(10).row();
+        p.add("just for developers").row();
+        
                const studyTex3 = Core.atlas.find("cheetah-x-study3");
         p.image(studyTex3).size(600, 600).pad(10).row();
         // ✅ إضافة زر الرابط هنا
