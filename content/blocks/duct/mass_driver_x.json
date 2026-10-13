@@ -14,4 +14,4 @@ ram/1,
 size: 2
 type: MassDriver
 
-    alwaysUnlocked: false
+    alwaysUnlocked: true
