@@ -21,7 +21,7 @@ canAttack:true,
   "mineSpeed": 3,
   "mineTier": 11,
   
-"commands": ["move", "mine", "repair", "rebuild"]
+"commands": ["move", "mine", "repair", "rebuild", "enterPayload"]
   
 "health": 8000,
 "armor": 20,

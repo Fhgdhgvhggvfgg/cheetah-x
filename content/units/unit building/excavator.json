@@ -15,7 +15,7 @@ drag: 0.90
 "faceTarget": false,
 canAttack:true,
 
-"commands": ["move", "mine", "rebuild"]
+"commands": ["move", "mine", "rebuild", "enterPayload"]
 
   "itemCapacity": 60,
   "mineFloor": true,
