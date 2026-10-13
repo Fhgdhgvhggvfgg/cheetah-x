@@ -85,7 +85,7 @@ abilities:[
 		shootX: 0
                 x: 0
                 y: 0
-                reload: 300
+                reload: 380
                 
                 
                 shoot: {
@@ -93,6 +93,7 @@ abilities:[
       shotDelay: 4
     }
         bullet: {
+        buildingDamageMultiplier: 0.7
           "range": 70,
   "maxRange": 70,
         buildingDamageMultiplier: 1.7
