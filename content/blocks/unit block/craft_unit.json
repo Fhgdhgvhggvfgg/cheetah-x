@@ -116,7 +116,7 @@
 }
 
 {
-"unit":"speed_machin",
+"unit":"heal_machin",
 "requirements":[
 "elixir/120"
 "cristal/10"
