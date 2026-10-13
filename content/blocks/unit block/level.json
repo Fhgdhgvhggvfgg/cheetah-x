@@ -45,6 +45,11 @@
     daiana_alpha
     ]
     
+    [
+    excavator
+    excavator_S
+    ]
+    
   ]
   category: units
       alwaysUnlocked: true

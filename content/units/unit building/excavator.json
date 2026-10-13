@@ -1,6 +1,4 @@
 {
-"description": 
-",
 "name":"excavator",
 buildRange:60,
 buildSpeed:3.5,
@@ -15,6 +13,10 @@ drag: 0.90
 "singleTarget": false,
 "omniMovement": false,
 "faceTarget": false,
+canAttack:true,
+
+"commands": ["move", "mine", "rebuild"]
+
   "itemCapacity": 60,
   "mineFloor": true,
   "mineWalls": true,
