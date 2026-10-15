@@ -91,7 +91,7 @@ weapons: [
     y: -15
     shootSound: fire_ball_a
     bullet:{
-    buildingDamageMultiplier: 0.6
+    buildingDamageMultiplier: 1.5
       "range": 230,
   "maxRange": 230,
         damage: 10
