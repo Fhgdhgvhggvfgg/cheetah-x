@@ -1,0 +1,31 @@
+{
+alwaysUnlocked: true
+"template": "ErekirUnitType",
+canAttack:false,
+lifetime: 1200,
+coreUnitDock:true,
+  "drownTimeMultiplier": 99999999999999999999,
+flying:true,
+outlineColor: 00000000
+health:40000,
+hitSize: 32
+name: "safe box",
+speed: 6,
+rotateSpeed: 5
+"type":"missile",
+"engineSize": 0, 
+
+abilities:[
+ {
+		type: SpawnDeathAbility
+      "unit": "tank_girl_die",
+      amount: 1
+    },
+    
+     {
+		type: SpawnDeathAbility
+      "unit": "saw",
+      amount: 4
+    },
+    ]
+}

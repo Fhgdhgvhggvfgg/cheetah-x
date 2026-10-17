@@ -49,7 +49,11 @@
     excavator
     excavator_S
     ]
-    
+
+    [
+    tank_girl_die
+    tank_girl_mega
+    ]    
   ]
   category: units
       alwaysUnlocked: true

@@ -55,8 +55,14 @@ growY: -0.7
 abilities:[
  {
 		type: SpawnDeathAbility
-		amount: 8
+		amount: 14
 		unit: saw
+	}
+	
+	 {
+		type: SpawnDeathAbility
+		amount: 1
+		unit: safe_box
 	}
 
 ]
