@@ -14,4 +14,57 @@ speed: 0,
 rotateSpeed: 0
 "type":"missile",
 "engineSize": 0, 
+weapons: [
+    {
+    name: status_ws
+    "layerOffset": 0.0001, 
+        rotate: false
+        mirror: false
+        shootY: 0
+        x: 0
+        y: 0
+        reload: 1800
+        recoil: 0
+        ejectEffect: casing2
+        shootSound: progr
+        alwaysShooting: true
+        
+                "parts":    [
+                
+{
+
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 30
+y: 30
+moveRot: 0
+moveX: 20
+moveY: 20
+progress: recoil
+color: ffffff00
+"recoilTime": 5000
+colorTo: ffffffb3
+growX: 0
+growY: 0
+}
+]
+        
+            bullet: {
+      type: LaserBulletType
+                      recoil: 0
+        length: 0
+        width: 0
+        damage: 0
+
+        trailColor: ff0000
+    }
+        }
+
+]
+
+
+
 }
