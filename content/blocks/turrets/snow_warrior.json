@@ -73,7 +73,7 @@ shootType: {
   trailLength: 4
   trailColor: "00ffff"
 }
-alwaysUnlocked: false
+alwaysUnlocked: true
 requirements: [
   cristal/100
   obsidian/120
