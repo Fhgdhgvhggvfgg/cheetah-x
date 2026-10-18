@@ -54,6 +54,10 @@
     tank_girl_die
     tank_girl_mega
     ]    
+    [
+    water_truck
+    water_truck_c
+    ]
   ]
   category: units
       alwaysUnlocked: true

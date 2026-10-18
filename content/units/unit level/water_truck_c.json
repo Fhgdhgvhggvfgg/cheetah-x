@@ -1,0 +1,161 @@
+{
+"description": "",
+"name":"water truck C",
+"type": "tank",
+      "targetUnits": true,
+"targetBuildings": true,
+"healp": true
+"hitSize": 60,
+accel: 0.05
+drag: 0.07
+"crushDamage": 1,
+"template": "ErekirUnitType",
+"commands": ["move", "repair", "enterPayload"]
+"treadPullOffset": 6,
+"singleTarget": true,
+"omniMovement": true,
+"faceTarget": true,
+"health": 5600,
+"armor": 20,
+"speed": 6,
+"rotateSpeed": 5,
+"itemCapacity": 0,
+"outlineColor": "00000000",
+"treadRects": [
+    {
+      "x": 80,
+      "y": -84,
+      "width": 19,
+      "height": 170
+    }
+  ],
+  
+  
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+"layerOffset": +0.1, 
+x: 0
+y: -65
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.72
+growY: -0.72
+
+}
+  ]
+
+  
+
+abilities:[
+    {
+      "type": "UnitSpawnAbility",
+      "spawnX": 0,
+      "spawnY": -24,
+      "unit": "water_sprayer",
+      "spawnTime": 500
+    },
+    
+        {
+      "type": "UnitSpawnAbility",
+      "spawnX": 0,
+      "spawnY": -24,
+      "unit": "water_sprayer",
+      "spawnTime": 500
+    },
+]
+
+
+"weapons": [
+  {
+  "name": water_sprayer_c,
+  shootWarmupSpeed: 10
+    "x": 0,
+    "y": 0,
+    "recoil": 0
+    "shootY": 13
+    "rotate": true,
+    "mirror": false,
+    "rotateSpeed": 6,
+    "reload": 40,
+    "shootSound": "water",
+ 
+                    shoot: {
+      shots: 1
+      shotDelay: 0
+    }
+    
+    
+    
+    "bullet": {
+  type: BasicBulletType
+  damage: 20
+  speed: 14
+  height: 5
+  width: 1.2
+  lifetime: 26
+  fragOnHit: true
+                  fragBullets: 20
+        fragVelocityMin: 0.2
+        fragRandomSpread: 350
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+  type: BasicBulletType
+  damage: 1
+  speed: 14
+  height: 5
+  width: 1.2
+  lifetime: 6
+  
+  collidesTeam: true
+  healPercent: 3
+  fragOnHit: true
+                  fragBullets: 60
+        fragVelocityMin: 0.2
+        fragRandomSpread: 350
+        fragSpread: 360
+        fragLifeMin: 0.8
+        fragBullet: {
+      "type": "LiquidBulletType",
+      "liquid": "water",
+      "damage": 10,
+      "collidesTeam":true,
+      healPercent: 3
+      "orbSize": 1.5
+      "speed": 3,
+      "lifetime": 20,
+      "status": "wet",
+      "statusDuration": 60
+       }
+  splashDamageRadius: 35
+  splashDamage: 10
+  hitEffect: blastExplosion
+  healPercent: 3
+  collidesTeam: true
+  healPercent: 3
+  trailLength: 4
+  trailColor: "00ffff"
+       }
+  splashDamageRadius: 35
+  splashDamage: 0
+  hitEffect: blastExplosion
+  healPercent: 3
+  collidesTeam: true
+  trailLength: 4
+  trailColor: "00ffff"
+  }
+  }
+  ]
+  
+      alwaysUnlocked: true
+}
