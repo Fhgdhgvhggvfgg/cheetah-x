@@ -44,39 +44,91 @@ Timer.schedule(() => {
 //================================================================
 
 var active = false;
-var table;
+var editorMenuTable1; // جدول الزر الأول
+var editorMenuTable2; // جدول الزر الثاني
+var phoValue = 0; // متغير عالمي ومؤقت يبدأ من الصفر
 
-function newTable() {
-    let t = new Table();
-    t.bottom().left();
-    t.table(Tex.pane, t => {
-        let b = new Button(Styles.none);
-        let icon = new TextureRegionDrawable(Blocks.switchBlock.uiIcon);
-        b.button(icon, () => {});
-        t.add(b).size(50, 50);
+// --- دالة إنشاء وتحديد إحداثيات الأزرار ---
+function createEditorMenus() {
+    
+let menu1 = new Table();
+menu1.setFillParent(true); // يجعل الجدول يمتد على كامل الشاشة لتفعيل المحاذاة بدقة
+menu1.top().left();       // محاذاة العناصر إلى الأعلى واليسار
+
+menu1.table(Tex.pane, t => {
+    let bPho = new Button(Styles.none);
+    let iconPho = new TextureRegionDrawable(Icon.add);
+    bPho.button(iconPho, () => {
+        phoValue = (phoValue + 1) % 3;
+    });
+    t.add(bPho).size(50, 50);
+});
+
+menu1.visibility = () => {
+    return Vars.ui.hudfrag.shown && 
+           !Vars.ui.consolefrag.shown() && 
+           !Vars.ui.minimapfrag.shown() && 
+           !Vars.net.client();
+};
+
+
+    // --- 2. الزر الثاني (زر وضع التحرير) ---
+    let menu2 = new Table();
+    menu2.bottom().left();
+    
+    menu2.table(Tex.pane, t => {
+        let bEdit = new Button(Styles.none);
+        let iconEdit = new TextureRegionDrawable(Blocks.switchBlock.uiIcon);
+        bEdit.button(iconEdit, () => {
+            if (Vars.net.client()) return;
+            active = !active;
+            Vars.state.rules.editor = active;
+        });
+        t.add(bEdit).size(50, 50);
     });
 
-    t.visibility = () => {
-        return Vars.ui.hudfrag.shown && !Vars.ui.consolefrag.shown() && !Vars.ui.minimapfrag.shown() && !Vars.net.client();
+    menu2.visibility = () => {
+        return Vars.ui.hudfrag.shown && 
+               !Vars.ui.consolefrag.shown() && 
+               !Vars.ui.minimapfrag.shown() && 
+               !Vars.net.client();
     };
 
-    t.clicked(() => {
-        if (Vars.net.client()) return;
-        active = !active;
-        Vars.state.rules.editor = active;
-    });
-    return t;
+    // إرجاع كلا الجدولين في مصفوفة أو كائن للتحكم بهم
+    return { menu1: menu1, menu2: menu2 };
 }
 
+// --- استدعاء القوائم عند تحميل العالم وتحديد إحداثيات كل زر على حدة ---
 Events.on(WorldLoadEvent, () => {
     active = false;
-    try { Vars.ui.hudGroup.removeChild(table); } catch(e) {}
-    table = newTable();
+    
+    // إزالة القوائم القديمة إن وجدت
+    try { 
+        if (editorMenuTable1 != null) Vars.ui.hudGroup.removeChild(editorMenuTable1); 
+        if (editorMenuTable2 != null) Vars.ui.hudGroup.removeChild(editorMenuTable2); 
+    } catch(e) {}
+
+    // إنشاء الجداول الجديدة
+    let menus = createEditorMenus();
+    editorMenuTable1 = menus.menu1;
+    editorMenuTable2 = menus.menu2;
+    
     if (!Vars.state.rules.editor) {
-        Vars.ui.hudGroup.addChild(table);
+        Vars.ui.hudGroup.addChild(editorMenuTable1);
+        Vars.ui.hudGroup.addChild(editorMenuTable2);
     }
-    try { table.setPosition(0, 230); } catch(e) {}
+    
+    // --- ضبط إحداثيات كل زر بشكل مستقل تماماً ---
+    try { 
+        // إحداثيات الزر الأول (مثال: x = 0, y = 230)
+        editorMenuTable1.setPosition(340, -330); 
+        
+        // إحداثيات الزر الثاني (مثال: x = 60, y = 230 بجانبه، أو أي إحداثيات أخرى تريدها)
+        editorMenuTable2.setPosition(0, 230); 
+    } catch(e) {}
 });
+
+
 
 //===================================================================
 
@@ -155,15 +207,33 @@ Events.on(ClientLoadEvent, function() {
             if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-keven")) {
                 
                 // استخدام نفس الأمر مباشرة داخل الجدول
+                if (phoValue == 0)
+                {
                 iconTable.image(Core.atlas.find("cheetah-x-keven_p"))
+                        .size(si)
+                      .padLeft(left)
+                      .padTop(top);              
+                } else if (phoValue == 1){
+                iconTable.image(Core.atlas.find("cheetah-x-keven_p2"))
+                       .size(si)
+                      .padLeft(left)
+                      .padTop(top);               
+                } else {
+                	iconTable.image(Core.atlas.find("cheetah-x-keven_p3"))
                       .size(si)
                       .padLeft(left)
-                      .padTop(top);
-                      
+                      .padTop(top);                
+                }
                                       iconTable.image(Core.atlas.find("cheetah-x-keven-name"))
                       .size(si,siy)
                       .padLeft(left - 200)
                       .padTop(top + 245);
+                            
+                   iconTable.image(Core.atlas.find("cheetah-x-oc_p"))
+                  .size(80)
+                  .padLeft(0)
+                  .padTop(180);
+                  
             }else if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-jeff")) {
                 
                 // استخدام نفس الأمر مباشرة داخل الجدول
@@ -247,14 +317,33 @@ Events.on(ClientLoadEvent, function() {
             }else if(playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-asia")) {
                 
                 // استخدام نفس الأمر مباشرة داخل الجدول
+                if (phoValue == 0)
+                {
                 iconTable.image(Core.atlas.find("cheetah-x-asia_p"))
+                        .size(si)
+                      .padLeft(left)
+                      .padTop(top);              
+                } else if (phoValue == 1){
+                iconTable.image(Core.atlas.find("cheetah-x-asia_p2"))
+                       .size(si)
+                      .padLeft(left)
+                      .padTop(top);               
+                } else {
+                	iconTable.image(Core.atlas.find("cheetah-x-asia_p3"))
                       .size(si)
                       .padLeft(left)
-                      .padTop(top);
+                      .padTop(top);                
+                }
                                       iconTable.image(Core.atlas.find("cheetah-x-asia-name"))
                       .size(si,siy)
                       .padLeft(left - 200)
                       .padTop(top + 245);
+                      
+                    iconTable.image(Core.atlas.find("cheetah-x-oc_p"))
+                  .size(80)
+                  .padLeft(0)
+                  .padTop(180);                     
+                      
             }else if(playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-lisa")) {
                 
                 // استخدام نفس الأمر مباشرة داخل الجدول
