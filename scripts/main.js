@@ -56,13 +56,24 @@ menu1.setFillParent(true); // يجعل الجدول يمتد على كامل ا�
 menu1.top().left();       // محاذاة العناصر إلى الأعلى واليسار
 
 menu1.table(Tex.pane, t => {
-    let bPho = new Button(Styles.none);
     let iconPho = new TextureRegionDrawable(Icon.add);
-    bPho.button(iconPho, () => {
-        phoValue = (phoValue + 1) % 3;
-    });
-    t.add(bPho).size(50, 50);
+    
+    let bPho = new Button(Styles.none);
+    bPho.button(iconPho, () => { phoValue = 0; });
+    t.add(bPho).size(50, 50).padBottom(20); // <--- إضافة مسافة من الأسفل
+    t.row();
+    
+    let bPho2 = new Button(Styles.none);
+    bPho2.button(iconPho, () => { phoValue = 1; });
+    t.add(bPho2).size(50, 50).padBottom(20); // <--- إضافة مسافة من الأسفل
+    t.row();
+    
+    let bPho3 = new Button(Styles.none);
+    bPho3.button(iconPho, () => { phoValue = 2; });
+    t.add(bPho3).size(50, 50); // الزر الأخير لا يحتاج مسافة تحته
 });
+
+
 
 menu1.visibility = () => {
     return Vars.ui.hudfrag.shown && 
@@ -229,10 +240,6 @@ Events.on(ClientLoadEvent, function() {
                       .padLeft(left - 200)
                       .padTop(top + 245);
                             
-                   iconTable.image(Core.atlas.find("cheetah-x-oc_p"))
-                  .size(80)
-                  .padLeft(0)
-                  .padTop(180);
                   
             }else if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-jeff")) {
                 
@@ -339,10 +346,6 @@ Events.on(ClientLoadEvent, function() {
                       .padLeft(left - 200)
                       .padTop(top + 245);
                       
-                    iconTable.image(Core.atlas.find("cheetah-x-oc_p"))
-                  .size(80)
-                  .padLeft(0)
-                  .padTop(180);                     
                       
             }else if(playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-lisa")) {
                 
