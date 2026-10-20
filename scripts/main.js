@@ -208,6 +208,8 @@ Events.on(ClientLoadEvent, function() {
     iconTable.update(function() {
         iconTable.clearChildren();
         
+        if (Vars.ui.hudfrag.shown){
+           	
         if (Vars.ui != null && Vars.player != null && Vars.player.unit() != null) {
             var playerUnit = Vars.player.unit();
             let si = 200;
@@ -401,6 +403,7 @@ Events.on(ClientLoadEvent, function() {
                       .padTop(top + 245);
             }
       
+        }
         }
     });
 
