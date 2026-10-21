@@ -1,0 +1,115 @@
+name: gama cannon
+description: ""
+type: PowerTurret
+rotateSpeed: 8
+"outlineColor": "00000000"
+reload: 240
+targetGround: true
+shootWarmupSpeed: 10
+targetAir: true
+range: 550
+recoil: 0
+shootSound: cannon
+size: 6
+health: 13000
+targetHealing: true
+
+drawer: {
+  type: DrawTurret
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: -42
+moveRot: 0
+moveY: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.4
+growY: -0.4
+}
+  ]
+  }
+  
+ 
+xRand: 1
+shootY: 20
+            shoot: {
+firstShotDelay: 50
+}
+consumes: {
+power: 1
+coolant: {
+  type: ConsumeCoolant
+  allowGas: false
+  allowLiquid: true
+  amount: 0.2
+}
+}
+
+
+shootType: {
+      type: BasicBulletType
+        lightRadius: 3
+        lightColor: C6FF6BFF
+        damage: 1000
+        scaleVelocity: true
+        splashDamage: 20
+        splashDamageRadius: 20
+        height: 30
+        width: 30
+        speed: 23
+        lifetime: 18
+        shrinkX: 0
+        shrinkY: 0
+        trailChance: 2
+        trailParam: 2
+        trailLength: 2
+        trailColor: 00ffff
+        trailWidth: 5
+        fragBullets: 20
+        fragVelocityMin: 0.2
+        fragRandomSpread: 60
+        fragSpread: 0
+    	splashDamageRadius: 60
+		splashDamage: 1000
+        fragLifeMin: 0.8
+    
+		                        fragBullet: {
+      type: BasicBulletType
+        lightRadius: 3
+        lightColor: C6FF6BFF
+        damage: 250
+        scaleVelocity: true
+        splashDamage: 250
+        splashDamageRadius: 20
+        height: 6
+        width: 6
+        speed: 18
+        lifetime: 10
+        shrinkX: 0
+        shrinkY: 0
+        trailChance: 2
+        trailParam: 10
+        trailLength: 19
+        trailColor: 00ffff
+        trailWidth: 5
+        }
+}
+alwaysUnlocked: true
+requirements: [
+  cristal/1000
+  gold/1800
+  obsidian/2500
+  elixir/100
+  ram/80
+]
+
+category: turret
+
+
