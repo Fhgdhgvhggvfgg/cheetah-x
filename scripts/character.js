@@ -3,6 +3,40 @@ var editorMenuTable1; // جدول الزر الأول
 var editorMenuTable2; // جدول الزر الثاني
 var phoValue = 0; // متغير عالمي ومؤقت يبدأ من الصفر
 
+// دالة عرض النافذة الترحيبية / التعليمات بشكل مستقل
+function showMyDialog() {
+    const d = new BaseDialog("hello");
+    
+    d.cont.pane(p => {
+        p.image(Core.atlas.find("cheetah-x-welcome_logo")).size(600, 600).pad(10).row();
+        p.add("The mod will be ready soon. You just have to wait a little longer.").row();
+        
+        const studyTex = Core.atlas.find("cheetah-x-study");
+        p.image(studyTex).size(600, 600).pad(10).row();
+        p.add("How to collect gold.").row();
+        
+        const studyTex2 = Core.atlas.find("cheetah-x-study2");
+        p.image(studyTex2).size(600, 600).pad(10).row();
+        p.add("The way the game starts. py ram").row();
+        
+        const studyTexD = Core.atlas.find("cheetah-x-developer");
+        p.image(studyTexD).size(600, 600).pad(10).row();
+        p.add("just for developers").row();
+        
+        const studyTex3 = Core.atlas.find("cheetah-x-study3");
+        p.image(studyTex3).size(600, 600).pad(10).row();
+        
+        // أزرار الروابط الخارجية
+        p.button("keven 01", Icon.link, () => Core.app.openURI("https://fhgdhgvhggvfgg.github.io/Cpe-cheetah-/warehouse/")).size(160, 80).padTop(-1100).padLeft(-500).row();
+        p.button("mindustry", Icon.link, () => Core.app.openURI("https://fhgdhgvhggvfgg.github.io/Cpe-cheetah-/cheetah-m/")).size(160, 80).padTop(-1100).padLeft(-150).row();
+        p.add("come to our page for the latest news").row();
+    }).size(1000, 600);
+    
+    d.buttons.button("gooo to game", () => d.hide()).size(300, 100);
+    d.show();
+}
+
+
 // --- دالة إنشاء وتحديد إحداثيات الأزرار ---
 function createEditorMenus() {
     
@@ -23,9 +57,15 @@ menu1.table(Tex.pane, t => {
     t.add(bPho2).size(50, 50).padBottom(20); // <--- إضافة مسافة من الأسفل
     t.row();
     
-    let bPho3 = new Button(Styles.none);
+        let bPho3 = new Button(Styles.none);
     bPho3.button(iconPho, () => { phoValue = 2; });
-    t.add(bPho3).size(50, 50); // الزر الأخير لا يحتاج مسافة تحته
+    t.add(bPho3).size(50, 50).padBottom(20); // <--- إضافة مسافة من الأسفل
+    t.row();
+    
+    let bPho4 = new Button(Styles.none);
+    bPho4.button(new TextureRegionDrawable(Icon.info), () => { showMyDialog(); });
+    t.add(bPho4).size(50, 50);
+
 });
 
 
