@@ -2,14 +2,31 @@ var active = false;
 var editorMenuTable1; // جدول الزر الأول
 var editorMenuTable2; // جدول الزر الثاني
 var phoValue = 0; // متغير عالمي ومؤقت يبدأ من الصفر
+var uip = 1;
 
 // دالة عرض النافذة الترحيبية / التعليمات بشكل مستقل
 function showMyDialog() {
     const d = new BaseDialog("hello");
     
+    
     d.cont.pane(p => {
+    	
+            p.button("no photo", Icon.add, () => {
+        	    if (uip == 0) { 
+            uip = 1;
+            }else{
+            	uip = 0;
+            }
+            
+            // يمكنك طباعة النتيجة في نافذة أو سجل اللعبة للتأكد
+            Log.info("New Math Result (phoValue): " + phoValue);
+        }).size(200, 80).pad(10).row();
+    
         p.image(Core.atlas.find("cheetah-x-welcome_logo")).size(600, 600).pad(10).row();
         p.add("The mod will be ready soon. You just have to wait a little longer.").row();
+        
+                // زر لتنفيذ عملية رياضية (تغيير القيمة بشكل دائرى رياضياً باستخدام باقي القسمة)
+        
         
         const studyTex = Core.atlas.find("cheetah-x-study");
         p.image(studyTex).size(600, 600).pad(10).row();
@@ -32,7 +49,33 @@ function showMyDialog() {
         p.add("come to our page for the latest news").row();
     }).size(1000, 600);
     
-    d.buttons.button("gooo to game", () => d.hide()).size(300, 100);
+        d.buttons.button("gooo to game", () => {
+        d.hide(); // إغلاق النافذة
+        
+        // إزالة القوائم القديمة من الشاشة
+        try { 
+            if (editorMenuTable1 != null) Vars.ui.hudGroup.removeChild(editorMenuTable1); 
+            if (editorMenuTable2 != null) Vars.ui.hudGroup.removeChild(editorMenuTable2); 
+        } catch(e) {}
+
+        // إنشاء الجداول الجديدة وتحديثها بالقيمة الحالية
+        let menus = createEditorMenus();
+        editorMenuTable1 = menus.menu1;
+        editorMenuTable2 = menus.menu2;
+        
+        if (!Vars.state.rules.editor) {
+            Vars.ui.hudGroup.addChild(editorMenuTable1);
+            Vars.ui.hudGroup.addChild(editorMenuTable2);
+        }
+        
+        // ضبط إحداثيات الأزرار في مكانها الصحيح
+        try { 
+            editorMenuTable1.setPosition(340, -330); 
+            editorMenuTable2.setPosition(0, 230); 
+        } catch(e) {}
+        
+    }).size(300, 100);
+
     d.show();
 }
 
@@ -47,10 +90,13 @@ menu1.top().left();       // محاذاة العناصر إلى الأعلى و�
 menu1.table(Tex.pane, t => {
     let iconPho = new TextureRegionDrawable(Icon.add);
     
+    if (uip == 1) {
+    
     let bPho = new Button(Styles.none);
     bPho.button(iconPho, () => { phoValue = 0; });
     t.add(bPho).size(50, 50).padBottom(20); // <--- إضافة مسافة من الأسفل
     t.row();
+    
     
     let bPho2 = new Button(Styles.none);
     bPho2.button(iconPho, () => { phoValue = 1; });
@@ -61,6 +107,7 @@ menu1.table(Tex.pane, t => {
     bPho3.button(iconPho, () => { phoValue = 2; });
     t.add(bPho3).size(50, 50).padBottom(20); // <--- إضافة مسافة من الأسفل
     t.row();
+    }
     
     let bPho4 = new Button(Styles.none);
     bPho4.button(new TextureRegionDrawable(Icon.info), () => { showMyDialog(); });
@@ -152,7 +199,8 @@ Events.on(ClientLoadEvent, function() {
             let siy = 96;
             let left = 0;
             let top = 150;
-            
+                if (uip == 1) {
+                	
             if (playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-keven")) {
                 
                 // استخدام نفس الأمر مباشرة داخل الجدول
@@ -350,6 +398,7 @@ Events.on(ClientLoadEvent, function() {
                       .size(si,siy)
                       .padLeft(left - 200)
                       .padTop(top + 245);
+            }
             }
       
         }
