@@ -77,80 +77,71 @@ function showMyDialog() {
 
 
 // --- دالة إنشاء وتحديد إحداثيات الأزرار ---
+// --- دالة إنشاء وتحديد إحداثيات الأزرار ---
 function createEditorMenus() {
     
 let menu1 = new Table();
-menu1.setFillParent(true); // يجعل الجدول يمتد على كامل الشاشة لتفعيل المحاذاة بدقة
-menu1.top().left();       // محاذاة العناصر إلى الأعلى واليسار
+menu1.setFillParent(true);
+menu1.top().left();
 
 menu1.table(Tex.pane, t => {
     let iconPho = new TextureRegionDrawable(Icon.add);
     
     if (uip == 1) {
-    
-    let bPho = new Button(Styles.none);
-    bPho.button(iconPho, () => { phoValue = 0; });
-    t.add(bPho).size(50, 50).padBottom(20); // <--- إضافة مسافة من الأسفل
-    t.row();
-    
-    
-    let bPho2 = new Button(Styles.none);
-    bPho2.button(iconPho, () => { phoValue = 1; });
-    t.add(bPho2).size(50, 50).padBottom(20); // <--- إضافة مسافة من الأسفل
-    t.row();
-    
+        let bPho = new Button(Styles.none);
+        bPho.button(iconPho, () => { phoValue = 0; });
+        t.add(bPho).size(50, 50).padBottom(20);
+        t.row();
+        
+        let bPho2 = new Button(Styles.none);
+        bPho2.button(iconPho, () => { phoValue = 1; });
+        t.add(bPho2).size(50, 50).padBottom(20);
+        t.row();
+        
         let bPho3 = new Button(Styles.none);
-    bPho3.button(iconPho, () => { phoValue = 2; });
-    t.add(bPho3).size(50, 50).padBottom(20); // <--- إضافة مسافة من الأسفل
-    t.row();
+        bPho3.button(iconPho, () => { phoValue = 2; });
+        t.add(bPho3).size(50, 50).padBottom(20);
+        t.row();
     }
-
 });
 
-
-
+// إزالة شرط عدم الاهتمام بالأونلاين (!Vars.net.client) لكي يظهر الجدول حتى في اللعب الجماعي
 menu1.visibility = () => {
     return Vars.ui.hudfrag.shown && 
            !Vars.ui.consolefrag.shown() && 
-           !Vars.ui.minimapfrag.shown() && 
-           !Vars.net.client();
+           !Vars.ui.minimapfrag.shown();
 };
 
-
-    // --- 2. الزر الثاني (زر وضع التحرير) ---
+    // --- 2. الزر الثاني (زر وضع التحرير أو الإعدادات) ---
     let menu2 = new Table();
     menu2.bottom().left();
     
     menu2.table(Tex.pane, t => {
-    	
         let bEdit = new Button(Styles.none);
         let iconEdit = new TextureRegionDrawable(Blocks.switchBlock.uiIcon);
         bEdit.button(iconEdit, () => {
+            // في الأونلاين قد لا تمتلك صلاحيات التعديل، لذا يتم وضع حماية بسيطة هنا إن أردت
             if (Vars.net.client()) return;
             active = !active;
             Vars.state.rules.editor = active;
         });
         t.add(bEdit).size(50, 50);
         
-    let bPho4 = new Button(Styles.none);
-    bPho4.button(new TextureRegionDrawable(Icon.info), () => { showMyDialog(); });
-    bPho4.add("setting").padLeft(6); 
-    t.add(bPho4).size(160, 50); 
-
-
-        
+        let bPho4 = new Button(Styles.none);
+        bPho4.button(new TextureRegionDrawable(Icon.info), () => { showMyDialog(); });
+        bPho4.add("setting").padLeft(6); 
+        t.add(bPho4).size(160, 50); 
     });
 
     menu2.visibility = () => {
         return Vars.ui.hudfrag.shown && 
                !Vars.ui.consolefrag.shown() && 
-               !Vars.ui.minimapfrag.shown() && 
-               !Vars.net.client();
+               !Vars.ui.minimapfrag.shown();
     };
 
-    // إرجاع كلا الجدولين في مصفوفة أو كائن للتحكم بهم
     return { menu1: menu1, menu2: menu2 };
 }
+
 
 // --- استدعاء القوائم عند تحميل العالم وتحديد إحداثيات كل زر على حدة ---
 Events.on(WorldLoadEvent, () => {
