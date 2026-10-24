@@ -55,23 +55,19 @@ function showMyDialog() {
         // إزالة القوائم القديمة من الشاشة
         try { 
             if (editorMenuTable1 != null) Vars.ui.hudGroup.removeChild(editorMenuTable1); 
-            if (editorMenuTable2 != null) Vars.ui.hudGroup.removeChild(editorMenuTable2); 
         } catch(e) {}
 
         // إنشاء الجداول الجديدة وتحديثها بالقيمة الحالية
         let menus = createEditorMenus();
-        editorMenuTable1 = menus.menu1;
-        editorMenuTable2 = menus.menu2;
+        editorMenuTable1 = menus.menu1;;
         
         if (!Vars.state.rules.editor) {
             Vars.ui.hudGroup.addChild(editorMenuTable1);
-            Vars.ui.hudGroup.addChild(editorMenuTable2);
         }
         
         // ضبط إحداثيات الأزرار في مكانها الصحيح
         try { 
             editorMenuTable1.setPosition(340, -330); 
-            editorMenuTable2.setPosition(0, 230); 
         } catch(e) {}
         
     }).size(300, 100);
