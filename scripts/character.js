@@ -104,10 +104,6 @@ menu1.table(Tex.pane, t => {
     t.add(bPho3).size(50, 50).padBottom(20); // <--- إضافة مسافة من الأسفل
     t.row();
     }
-    
-    let bPho4 = new Button(Styles.none);
-    bPho4.button(new TextureRegionDrawable(Icon.info), () => { showMyDialog(); });
-    t.add(bPho4).size(50, 50);
 
 });
 
@@ -126,6 +122,7 @@ menu1.visibility = () => {
     menu2.bottom().left();
     
     menu2.table(Tex.pane, t => {
+    	
         let bEdit = new Button(Styles.none);
         let iconEdit = new TextureRegionDrawable(Blocks.switchBlock.uiIcon);
         bEdit.button(iconEdit, () => {
@@ -134,6 +131,14 @@ menu1.visibility = () => {
             Vars.state.rules.editor = active;
         });
         t.add(bEdit).size(50, 50);
+        
+    let bPho4 = new Button(Styles.none);
+    bPho4.button(new TextureRegionDrawable(Icon.info), () => { showMyDialog(); });
+    bPho4.add("setting").padLeft(6); 
+    t.add(bPho4).size(160, 50); 
+
+
+        
     });
 
     menu2.visibility = () => {
