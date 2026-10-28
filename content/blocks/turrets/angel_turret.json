@@ -75,6 +75,7 @@ ammoTypes: {
         height: 15
         width: 15
         "status": "burn"
+        statusDuration: 180
         lifetime: 15
          splashDamageRadius: 30
 		splashDamage: 20

@@ -1,0 +1,105 @@
+name: ice cristal
+description: ""
+type: PowerTurret
+rotateSpeed: 8
+"outlineColor": "00000000"
+reload: 300
+targetGround: true
+"recoilTime": 13,
+shootWarmupSpeed: 10
+targetAir: true
+range: 250
+recoil: 0
+shootSound: air
+size: 5
+health: 5100
+targetHealing: true
+
+drawer: {
+  type: DrawTurret
+    "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: -36
+moveRot: 0
+moveY: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+growX: -0.8
+growY: -0.8
+}
+
+{
+  "type": "RegionPart",
+  "suffix": "-ex",
+  "mirror": false,
+  "under": false,
+  "outline": false,
+  "x": 0,
+  "y": 0,
+  moveRot: 160
+  "progress": "recoil",
+  "growProgress": "recoil",
+  "color": "ffffff00",
+  "colorTo": "ffffffff",
+  "growX": 16,
+  "growY": 16,
+  "blending": "additive"
+}
+
+  ]
+  }
+  
+ 
+xRand: 1
+shootY: 3
+            shoot: {
+firstShotDelay: 50
+}
+consumes: {
+power: 1
+coolant: {
+  type: ConsumeCoolant
+  allowGas: false
+  allowLiquid: true
+  amount: 0.2
+}
+}
+
+
+shootType: {
+  type: BasicBulletType
+  damage: 60
+  speed: 0
+  height: 7
+  width: 2
+  lifetime: 1
+  
+  
+  fragOnHit: true
+  fragBullets: 50
+  splashDamageRadius: 350
+status: ice
+statusDuration: 160
+  splashDamage: 60
+  hitEffect: blastExplosion
+  
+  trailLength: 4
+  trailColor: "00ffff"
+}
+alwaysUnlocked: true
+requirements: [
+  cristal/340
+  elixir/240
+  gold/45
+]
+
+category: turret
+
+
