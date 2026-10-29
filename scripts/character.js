@@ -4,8 +4,28 @@ var editorMenuTable2; // جدول الزر الثاني
 var phoValue = 0; // متغير عالمي ومؤقت يبدأ من الصفر
 var uip = 1;
 
+Events.on(ClientLoadEvent, () => {
+    let table = new Table(); // تم تعريف المتغير بشكل صحيح لتجنب انهيار اللعبة
+    
+    Time.run(60, () => {
+        Vars.ui.menuGroup.fill(Cons(t => {           
+            t.clear(); // تنظيف الطبقات القديمة 
+            t.left().bottom(); // نقطة الصفر أسفل يسار
+            
+            let bPho4 = new Button(Styles.none);
+            bPho4.button(new TextureRegionDrawable(Icon.info), () => { menuWelcome(); });
+            bPho4.add("setting").padLeft(6); 
+            t.add(bPho4).size(160, 50).padTop(-240).padLeft(50);
+        }));
+    });
+});
+
+
+
+
+
 // دالة عرض النافذة الترحيبية / التعليمات بشكل مستقل
-function showMyDialog() {
+function menuWelcome() {
     const d = new BaseDialog("hello");
     
     
@@ -77,7 +97,6 @@ function showMyDialog() {
 
 
 // --- دالة إنشاء وتحديد إحداثيات الأزرار ---
-// --- دالة إنشاء وتحديد إحداثيات الأزرار ---
 function createEditorMenus() {
     
 let menu1 = new Table();
@@ -128,7 +147,7 @@ menu1.visibility = () => {
         t.add(bEdit).size(50, 50);
         
         let bPho4 = new Button(Styles.none);
-        bPho4.button(new TextureRegionDrawable(Icon.info), () => { showMyDialog(); });
+        bPho4.button(new TextureRegionDrawable(Icon.info), () => { menuWelcome(); });
         bPho4.add("setting").padLeft(6); 
         t.add(bPho4).size(160, 50); 
     });
