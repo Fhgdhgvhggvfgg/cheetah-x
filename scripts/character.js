@@ -401,10 +401,23 @@ Events.on(ClientLoadEvent, function() {
             }else if(playerUnit.type != null && playerUnit.type.name.endsWith("cheetah-x-lisa")) {
                 
                 // استخدام نفس الأمر مباشرة داخل الجدول
+                if (phoValue == 0)
+                {
                 iconTable.image(Core.atlas.find("cheetah-x-lisa_p"))
+                        .size(si)
+                      .padLeft(left)
+                      .padTop(top);              
+                } else if (phoValue == 1){
+                iconTable.image(Core.atlas.find("cheetah-x-lisa_p2"))
+                       .size(si)
+                      .padLeft(left)
+                      .padTop(top);               
+                } else {
+                	iconTable.image(Core.atlas.find("cheetah-x-lisa_p3"))
                       .size(si)
                       .padLeft(left)
-                      .padTop(top);
+                      .padTop(top);                
+                }
                                       iconTable.image(Core.atlas.find("cheetah-x-Plisa-name"))
                       .size(si,siy)
                       .padLeft(left - 200)
