@@ -27,52 +27,11 @@ abilities:[
 
 ]
 
-    "parts": [
-{
-type: RegionPart
-suffix: -photo
-mirror: false
-under: false
-outline: false
-"layerOffset": +0.1, 
-x: 0
-y: -110
-moveY: 0
-moveX: 0
-moveRot: 0
-progress: warmup
-color: ffffff00
-colorTo: ffffffb3
-scl: 0.1
-growX: -0.55
-growY: -0.55
-
-}
-
-    {
-type: RegionPart
-suffix: -so
-mirror: true
-under: false
-outline: false
-"layerOffset": +0.1, 
-x: 3
-y: -1
-moveY: 0
-moveX: 0
-moveRot: 60
-progress: recoil
-color: ffffffff
-scl: 0.1
-growX: 0
-growY: 0
-
-}
-  ]
 
 "weapons":[
 
 	{
+	shootWarmupSpeed: 10
       "type": "RepairBeamWeapon",
       "name": "repair-point",
       "mirror": "false",
@@ -130,10 +89,56 @@ growY: 0
 
     }
     
+    {
+    name: aircraft_p
+    shootWarmupSpeed: 10
+    
+        "parts": [
+{
+type: RegionPart
+suffix: -photo
+mirror: false
+under: false
+outline: false
+x: 0
+y: -110
+moveY: 0
+moveX: 0
+moveRot: 0
+progress: warmup
+color: ffffff00
+colorTo: ffffffb3
+scl: 0.1
+growX: -0.55
+growY: -0.55
+
+}
+
+  ]
+    
+    
+        rotate: false
+        mirror: false
+        x: 0
+        y: 0
+        shootY: 0
+        reload: 700
+        recoil: 1
+        ejectEffect: casing2
+        shootSound: dgfhfrhgddfhfhfyh
+        
+        bullet: {
+speed: 0
+lifetime: 0
+       }
+        
+
+    }
+    
 
 {
 shootWarmupSpeed: 10
-"layerOffset": +0.2, 
+"layerOffset": 0.2, 
 "rotateSpeed": 3,
 name: aircraft_cannon
 y: 0
