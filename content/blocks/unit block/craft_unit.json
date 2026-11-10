@@ -131,7 +131,7 @@
 "unit":"egg_c",
 "requirements":[
 "ram/1"
-"gold/2"
+"gold/1"
 ],
 "time":1500
 }

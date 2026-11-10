@@ -11,7 +11,7 @@
 "itemCapacity":40,
 "name": "craft cristal",
 "outputItem":{"item":"cristal","amount":1},
-"requirements":[{"item":"ram","amount":15}],
+"requirements":[{"item":"ram","amount":18}],
 "size":3
 "type": "GenericCrafter",
 

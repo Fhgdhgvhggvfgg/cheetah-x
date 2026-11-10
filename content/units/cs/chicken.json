@@ -2,7 +2,7 @@
 "description": "",
 "name":"chicken",
 "type": "tank",
-"hitSize": 5,
+"hitSize": 8,
 accel: 0.05
 flying: true
 drag: 0.07
@@ -29,7 +29,7 @@ weapons: [
         x: 0
         y: 0
         shootY: 0
-        reload: 450
+        reload: 280
         recoil: 1
         ejectEffect: casing2
         shootSound: chicken
@@ -69,7 +69,7 @@ abilities:[
       "spawnX": 0,
       "spawnY": -2,
       "unit": "egg_c",
-      "spawnTime": 3800
+      "spawnTime": 5800
     },
 ],
 "treadRects": [

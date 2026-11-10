@@ -1,7 +1,7 @@
 {
 "name": "chicken home",
 "category":"units",
-
+"health": 1,
 "hasPower": false
 "outputsPower": false
 
