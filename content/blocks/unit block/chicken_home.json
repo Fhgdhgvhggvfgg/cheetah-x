@@ -1,0 +1,31 @@
+{
+"name": "chicken home",
+"category":"units",
+
+"hasPower": false
+"outputsPower": false
+
+  consumes: {
+    
+    }
+    
+    
+"plans":[
+
+
+{
+"unit":"chicken",
+"requirements":[
+"ram/0"
+],
+"time":50
+}
+
+],
+
+
+"requirements":["cristal/0"],
+"size":2,
+"type":"UnitFactory",
+    alwaysUnlocked: true
+}

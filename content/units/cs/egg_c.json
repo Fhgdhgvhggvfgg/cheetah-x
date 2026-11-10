@@ -1,0 +1,23 @@
+{
+alwaysUnlocked: true
+accel: 0.1
+drag: 0.1
+"template": "ErekirUnitType",
+canAttack:true,
+coreUnitDock:true,
+useUnitCap: true
+flying:false,
+defaultCommand: enterPayload
+health:3,
+outlineColor: 00000000
+lifetime: 1800,
+hitSize: 2
+  "engineSize": 0, 
+localisedName: "reformer",
+speed: 0
+rotateSpeed: 0
+"type":"missile",
+
+
+alwaysUnlocked: true
+}

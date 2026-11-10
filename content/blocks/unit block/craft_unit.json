@@ -14,14 +14,6 @@
 
 
 {
-"unit":"gold_alien",
-"requirements":[
-"elixir/20"
-],
-"time":500
-}
-
-{
 "unit":"lever",
 "requirements":[
 "obsidian/79"
@@ -135,12 +127,20 @@
 "time":1300
 }
 
+{
+"unit":"egg_c",
+"requirements":[
+"ram/1"
+"gold/2"
+],
+"time":1500
+}
+
 ],
 
 
 "requirements":["cristal/15"],
 "size":4,
 "type":"UnitFactory",
-"unitCapModifier":5,
     alwaysUnlocked: true
 }

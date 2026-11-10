@@ -1,0 +1,18 @@
+{
+  "type": "PayloadDeconstructor",
+  "name": "market",
+  "description": "",
+  "size": 4,
+  "health":3,
+  "itemCapacity": 1000,
+  "deconstructSpeed": 6,
+  "hasPower": true,
+  "maxPayloadSize": 19,
+  "consumes": { },
+  alwaysUnlocked: true
+  "regionSuffix": "-dark",
+  "category": "units",
+  "requirements": [
+    "ram/0",
+  ]
+}
