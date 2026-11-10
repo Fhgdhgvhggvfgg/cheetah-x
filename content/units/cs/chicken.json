@@ -16,13 +16,60 @@ drag: 0.07
 "itemCapacity": 0,
 "outlineColor": "00000000",
 
+weapons: [
+    {
+    
+    
+                   shoot: {
+                     shots: 1
+      shotDelay: 0
+}
+        rotate: true
+        mirror: false
+        x: 0
+        y: 0
+        shootY: 0
+        reload: 450
+        recoil: 1
+        ejectEffect: casing2
+        shootSound: chicken
+        
+                        bullet: {
+      type: BasicBulletType
+        sprite: circle-bullet
+        lightRadius: 10
+        lightColor: FF0000
+        damage: 1
+        scaleVelocity: true
+        splashDamage: 1
+        splashDamageRadius: 1
+        height: 6
+        width: 6
+        speed: 0
+        lifetime: 4
+                  "fragBullets": 1
+                  
+  "range": 30,
+  "maxRange": 30,
+                  
+                fragBullet: {
+      type: BasicBulletType
+        spawnUnit: egg_c
+       }
+       }
+        
+
+    }
+    
+],
+
 abilities:[
     {
       "type": "UnitSpawnAbility",
       "spawnX": 0,
       "spawnY": -2,
       "unit": "egg_c",
-      "spawnTime": 2400
+      "spawnTime": 3800
     },
 ],
 "treadRects": [
@@ -34,6 +81,6 @@ abilities:[
     }
   ],
   
-  
+     "deathSound": "chicken_die",
       alwaysUnlocked: true
 }

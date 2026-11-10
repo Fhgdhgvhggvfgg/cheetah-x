@@ -11,7 +11,7 @@ defaultCommand: enterPayload
 health:3,
 outlineColor: 00000000
 lifetime: 1800,
-hitSize: 2
+hitSize: 1
   "engineSize": 0, 
 localisedName: "reformer",
 speed: 0
