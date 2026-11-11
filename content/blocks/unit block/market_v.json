@@ -1,0 +1,19 @@
+{
+  "type": "PayloadDeconstructor",
+  "name": "market v",
+  "description": "",
+  "size": 4,
+  "health":800,
+  "itemCapacity": 1000,
+  "deconstructSpeed": 6,
+  "hasPower": true,
+  "maxPayloadSize": 19,
+  "consumes": { },
+  alwaysUnlocked: true
+  "regionSuffix": "-dark",
+  "category": "units",
+  "requirements": [
+    "cristal/4",
+    "gold/20",
+  ]
+}

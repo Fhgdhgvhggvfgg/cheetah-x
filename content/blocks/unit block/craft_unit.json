@@ -49,9 +49,11 @@
 }
 
 {
-"unit":"dron",
+"unit":"spider",
 "requirements":[
-"ram/8"
+"gold/8"
+"ram/3"
+"cristal/6"
 ],
 "time":80
 }
@@ -132,14 +134,23 @@
 "requirements":[
 "ram/1"
 "gold/1"
+"obsidian/1"
 ],
 "time":1500
 }
 
+{
+"unit":"minispider",
+"requirements":[
+"gold/10"
+"obsidian/2"
+],
+"time":80
+}
 ],
 
 
-"requirements":["cristal/15"],
+"requirements":["cristal/10", "gold/6"],
 "size":4,
 "type":"UnitFactory",
     alwaysUnlocked: true

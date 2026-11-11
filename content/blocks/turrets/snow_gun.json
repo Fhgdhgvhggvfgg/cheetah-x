@@ -1,0 +1,63 @@
+name: snow gun
+description: ""
+type: PowerTurret
+rotateSpeed: 8
+"outlineColor": "00000000"
+reload: 90
+targetGround: true
+shootWarmupSpeed: 10
+targetAir: true
+range: 100
+recoil: 0
+shootSound: fire_ball_a
+size: 1
+health: 500
+targetHealing: true
+
+drawer: {
+  type: DrawTurret
+
+  }
+  
+ 
+xRand: 1
+shootY: 3
+            shoot: {
+firstShotDelay: 50
+}
+consumes: {
+coolant: {
+  type: ConsumeCoolant
+  allowGas: false
+  allowLiquid: true
+  amount: 0.2
+}
+}
+
+
+shootType: {
+  type: BasicBulletType
+  damage: 30
+  speed: 6
+  height: 7
+  width: 2
+  lifetime: 13
+  
+  splashDamageRadius: 13
+  "status": "snow"
+  statusDuration: 180
+  splashDamage: 25
+  hitEffect: blastExplosion
+  
+  trailLength: 4
+  trailColor: "00ffff"
+}
+alwaysUnlocked: true
+requirements: [
+  obsidian/6
+  ram/4
+]
+
+category: turret
+
+

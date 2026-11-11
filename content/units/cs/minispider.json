@@ -1,0 +1,71 @@
+{
+  "singleTarget": true,
+  "template": "ErekirUnitType",
+  "localizedName": "spider",
+  buildRange:240,
+buildSpeed:5,
+itemCapacity: 70,
+canAttack:true,
+  "drawShields": false,
+  "research": { },
+  "lightRadius": 200,
+  "type": "legs",
+  "drownTimeMultiplier": 99999999999999999999,
+  "legCount": 6,
+  "legLength": 20,
+  "legSpeed": 0.5,
+  "legExtension": -7,
+  "legForwardScl": 0,
+  "legMoveSpace": 0.9,
+  "legPairOffset": 2,
+  "rotateSpeed": 5,
+  "speed": 2,
+  "accel": 0.4,
+  "drag": 0.4,
+  "aimDst": 340,
+  "outlineColor": "00000000",
+  "faceTarget": true,
+  "flying": false,
+  "health": 500,
+  "hitSize": 18,
+  "lowAltitude": true,
+  
+
+  
+  "weapons": [
+   {
+   buildingDamageMultiplier: 0.1
+    x: 0
+    y: 0
+    reload: 30
+    recoil: 0
+     "heatTime": 90,
+    "heatColor": "FFFFFF",
+    alternate: true
+    shootY: 10
+    mirror: false
+    rotate: false
+    shootSound: bolt
+       bullet: {
+      type: LaserBulletType
+        length: 160
+        width: 6
+        damage: 80
+        hitEffect: lightningShoot
+        shootEffect: lightningShoot
+        colors: [
+          8DEEEB
+          8DEEEB
+          FFFFFF
+        ],
+        sideAngle: -45
+        sideLength: 30
+        sideWidth: 3.4
+    }
+}
+
+
+  ]
+  
+      alwaysUnlocked: true
+}

@@ -29,7 +29,7 @@ weapons: [
         x: 0
         y: 0
         shootY: 0
-        reload: 280
+        reload: 60
         recoil: 1
         ejectEffect: casing2
         shootSound: chicken
