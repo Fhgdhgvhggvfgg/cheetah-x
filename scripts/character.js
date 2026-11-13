@@ -135,17 +135,18 @@ menu1.visibility = () => {
     let menu2 = new Table();
     menu2.bottom().left();
     
-    menu2.table(Tex.pane, t => {
+    menu2.table(Tex.pane, t => { 
+    if (!Vars.state.isCampaign()) {   
+    
         let bEdit = new Button(Styles.none);
         let iconEdit = new TextureRegionDrawable(Blocks.switchBlock.uiIcon);
         bEdit.button(iconEdit, () => {
-            // في الأونلاين قد لا تمتلك صلاحيات التعديل، لذا يتم وضع حماية بسيطة هنا إن أردت
             if (Vars.net.client()) return;
             active = !active;
             Vars.state.rules.editor = active;
         });
         t.add(bEdit).size(50, 50);
-        
+    }    
         let bPho4 = new Button(Styles.none);
         bPho4.button(new TextureRegionDrawable(Icon.info), () => { menuWelcome(); });
         bPho4.add("setting").padLeft(6); 
