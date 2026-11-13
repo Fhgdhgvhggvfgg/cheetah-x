@@ -29,7 +29,7 @@ weapons: [
         x: 0
         y: 0
         shootY: 0
-        reload: 60
+        reload: 40
         recoil: 1
         ejectEffect: casing2
         shootSound: chicken
@@ -69,7 +69,7 @@ abilities:[
       "spawnX": 0,
       "spawnY": -2,
       "unit": "egg_c",
-      "spawnTime": 5800
+      "spawnTime": 4400
     },
 ],
 "treadRects": [

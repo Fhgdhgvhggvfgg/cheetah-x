@@ -51,13 +51,19 @@
     ]
 
     [
-    tank_girl_die
-    tank_girl_mega
-    ]    
-    [
     water_truck
     water_truck_c
     ]
+    
+        [
+    aircraft_b
+    aircraft_b2
+    ]
+    
+        [
+    tank_girl_die
+    tank_girl_mega
+    ]    
   ]
   category: units
       alwaysUnlocked: true

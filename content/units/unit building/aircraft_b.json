@@ -175,6 +175,8 @@ growY: 0
   ]
   
     bullet: {
+          "range": 350,
+  "maxRange": 350,
                 type: SolidBulletType
                 damage: 100
                 homing: false

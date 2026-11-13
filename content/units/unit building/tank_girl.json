@@ -4,7 +4,7 @@
 "name":"tank girl",
 outlineColor: 00000000
 "type": "tank",
-"hitSize": 80,
+"hitSize": 67,
 accel: 0.90
 drag: 0.90
 "crushDamage": 0.8,
