@@ -34,7 +34,6 @@ canAttack:true,
   
   "weapons": [
    {
-   buildingDamageMultiplier: 0.1
     x: 0
     y: 0
     reload: 30
@@ -47,6 +46,7 @@ canAttack:true,
     rotate: false
     shootSound: bolt
        bullet: {
+       buildingDamageMultiplier: 0.1
       type: LaserBulletType
         length: 160
         width: 6

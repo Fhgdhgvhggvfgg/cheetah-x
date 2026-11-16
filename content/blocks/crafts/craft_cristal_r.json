@@ -1,7 +1,7 @@
 {
 "category":"crafting"
 "craftEffect":"smeltsmoke",
-"craftTime":360, 
+"craftTime":290, 
 "description":"A factory that makes cristal",
 "displayNane":"craft cristal r",
 "consumes":{
@@ -11,7 +11,7 @@
 "itemCapacity":40,
 "name": "craft cristal r",
 "outputItem":{"item":"cristal","amount":1},
-"requirements":[{"item":"ram_c","amount":2},{"item":"cristal","amount":18},{"item":"obsidian","amount":25}],
+"requirements":[{"item":"ram_c","amount":2},{"item":"cristal","amount":20},{"item":"obsidian","amount":30}],
 "size":3
 "type": "GenericCrafter",
 
