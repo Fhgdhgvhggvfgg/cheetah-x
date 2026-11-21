@@ -1,3 +1,58 @@
+function startQuickRushGame() {
+    const d = new BaseDialog("Quick Rush");
+    const colors = [
+        { name: "■■■\n■■■\n■■■", tag: "[scarlet]" },
+        { name: "■■■\n■■■\n■■■", tag: "[cyan]" },
+        { name: "■■■\n■■■\n■■■", tag: "[lime]" },
+        { name: "■■■\n■■■\n■■■", tag: "[gold]" }
+    ];
+    let score = 0, timeLeft = 15, targetColor = 0, task = null, grid = [];
+    const stop = () => { if (task) { task.cancel(); task = null; } };
+    const refill = () => {
+        grid = [];
+        for (let i = 0; i < 9; i++) grid.push(Math.floor(Math.random() * colors.length));
+        targetColor = grid[Math.floor(Math.random() * 9)];
+    };
+    const render = () => {
+        d.cont.clear();
+        d.cont.add("[accent]Score: [white]" + score + "   [scarlet]Time: [white]" + timeLeft + "s").row();
+        d.cont.add(colors[targetColor].tag + colors[targetColor].name).padBottom(8).row();
+        d.cont.table(cons(t => {
+            for (let i = 0; i < 9; i++) {
+                const cellColor = grid[i], c = colors[cellColor];
+                const block4 = c.tag + "■■■\n" + c.tag + "■■■\n" + c.tag + "■■■";
+                t.button(block4, () => {
+                    if (timeLeft <= 0) return;
+                    if (cellColor === targetColor) { score += 5; refill(); render(); }
+                    else { score = Math.max(0, score - 3); timeLeft = Math.max(0, timeLeft - 1); render(); }
+                }).size(130, 130).pad(4);
+                if ((i + 1) % 3 === 0) t.row();
+            }
+        }));
+    };
+    const reset = () => {
+        stop(); score = 0; timeLeft = 15; refill(); render();
+        task = Timer.schedule(() => {
+            if (!d.isShown()) return;
+            timeLeft--;
+            if (timeLeft <= 0) { timeLeft = 0; stop(); Vars.ui.showInfo("Time's up! Final Score: " + score); }
+            render();
+        }, 1, 1);
+    };
+    d.hidden(stop);
+    d.buttons.clear();
+    d.buttons.button("Restart", reset).size(150, 60).padRight(10);
+    d.buttons.button("Close", () => { stop(); d.hide(); }).size(150, 60);
+    reset();
+    d.show();
+}
+
+
+
+
+
+
+
 
 function startGridGame() {
     const size = 7;
@@ -272,7 +327,7 @@ startGridGame();
         }).size(260, 70).pad(10).row();
 
         d.cont.button("Empty MiniGame 2", function() {
-            // سكربت فارغ
+startQuickRushGame();
         }).size(260, 70).pad(10).row();
 
         d.buttons.clear();
