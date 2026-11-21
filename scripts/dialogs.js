@@ -32,7 +32,10 @@
             
           }));
           
-          
+    
+
+
+      
           // діалогове вікно це функція щоб упростити код та виклик цього вікна
           //саме вікно:
           // دالة عرض النافذة الترحيبية عند تشغيل اللعبة
@@ -40,9 +43,10 @@ function showMyDialog() {
     const d = new BaseDialog("hello");
     
     d.cont.pane(p => {
+    	
         p.image(Core.atlas.find("cheetah-x-welcome_logo")).size(600, 600).pad(10).row();
         p.add("The mod will be ready soon. You just have to wait a little longer.").row();
-        
+
         const studyTex = Core.atlas.find("cheetah-x-study");
         p.image(studyTex).size(600, 600).pad(10).row();
         p.add("How to collect gold.").row();

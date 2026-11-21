@@ -1,5 +1,7 @@
 require("dialogs");
 require("character");
+const minigame = require("minigame");
+
 
 //================================================================
 
