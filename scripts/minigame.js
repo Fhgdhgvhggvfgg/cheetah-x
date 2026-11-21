@@ -1,3 +1,75 @@
+function openImageGallery() {
+    // مصفوفة أسماء الصور مباشرة بدون مسار وبدون .png (تماماً مثل character.js)
+    const imageList = [
+        "lora_queen_p3",
+        "bradar_p3",
+        "bradar_keven",
+        "lora_shore",
+        "jeen_p3",
+        "lora_sleep",
+        "jamaica_p2",
+        "jeff_p3",
+        "tank_girl-photo",
+        "study3",
+        "keven_night",
+        "CCA_bus_power-photo",
+        "jeff_p2",
+        "valka_queen-photo",
+        "jeff_bradar",
+        "lora_keven",
+        "pyramid-full",
+        "lisa_p2",
+        "par-photo",
+        "aircraft_p-photo",
+        "lisa_p3",
+        "lora_p2",
+        "keven_u-photo",
+        "asia_p",
+        "jeen_p2",
+        "study3",
+        "excavator_S-photo",
+    ];
+
+    const d = new BaseDialog("Image Studio");
+
+    d.cont.pane(p => {
+        const cols = 3; // 3 صور في كل سطر
+
+        for (let i = 0; i < imageList.length; i++) {
+            let imgName = imageList[i].trim();
+            // استدعاء الصورة مباشرة بالبادئة كما في character.js
+            let tex = Core.atlas.find("cheetah-x-" + imgName);
+
+            // بطاقة كل صورة
+            p.table(Tex.button, card => {
+                card.image(tex).size(150, 150).scaling(Scaling.fit).pad(6).row();
+                card.add(imgName).padBottom(4);
+
+                // النقر لعرض الصورة بحجم كبير
+                card.clicked(() => {
+                    const view = new BaseDialog(imgName);
+                    view.cont.image(tex).size(420, 420).scaling(Scaling.fit).pad(10).row();
+                    view.buttons.button("Close", () => view.hide()).size(160, 60);
+                    view.show();
+                });
+            }).pad(8);
+
+            // النزول إلى سطر جديد بعد كل 3 صور
+            if ((i + 1) % cols === 0) {
+                p.row();
+            }
+        }
+    }).size(700, 500);
+
+    d.buttons.clear();
+    d.buttons.button("Close", () => d.hide()).size(180, 60);
+
+    d.show();
+}
+
+
+
+
 function startQuickRushGame() {
     const d = new BaseDialog("Quick Rush");
     const colors = [
@@ -326,8 +398,12 @@ function openMinigameMenu() {
 startGridGame();
         }).size(260, 70).pad(10).row();
 
-        d.cont.button("Empty MiniGame 2", function() {
+        d.cont.button("box colors game", function() {
 startQuickRushGame();
+        }).size(260, 70).pad(10).row();
+
+        d.cont.button("photos studio", function() {
+openImageGallery();
         }).size(260, 70).pad(10).row();
 
         d.buttons.clear();
