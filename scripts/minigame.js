@@ -1,5 +1,34 @@
+var activeMiniGameMenu = null;
+var activeMiniGameState = {
+    activeGame: null,
+    isMenuHiddenForGame: false
+};
+
+function setMinigameMenuVisible(visible) {
+    if (activeMiniGameMenu == null || activeMiniGameMenu.parent == null) {
+        if (visible) {
+            openMinigameMenu();
+        }
+        return;
+    }
+    activeMiniGameMenu.visible = visible;
+    activeMiniGameState.isMenuHiddenForGame = !visible;
+}
+
+function closeMinigameMenu() {
+    if (activeMiniGameMenu != null) {
+        try {
+            activeMiniGameMenu.remove();
+        } catch (e) {}
+        activeMiniGameMenu = null;
+        activeMiniGameState.isMenuHiddenForGame = false;
+    }
+}
+
 function openImageGallery() {
-    // مصفوفة أسماء الصور مباشرة بدون مسار وبدون .png (تماماً مثل character.js)
+    activeMiniGameState.activeGame = "gallery";
+    setMinigameMenuVisible(false);
+
     const imageList = [
         "lora_queen_p3",
         "bradar_p3",
@@ -26,8 +55,7 @@ function openImageGallery() {
         "keven_u-photo",
         "asia_p",
         "jeen_p2",
-        "study3",
-        "excavator_S-photo",
+        "excavator_S-photo"
     ];
 
     const wrapper = new Table();
@@ -49,9 +77,9 @@ function openImageGallery() {
     const closeGallery = () => {
         closePreview();
         try { wrapper.remove(); } catch (e) {}
-        openMinigameMenu();
+        activeMiniGameState.activeGame = null;
+        setMinigameMenuVisible(true);
     };
-
 
     const openPreview = (imgName, tex) => {
         closePreview();
@@ -73,25 +101,21 @@ function openImageGallery() {
     };
 
     box.pane(p => {
-        const cols = 3; // 3 صور في كل سطر
+        const cols = 3;
 
         for (let i = 0; i < imageList.length; i++) {
             let imgName = imageList[i].trim();
-            // استدعاء الصورة مباشرة بالبادئة كما في character.js
             let tex = Core.atlas.find("cheetah-x-" + imgName);
 
-            // بطاقة كل صورة
             p.table(Tex.button, card => {
                 card.image(tex).size(110, 110).scaling(Scaling.fit).pad(4).row();
                 card.add(imgName).padBottom(2);
 
-                // النقر لعرض الصورة بحجم كبير في نافذة مصغرة
                 card.clicked(() => {
                     openPreview(imgName, tex);
                 });
             }).pad(5);
 
-            // النزول إلى سطر جديد بعد كل 3 صور
             if ((i + 1) % cols === 0) {
                 p.row();
             }
@@ -106,17 +130,23 @@ function openImageGallery() {
     Core.scene.add(wrapper);
 }
 
-
-
-
 function startQuickRushGame() {
+    activeMiniGameState.activeGame = "quickRush";
+    setMinigameMenuVisible(false);
+
     const colors = [
         { name: "■■■\n■■■\n■■■", tag: "[scarlet]" },
         { name: "■■■\n■■■\n■■■", tag: "[cyan]" },
         { name: "■■■\n■■■\n■■■", tag: "[lime]" },
         { name: "■■■\n■■■\n■■■", tag: "[gold]" }
     ];
-    let score = 0, timeLeft = 15, targetColor = 0, task = null, grid = [];
+
+    let score = 0;
+    let timeLeft = 15;
+    let targetColor = 0;
+    let task = null;
+    let grid = [];
+    let isRoundOver = false;
 
     const wrapper = new Table();
     wrapper.setFillParent(true);
@@ -137,22 +167,25 @@ function startQuickRushGame() {
     const isShown = () => wrapper.parent != null;
 
     const stop = () => {
-        if (task) {
-            task.cancel();
+        if (task != null) {
+            try { task.cancel(); } catch (e) {}
             task = null;
         }
     };
 
     const close = () => {
+        isRoundOver = true;
         stop();
         try { wrapper.remove(); } catch (e) {}
-        openMinigameMenu();
+        activeMiniGameState.activeGame = null;
+        setMinigameMenuVisible(true);
     };
-
 
     const refill = () => {
         grid = [];
-        for (let i = 0; i < 9; i++) grid.push(Math.floor(Math.random() * colors.length));
+        for (let i = 0; i < 9; i++) {
+            grid.push(Math.floor(Math.random() * colors.length));
+        }
         targetColor = grid[Math.floor(Math.random() * 9)];
     };
 
@@ -163,12 +196,24 @@ function startQuickRushGame() {
         body.add(colors[targetColor].tag + colors[targetColor].name).padBottom(6).row();
         body.table(cons(t => {
             for (let i = 0; i < 9; i++) {
-                const cellColor = grid[i], c = colors[cellColor];
+                const cellColor = grid[i];
+                const c = colors[cellColor];
                 const block4 = c.tag + "■■■\n" + c.tag + "■■■\n" + c.tag + "■■■";
                 t.button(block4, () => {
-                    if (timeLeft <= 0) return;
-                    if (cellColor === targetColor) { score += 5; refill(); render(); }
-                    else { score = Math.max(0, score - 3); timeLeft = Math.max(0, timeLeft - 1); render(); }
+                    if (isRoundOver || timeLeft <= 0) return;
+                    if (cellColor === targetColor) {
+                        score += 5;
+                        refill();
+                        render();
+                    } else {
+                        score = Math.max(0, score - 3);
+                        timeLeft = Math.max(0, timeLeft - 1);
+                        if (timeLeft <= 0) {
+                            isRoundOver = true;
+                            stop();
+                        }
+                        render();
+                    }
                 }).size(78, 78).pad(3);
                 if ((i + 1) % 3 === 0) t.row();
             }
@@ -179,6 +224,7 @@ function startQuickRushGame() {
         stop();
         score = 0;
         timeLeft = 15;
+        isRoundOver = false;
         refill();
         render();
         task = Timer.schedule(() => {
@@ -186,11 +232,18 @@ function startQuickRushGame() {
                 stop();
                 return;
             }
+            if (isRoundOver) {
+                stop();
+                return;
+            }
             timeLeft--;
             if (timeLeft <= 0) {
                 timeLeft = 0;
+                isRoundOver = true;
                 stop();
+                render();
                 Vars.ui.showInfo("Time's up! Final Score: " + score);
+                return;
             }
             render();
         }, 1, 1);
@@ -203,14 +256,10 @@ function startQuickRushGame() {
     reset();
 }
 
-
-
-
-
-
-
-
 function startGridGame() {
+    activeMiniGameState.activeGame = "grid";
+    setMinigameMenuVisible(false);
+
     const size = 7;
     let playerX = 3;
     let playerY = 3;
@@ -251,17 +300,18 @@ function startGridGame() {
 
     function stopLoop() {
         if (moveTask != null) {
-            moveTask.cancel();
+            try { moveTask.cancel(); } catch (e) {}
             moveTask = null;
         }
     }
 
     function closeGame() {
+        gameOver = true;
         stopLoop();
         try { wrapper.remove(); } catch (e) {}
-        openMinigameMenu();
+        activeMiniGameState.activeGame = null;
+        setMinigameMenuVisible(true);
     }
-
 
     function startLoop() {
         stopLoop();
@@ -283,7 +333,7 @@ function startGridGame() {
 
         moveTo(playerX + dirX, playerY + dirY);
 
-        if (!gameOver) {
+        if (!gameOver && isShown()) {
             startLoop();
         }
     }
@@ -309,7 +359,11 @@ function startGridGame() {
         let nx = 0;
         let ny = 0;
         let valid = false;
-        while (!valid) {
+        let safetyCounter = 0;
+        const maxAttempts = size * size * 4;
+
+        while (!valid && safetyCounter < maxAttempts) {
+            safetyCounter++;
             nx = Math.floor(Math.random() * size);
             ny = Math.floor(Math.random() * size);
             valid = true;
@@ -320,10 +374,27 @@ function startGridGame() {
                 }
             }
         }
+
+        if (!valid) {
+            for (let y = 0; y < size; y++) {
+                for (let x = 0; x < size; x++) {
+                    let occupied = false;
+                    for (let i = 0; i < excludeList.length; i++) {
+                        if (excludeList[i].x === x && excludeList[i].y === y) {
+                            occupied = true;
+                            break;
+                        }
+                    }
+                    if (!occupied) return { x: x, y: y };
+                }
+            }
+        }
+
         return { x: nx, y: ny };
     }
 
     function resetGame() {
+        stopLoop();
         playerX = 3;
         playerY = 3;
         dirX = 0;
@@ -478,21 +549,14 @@ function startGridGame() {
     resetGame();
 }
 
-
-
-var activeMiniGameMenu = null;
-
-function closeMinigameMenu() {
-    if (activeMiniGameMenu != null) {
-        try {
-            activeMiniGameMenu.remove();
-        } catch (e) {}
-        activeMiniGameMenu = null;
-    }
-}
-
 function openMinigameMenu() {
     try {
+        if (activeMiniGameMenu != null && activeMiniGameMenu.parent != null) {
+            activeMiniGameMenu.visible = true;
+            activeMiniGameState.isMenuHiddenForGame = false;
+            return;
+        }
+
         closeMinigameMenu();
 
         var wrapper = new Table();
@@ -503,27 +567,29 @@ function openMinigameMenu() {
         box.add("[accent]MiniGames Menu").pad(8).row();
 
         box.button("snack game", function() {
-            closeMinigameMenu();
+            setMinigameMenuVisible(false);
             startGridGame();
         }).size(220, 56).pad(6).row();
 
         box.button("box colors game", function() {
-            closeMinigameMenu();
+            setMinigameMenuVisible(false);
             startQuickRushGame();
         }).size(220, 56).pad(6).row();
 
         box.button("photos studio", function() {
-            closeMinigameMenu();
+            setMinigameMenuVisible(false);
             openImageGallery();
         }).size(220, 56).pad(6).row();
 
         box.button("Close", function() {
+            activeMiniGameState.activeGame = null;
             closeMinigameMenu();
         }).size(160, 48).padTop(8);
 
         wrapper.add(box);
         Core.scene.add(wrapper);
         activeMiniGameMenu = wrapper;
+        activeMiniGameState.isMenuHiddenForGame = false;
     } catch (e) {
         Vars.ui.showInfo("Error: " + e);
     }
@@ -531,5 +597,6 @@ function openMinigameMenu() {
 
 module.exports = {
     openMenu: openMinigameMenu,
-    closeMenu: closeMinigameMenu
+    closeMenu: closeMinigameMenu,
+    setMenuVisible: setMinigameMenuVisible
 };
