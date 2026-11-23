@@ -36,16 +36,6 @@ function menuWelcome() {
             }
             
         }).size(200, 80).pad(10).row();
-        
-p.button("mini game", Icon.add, () => {
-    const mg = require("minigame");
-    if (mg && typeof mg.openMenu === "function") {
-        Time.run(1, () => mg.openMenu());
-    }
-}).size(120, 80).padTop(-100).padLeft(320).row();
-
-        
-        
     
         p.image(Core.atlas.find("cheetah-x-welcome_logo")).size(600, 600).pad(10).row();
         p.add("The mod will be ready soon. You just have to wait a little longer.").row();
@@ -126,6 +116,8 @@ menu1.table(Tex.pane, t => {
         bPho3.button(iconPho, () => { phoValue = 2; });
         t.add(bPho3).size(50, 50).padBottom(20);
         t.row();
+        
+
     }
 });
 
@@ -152,10 +144,25 @@ menu1.visibility = () => {
         });
         t.add(bEdit).size(50, 50);
     }    
+    
+    
+        let bPhom = new Button(Styles.none);
+        bPhom.button(new TextureRegionDrawable(Icon.play), () => {
+
+
+
+     const mg = require("minigame");
+    if (mg && typeof mg.openMenu === "function") {
+        Time.run(1, () => mg.openMenu());
+    }
+
+
+});
+        t.add(bPhom).size(80, 50); 
+    
         let bPho4 = new Button(Styles.none);
         bPho4.button(new TextureRegionDrawable(Icon.info), () => { menuWelcome(); });
-        bPho4.add("setting").padLeft(6); 
-        t.add(bPho4).size(160, 50); 
+        t.add(bPho4).size(50, 50); 
     });
 
     menu2.visibility = () => {

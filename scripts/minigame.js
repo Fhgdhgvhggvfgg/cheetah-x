@@ -30,9 +30,49 @@ function openImageGallery() {
         "excavator_S-photo",
     ];
 
-    const d = new BaseDialog("Image Studio");
+    const wrapper = new Table();
+    wrapper.setFillParent(true);
+    wrapper.center();
 
-    d.cont.pane(p => {
+    const box = new Table(Tex.pane);
+    box.add("[accent]Image Studio").pad(6).row();
+
+    let previewBox = null;
+
+    const closePreview = () => {
+        if (previewBox != null) {
+            try { previewBox.remove(); } catch (e) {}
+            previewBox = null;
+        }
+    };
+
+    const closeGallery = () => {
+        closePreview();
+        try { wrapper.remove(); } catch (e) {}
+        openMinigameMenu();
+    };
+
+
+    const openPreview = (imgName, tex) => {
+        closePreview();
+
+        const pWrapper = new Table();
+        pWrapper.setFillParent(true);
+        pWrapper.center();
+
+        const pBox = new Table(Tex.pane);
+        pBox.add("[accent]" + imgName).pad(6).row();
+        pBox.image(tex).size(600, 600).scaling(Scaling.fit).pad(8).row();
+        pBox.button("Close", () => {
+            closePreview();
+        }).size(140, 44).padBottom(4);
+
+        pWrapper.add(pBox);
+        Core.scene.add(pWrapper);
+        previewBox = pWrapper;
+    };
+
+    box.pane(p => {
         const cols = 3; // 3 صور في كل سطر
 
         for (let i = 0; i < imageList.length; i++) {
@@ -42,36 +82,34 @@ function openImageGallery() {
 
             // بطاقة كل صورة
             p.table(Tex.button, card => {
-                card.image(tex).size(150, 150).scaling(Scaling.fit).pad(6).row();
-                card.add(imgName).padBottom(4);
+                card.image(tex).size(110, 110).scaling(Scaling.fit).pad(4).row();
+                card.add(imgName).padBottom(2);
 
-                // النقر لعرض الصورة بحجم كبير
+                // النقر لعرض الصورة بحجم كبير في نافذة مصغرة
                 card.clicked(() => {
-                    const view = new BaseDialog(imgName);
-                    view.cont.image(tex).size(420, 420).scaling(Scaling.fit).pad(10).row();
-                    view.buttons.button("Close", () => view.hide()).size(160, 60);
-                    view.show();
+                    openPreview(imgName, tex);
                 });
-            }).pad(8);
+            }).pad(5);
 
             // النزول إلى سطر جديد بعد كل 3 صور
             if ((i + 1) % cols === 0) {
                 p.row();
             }
         }
-    }).size(700, 500);
+    }).size(540, 380).row();
 
-    d.buttons.clear();
-    d.buttons.button("Close", () => d.hide()).size(180, 60);
+    box.button("Close", () => {
+        closeGallery();
+    }).size(160, 46).padTop(6);
 
-    d.show();
+    wrapper.add(box);
+    Core.scene.add(wrapper);
 }
 
 
 
 
 function startQuickRushGame() {
-    const d = new BaseDialog("Quick Rush");
     const colors = [
         { name: "■■■\n■■■\n■■■", tag: "[scarlet]" },
         { name: "■■■\n■■■\n■■■", tag: "[cyan]" },
@@ -79,17 +117,51 @@ function startQuickRushGame() {
         { name: "■■■\n■■■\n■■■", tag: "[gold]" }
     ];
     let score = 0, timeLeft = 15, targetColor = 0, task = null, grid = [];
-    const stop = () => { if (task) { task.cancel(); task = null; } };
+
+    const wrapper = new Table();
+    wrapper.setFillParent(true);
+    wrapper.center();
+
+    const box = new Table(Tex.pane);
+    box.add("[accent]Quick Rush").pad(6).row();
+
+    const body = new Table();
+    box.add(body).pad(4).row();
+
+    const footer = new Table();
+    box.add(footer).padTop(6);
+
+    wrapper.add(box);
+    Core.scene.add(wrapper);
+
+    const isShown = () => wrapper.parent != null;
+
+    const stop = () => {
+        if (task) {
+            task.cancel();
+            task = null;
+        }
+    };
+
+    const close = () => {
+        stop();
+        try { wrapper.remove(); } catch (e) {}
+        openMinigameMenu();
+    };
+
+
     const refill = () => {
         grid = [];
         for (let i = 0; i < 9; i++) grid.push(Math.floor(Math.random() * colors.length));
         targetColor = grid[Math.floor(Math.random() * 9)];
     };
+
     const render = () => {
-        d.cont.clear();
-        d.cont.add("[accent]Score: [white]" + score + "   [scarlet]Time: [white]" + timeLeft + "s").row();
-        d.cont.add(colors[targetColor].tag + colors[targetColor].name).padBottom(8).row();
-        d.cont.table(cons(t => {
+        if (!isShown()) return;
+        body.clear();
+        body.add("[accent]Score: [white]" + score + "   [scarlet]Time: [white]" + timeLeft + "s").padBottom(4).row();
+        body.add(colors[targetColor].tag + colors[targetColor].name).padBottom(6).row();
+        body.table(cons(t => {
             for (let i = 0; i < 9; i++) {
                 const cellColor = grid[i], c = colors[cellColor];
                 const block4 = c.tag + "■■■\n" + c.tag + "■■■\n" + c.tag + "■■■";
@@ -97,26 +169,38 @@ function startQuickRushGame() {
                     if (timeLeft <= 0) return;
                     if (cellColor === targetColor) { score += 5; refill(); render(); }
                     else { score = Math.max(0, score - 3); timeLeft = Math.max(0, timeLeft - 1); render(); }
-                }).size(130, 130).pad(4);
+                }).size(78, 78).pad(3);
                 if ((i + 1) % 3 === 0) t.row();
             }
         }));
     };
+
     const reset = () => {
-        stop(); score = 0; timeLeft = 15; refill(); render();
+        stop();
+        score = 0;
+        timeLeft = 15;
+        refill();
+        render();
         task = Timer.schedule(() => {
-            if (!d.isShown()) return;
+            if (!isShown()) {
+                stop();
+                return;
+            }
             timeLeft--;
-            if (timeLeft <= 0) { timeLeft = 0; stop(); Vars.ui.showInfo("Time's up! Final Score: " + score); }
+            if (timeLeft <= 0) {
+                timeLeft = 0;
+                stop();
+                Vars.ui.showInfo("Time's up! Final Score: " + score);
+            }
             render();
         }, 1, 1);
     };
-    d.hidden(stop);
-    d.buttons.clear();
-    d.buttons.button("Restart", reset).size(150, 60).padRight(10);
-    d.buttons.button("Close", () => { stop(); d.hide(); }).size(150, 60);
+
+    footer.clear();
+    footer.button("Restart", reset).size(115, 44).padRight(8);
+    footer.button("Close", close).size(115, 44);
+
     reset();
-    d.show();
 }
 
 
@@ -131,8 +215,8 @@ function startGridGame() {
     let playerX = 3;
     let playerY = 3;
     let dirX = 0;
-    let dirY = -1; // الاتجاه الفعلي الحالي للأفعى
-    let snakeTail = []; // [{ x, y }, ...] ذيل الأفعى (o)
+    let dirY = -1;
+    let snakeTail = [];
     let pendingGrowth = 0;
 
     let starX = 1;
@@ -143,9 +227,27 @@ function startGridGame() {
     let lives = 3;
     let gameOver = false;
     let statusText = "Collect stars (*) and avoid mines (X)!";
-
-    const d = new BaseDialog("Grid Mini-Game");
     let moveTask = null;
+
+    const wrapper = new Table();
+    wrapper.setFillParent(true);
+    wrapper.center();
+
+    const box = new Table(Tex.pane);
+    box.add("[accent]Grid Mini-Game").pad(6).row();
+
+    const body = new Table();
+    box.add(body).pad(4).row();
+
+    const footer = new Table();
+    box.add(footer).padTop(6);
+
+    wrapper.add(box);
+    Core.scene.add(wrapper);
+
+    function isShown() {
+        return wrapper.parent != null;
+    }
 
     function stopLoop() {
         if (moveTask != null) {
@@ -154,10 +256,18 @@ function startGridGame() {
         }
     }
 
+    function closeGame() {
+        stopLoop();
+        try { wrapper.remove(); } catch (e) {}
+        openMinigameMenu();
+    }
+
+
     function startLoop() {
         stopLoop();
         moveTask = Timer.schedule(() => {
-            if (!d.isShown() || gameOver) {
+            if (!isShown() || gameOver) {
+                if (!isShown()) stopLoop();
                 return;
             }
             moveTo(playerX + dirX, playerY + dirY);
@@ -165,20 +275,14 @@ function startGridGame() {
     }
 
     function setDirection(ndx, ndy) {
-        if (gameOver || !d.isShown()) return;
+        if (gameOver || !isShown()) return;
+        if (ndx === -dirX && ndy === -dirY) return;
 
-        // منع العودة للخلف بناءً على اتجاه الحركة الفعلي الحالي للأفعى
-        if (ndx === -dirX && ndy === -dirY) {
-            return;
-        }
-
-        // تحديث الاتجاه والتحرك فوراً
         dirX = ndx;
         dirY = ndy;
 
         moveTo(playerX + dirX, playerY + dirY);
 
-        // إعادة جدولة المؤقت لكي تكون الخطوة التلقائية التالية بعد 0.5 ثانية من الحركة الفورية
         if (!gameOver) {
             startLoop();
         }
@@ -224,7 +328,7 @@ function startGridGame() {
         playerY = 3;
         dirX = 0;
         dirY = -1;
-        snakeTail = [{ x: 3, y: 4 }]; // ذيل مبدئي صغير (o) أسفل الرأس (O)
+        snakeTail = [{ x: 3, y: 4 }];
         pendingGrowth = 0;
         score = 0;
         lives = 3;
@@ -262,7 +366,6 @@ function startGridGame() {
         playerX = nx;
         playerY = ny;
 
-        // تحريك الذيل ليتبع الرأس
         if (snakeTail.length > 0 || pendingGrowth > 0) {
             const newTail = [{ x: prevX, y: prevY }];
             const keepCount = pendingGrowth > 0 ? snakeTail.length : Math.max(0, snakeTail.length - 1);
@@ -275,7 +378,6 @@ function startGridGame() {
             }
         }
 
-        // التحقق من اصطدام الرأس بالذيل
         if (isTailAt(playerX, playerY)) {
             lives = 0;
             gameOver = true;
@@ -296,7 +398,6 @@ function startGridGame() {
             starX = nextStar.x;
             starY = nextStar.y;
 
-            // نقل اللغم أحيانًا لزيادة التحدي
             if (score % 20 === 0) {
                 const freeForMine = getOccupiedCells();
                 freeForMine.push({ x: starX, y: starY });
@@ -327,14 +428,13 @@ function startGridGame() {
     }
 
     function render() {
-        d.cont.clear();
+        if (!isShown()) return;
+        body.clear();
 
-        // شريط المعلومات
-        d.cont.add("[accent]Score: [white]" + score + "   [scarlet]Lives: [white]" + lives + "   [gray](" + playerX + "," + playerY + ")").row();
-        d.cont.add(statusText).padBottom(6).row();
+        body.add("[accent]Score: [white]" + score + "   [scarlet]Lives: [white]" + lives + "   [gray](" + playerX + "," + playerY + ")").row();
+        body.add(statusText).padBottom(4).row();
 
-        // شبكة الإحداثيات (غير قابلة للنقر)
-        d.cont.table(cons(grid => {
+        body.table(cons(grid => {
             for (let y = 0; y < size; y++) {
                 for (let x = 0; x < size; x++) {
                     let label = ".";
@@ -348,75 +448,88 @@ function startGridGame() {
                         label = "[scarlet]X";
                     }
 
-                    grid.add(label).size(48, 48).pad(2);
+                    grid.add(label).size(34, 34).pad(1);
                 }
                 grid.row();
             }
-        })).padBottom(10).row();
+        })).padBottom(6).row();
 
-        // أزرار التحكم بالاتجاهات (كبيرة ومرتبة على 3 صفوف: أعلى، يسار/يمين، أسفل)
-        d.cont.table(cons(ctrl => {
-            // الصف الأول: زر الأعلى في المنتصف
-            ctrl.add().size(92, 92).pad(4);
-            ctrl.button("^", () => setDirection(0, -1)).size(92, 92).pad(4);
-            ctrl.add().size(92, 92).pad(4);
+        body.table(cons(ctrl => {
+            ctrl.add().size(64, 64).pad(2);
+            ctrl.button("^", () => setDirection(0, -1)).size(64, 64).pad(2);
+            ctrl.add().size(64, 64).pad(2);
             ctrl.row();
 
-            // الصف الثاني: زر اليسار، فراغ بالمنتصف، زر اليمين
-            ctrl.button("<", () => setDirection(-1, 0)).size(92, 92).pad(4);
-            ctrl.add().size(92, 92).pad(4);
-            ctrl.button(">", () => setDirection(1, 0)).size(92, 92).pad(4);
+            ctrl.button("<", () => setDirection(-1, 0)).size(64, 64).pad(2);
+            ctrl.add().size(64, 64).pad(2);
+            ctrl.button(">", () => setDirection(1, 0)).size(64, 64).pad(2);
             ctrl.row();
 
-            // الصف الثالث: زر الأسفل في المنتصف
-            ctrl.add().size(92, 92).pad(4);
-            ctrl.button("v", () => setDirection(0, 1)).size(92, 92).pad(4);
-            ctrl.add().size(92, 92).pad(4);
+            ctrl.add().size(64, 64).pad(2);
+            ctrl.button("v", () => setDirection(0, 1)).size(64, 64).pad(2);
+            ctrl.add().size(64, 64).pad(2);
         })).row();
     }
 
-    d.hidden(() => stopLoop());
-
-    d.buttons.clear();
-    d.buttons.button("Restart", () => resetGame()).size(150, 60).padRight(10);
-    d.buttons.button("Close", () => {
-        stopLoop();
-        d.hide();
-    }).size(150, 60);
+    footer.clear();
+    footer.button("Restart", resetGame).size(115, 44).padRight(8);
+    footer.button("Close", closeGame).size(115, 44);
 
     resetGame();
-    d.show();
 }
 
 
 
+var activeMiniGameMenu = null;
+
+function closeMinigameMenu() {
+    if (activeMiniGameMenu != null) {
+        try {
+            activeMiniGameMenu.remove();
+        } catch (e) {}
+        activeMiniGameMenu = null;
+    }
+}
+
 function openMinigameMenu() {
     try {
-        var d = new BaseDialog("MiniGames Menu");
+        closeMinigameMenu();
 
-        d.cont.button("snack game", function() {
-startGridGame();
-        }).size(260, 70).pad(10).row();
+        var wrapper = new Table();
+        wrapper.setFillParent(true);
+        wrapper.center();
 
-        d.cont.button("box colors game", function() {
-startQuickRushGame();
-        }).size(260, 70).pad(10).row();
+        var box = new Table(Tex.pane);
+        box.add("[accent]MiniGames Menu").pad(8).row();
 
-        d.cont.button("photos studio", function() {
-openImageGallery();
-        }).size(260, 70).pad(10).row();
+        box.button("snack game", function() {
+            closeMinigameMenu();
+            startGridGame();
+        }).size(220, 56).pad(6).row();
 
-        d.buttons.clear();
-        d.buttons.button("Close", function() {
-            d.hide();
-        }).size(180, 60);
+        box.button("box colors game", function() {
+            closeMinigameMenu();
+            startQuickRushGame();
+        }).size(220, 56).pad(6).row();
 
-        d.show();
+        box.button("photos studio", function() {
+            closeMinigameMenu();
+            openImageGallery();
+        }).size(220, 56).pad(6).row();
+
+        box.button("Close", function() {
+            closeMinigameMenu();
+        }).size(160, 48).padTop(8);
+
+        wrapper.add(box);
+        Core.scene.add(wrapper);
+        activeMiniGameMenu = wrapper;
     } catch (e) {
         Vars.ui.showInfo("Error: " + e);
     }
 }
 
 module.exports = {
-    openMenu: openMinigameMenu
+    openMenu: openMinigameMenu,
+    closeMenu: closeMinigameMenu
 };
