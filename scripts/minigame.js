@@ -264,8 +264,8 @@ function startLaneDodgeGame() {
         body.add(gridTable);
 
         controls.clear();
-        controls.button("< Left", () => movePlayer(-1)).size(110, 44).padRight(12);
-        controls.button("Right >", () => movePlayer(1)).size(110, 44);
+        controls.button("< Left", () => movePlayer(-1)).size(180, 84).padRight(12);
+        controls.button("Right >", () => movePlayer(1)).size(180, 84);
 
         footer.clear();
         footer.button("Restart", () => resetGame()).size(110, 40).padRight(8);
