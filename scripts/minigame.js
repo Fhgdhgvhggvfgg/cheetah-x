@@ -25,6 +25,282 @@ function closeMinigameMenu() {
     }
 }
 
+
+
+
+function startLaneDodgeGame() {
+    activeMiniGameState.activeGame = "laneDodge";
+    try {
+        setMinigameMenuVisible(false);
+    } catch (e) {}
+
+    const rows = 8; // 8 صفوف عمودية (0 في الأعلى إلى 7 في الأسفل)
+    const cols = 3; // 3 مسارات أفقية (0: يسار، 1: وسط، 2: يمين)
+
+    let playerCol = 1;
+    let reds = []; // بدون حد أقصى: يسمح بـ 2 أو 3 أو أكثر في الساحة بنفس الوقت
+    let score = 0;
+    let lives = 3;
+    let gameOver = false;
+    let isClosed = false;
+    let fallTask = null;
+    let spawnTick = 0;
+
+    let cellLabels = [];
+    let statusLabel = null;
+
+    const wrapper = new Table();
+    wrapper.setFillParent(true);
+    wrapper.center();
+
+    const box = new Table(Tex.pane);
+    box.add("[accent]3 Lanes x 8 Rows").pad(6).row();
+
+    const infoTable = new Table();
+    box.add(infoTable).padBottom(4).row();
+
+    const body = new Table();
+    box.add(body).pad(4).row();
+
+    const controls = new Table();
+    box.add(controls).padTop(6).row();
+
+    const footer = new Table();
+    box.add(footer).padTop(6);
+
+    wrapper.add(box);
+    Core.scene.add(wrapper);
+
+    const isShown = () => !isClosed && wrapper != null && wrapper.parent != null;
+
+    const setLabelSafe = (lbl, txt) => {
+        if (lbl == null) return;
+        try {
+            lbl.setText(txt);
+        } catch (e) {
+            try { lbl.text = txt; } catch (e2) {}
+        }
+    };
+
+    const stopLoop = () => {
+        if (fallTask != null) {
+            try { fallTask.cancel(); } catch (e) {}
+            fallTask = null;
+        }
+    };
+
+    const closeGame = () => {
+        if (isClosed) return;
+        isClosed = true;
+        gameOver = true;
+        stopLoop();
+        try {
+            if (wrapper != null) wrapper.remove();
+        } catch (e) {}
+        activeMiniGameState.activeGame = null;
+        try {
+            setMinigameMenuVisible(true);
+        } catch (e) {}
+    };
+
+    const hasRedAt = (r, c) => {
+        for (let i = 0; i < reds.length; i++) {
+            if (reds[i].r === r && reds[i].c === c) return true;
+        }
+        return false;
+    };
+
+    const getCellText = (r, c) => {
+        const isBottomRow = r === rows - 1;
+        const isBlue = isBottomRow && c === playerCol;
+        const isRed = hasRedAt(r, c);
+
+        if (isBlue && isRed) return "[yellow]■■";
+        if (isBlue) return "[cyan]■■";
+        if (isRed) return "[scarlet]■■";
+        return "[darkgray]·";
+    };
+
+    const updateStatus = () => {
+        const stateText = gameOver ? "  [red]GAME OVER" : "";
+        setLabelSafe(statusLabel, "[accent]Score: [white]" + score + "   [scarlet]Lives: [white]" + lives + stateText);
+    };
+
+    const renderBoard = () => {
+        if (!isShown()) return;
+        try {
+            updateStatus();
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    if (cellLabels[r] && cellLabels[r][c]) {
+                        setLabelSafe(cellLabels[r][c], getCellText(r, c));
+                    }
+                }
+            }
+        } catch (e) {}
+    };
+
+    const applyHit = () => {
+        lives--;
+        if (lives <= 0) {
+            lives = 0;
+            gameOver = true;
+            stopLoop();
+        }
+    };
+
+    const spawnRedIfFree = () => {
+        const freeCols = [];
+        for (let c = 0; c < cols; c++) {
+            if (!hasRedAt(0, c)) {
+                freeCols.push(c);
+            }
+        }
+        if (freeCols.length > 0) {
+            const chosenCol = freeCols[Math.floor(Math.random() * freeCols.length)];
+            reds.push({ r: 0, c: chosenCol });
+        }
+    };
+
+    const stepDown = () => {
+        if (gameOver || !isShown()) return;
+
+        // 1) تحريك جميع المربعات الحمراء الموجودة صفاً واحداً للأسفل (بأي عدد كان)
+        for (let i = 0; i < reds.length; i++) {
+            reds[i].r += 1;
+        }
+
+        // 2) معالجة من تجاوز الصف الأخير (الأسفل)
+        const activeReds = [];
+        for (let i = 0; i < reds.length; i++) {
+            const item = reds[i];
+            if (item.r >= rows) {
+                if (item.c === playerCol) {
+                    applyHit();
+                } else {
+                    score++;
+                }
+            } else {
+                activeReds.push(item);
+            }
+        }
+        reds = activeReds;
+
+        if (gameOver) {
+            renderBoard();
+            return;
+        }
+
+        // 3) توليد مربع أحمر جديد في الأعلى في كل خطوة دون تقييد بعدد المربعات النشطة
+        spawnTick++;
+        if (spawnTick % 1 === 0) {
+            spawnRedIfFree();
+        }
+
+        renderBoard();
+    };
+
+    const movePlayer = (deltaCol) => {
+        if (gameOver || !isShown()) return;
+        const nextCol = playerCol + deltaCol;
+        if (nextCol < 0 || nextCol >= cols) return;
+
+        playerCol = nextCol;
+
+        for (let i = 0; i < reds.length; i++) {
+            if (reds[i].r === rows - 1 && reds[i].c === playerCol) {
+                reds.splice(i, 1);
+                applyHit();
+                break;
+            }
+        }
+
+        renderBoard();
+    };
+
+    const startFallLoop = () => {
+        stopLoop();
+        fallTask = Timer.schedule(() => {
+            if (!isShown() || gameOver) {
+                stopLoop();
+                return;
+            }
+            stepDown();
+        }, 0.20, 0.20);
+    };
+
+    const buildUI = () => {
+        infoTable.clear();
+        statusLabel = infoTable.add("").get();
+
+        body.clear();
+        cellLabels = [];
+
+        const gridTable = new Table();
+        for (let r = 0; r < rows; r++) {
+            const rowLbls = [];
+
+            if (r > 0) {
+                for (let c = 0; c < cols; c++) {
+                    gridTable.add("[gray]────").pad(0);
+                    if (c < cols - 1) {
+                        gridTable.add("[gray]┼").pad(0);
+                    }
+                }
+                gridTable.row();
+            }
+
+            for (let c = 0; c < cols; c++) {
+                const lbl = gridTable.add(getCellText(r, c)).size(48, 28).pad(1).get();
+                rowLbls.push(lbl);
+
+                if (c < cols - 1) {
+                    gridTable.add("[gray]│").pad(0);
+                }
+            }
+            gridTable.row();
+            cellLabels.push(rowLbls);
+        }
+        body.add(gridTable);
+
+        controls.clear();
+        controls.button("< Left", () => movePlayer(-1)).size(110, 44).padRight(12);
+        controls.button("Right >", () => movePlayer(1)).size(110, 44);
+
+        footer.clear();
+        footer.button("Restart", () => resetGame()).size(110, 40).padRight(8);
+        footer.button("Close", () => closeGame()).size(110, 40);
+    };
+
+    const resetGame = () => {
+        if (isClosed) return;
+        stopLoop();
+        playerCol = 1;
+        reds = [{ r: 0, c: Math.floor(Math.random() * cols) }];
+        score = 0;
+        lives = 3;
+        gameOver = false;
+        spawnTick = 0;
+
+        renderBoard();
+        startFallLoop();
+    };
+
+    buildUI();
+    resetGame();
+}
+
+
+
+
+
+
+
+
+
+
+
+
 function openImageGallery() {
     activeMiniGameState.activeGame = "gallery";
     setMinigameMenuVisible(false);
@@ -576,7 +852,12 @@ function openMinigameMenu() {
             startQuickRushGame();
         }).size(220, 56).pad(6).row();
 
-        box.button("photos studio", function() {
+        box.button("car", function() {
+            setMinigameMenuVisible(false);
+            startLaneDodgeGame();
+        }).size(220, 56).pad(6).row();
+        
+                box.button("photos studio", function() {
             setMinigameMenuVisible(false);
             openImageGallery();
         }).size(220, 56).pad(6).row();
