@@ -566,6 +566,12 @@ function openMinigameMenu() {
         var box = new Table(Tex.pane);
         box.add("[accent]MiniGames Menu").pad(8).row();
 
+        var box = new Table(Tex.pane);
+        box.add("[accent]MiniGames Menu").pad(8).row();
+
+        var menuLogo = Core.atlas.find("cheetah-x-minigame");
+        box.image(menuLogo).size(240, 120).scaling(Scaling.fit).pad(6).row();
+        
         box.button("snack game", function() {
             setMinigameMenuVisible(false);
             startGridGame();
