@@ -525,6 +525,13 @@ const coreDestroyPhotos = [
 var coreSequenceTable = null;
 var coreSequenceRunId = 0;
 
+function hideCoreSequenceTable() {
+    if (coreSequenceTable) {
+        coreSequenceTable.clearChildren();
+        coreSequenceTable.visible = false;
+    }
+}
+
 Events.on(ClientLoadEvent, () => {
     coreSequenceTable = new Table();
     coreSequenceTable.center().setFillParent(true);
@@ -537,23 +544,20 @@ function playCoreDestroySequence(imageNames, intervalSeconds, sizePx) {
     if (!coreSequenceTable) return;
     if (!imageNames || imageNames.length === 0) return;
 
-    const stepTicks = Math.max(1, Math.round(intervalSeconds * 60)); // 0.5s -> 30 ticks
-    const currentRunId = ++coreSequenceRunId; // لإلغاء أي تشغيل سابق عند تدمير نواة أخرى بسرعة
+    const delayMs = Math.max(10, Math.round(intervalSeconds * 1000));
+    const currentRunId = ++coreSequenceRunId;
 
-    function showAt(index) {
-        // إيقاف العرض إذا بدأ تسلسل جديد أو انتهت المصفوفة
+    function renderStep(index) {
         if (currentRunId !== coreSequenceRunId) return;
 
         if (index >= imageNames.length) {
-            coreSequenceTable.clearChildren();
-            coreSequenceTable.visible = false;
+            hideCoreSequenceTable();
             return;
         }
 
         const imgName = imageNames[index];
         let region = Core.atlas.find(imgName);
 
-        // احتياط في حال تم تمرير الاسم منتهياً بـ .png
         if ((!region || region === Core.atlas.find("error")) && imgName.endsWith(".png")) {
             region = Core.atlas.find(imgName.slice(0, -4));
         }
@@ -564,13 +568,36 @@ function playCoreDestroySequence(imageNames, intervalSeconds, sizePx) {
         if (region && region !== Core.atlas.find("error")) {
             coreSequenceTable.image(region).size(sizePx).center();
         }
-
-        Time.run(stepTicks, () => {
-            showAt(index + 1);
-        });
     }
 
-    showAt(0);
+    new java.lang.Thread(new java.lang.Runnable({
+        run: function() {
+            for (let i = 0; i < imageNames.length; i++) {
+                if (currentRunId !== coreSequenceRunId) return;
+
+                const stepIndex = i;
+                Core.app.post(new java.lang.Runnable({
+                    run: function() {
+                        renderStep(stepIndex);
+                    }
+                }));
+
+                try {
+                    java.lang.Thread.sleep(delayMs);
+                } catch (e) {
+                    break;
+                }
+            }
+
+            Core.app.post(new java.lang.Runnable({
+                run: function() {
+                    if (currentRunId === coreSequenceRunId) {
+                        hideCoreSequenceTable();
+                    }
+                }
+            }));
+        }
+    })).start();
 }
 
 Events.on(BlockDestroyEvent, event => {
@@ -582,8 +609,8 @@ Events.on(BlockDestroyEvent, event => {
 
     const playerTeam = (Vars.player && Vars.player.team()) ? Vars.player.team() : Team.sharded;
     if (build.team === playerTeam) return;
+
     if (uiw == 1) {
-    // تشغيل السلسلة: صورة كل 0.5 ثانية بحجم 250 بكسل في وسط الشاشة
-    playCoreDestroySequence(coreDestroyPhotos, 0.06, 560);
+        playCoreDestroySequence(coreDestroyPhotos, 0.06, 560);
     }
 });
