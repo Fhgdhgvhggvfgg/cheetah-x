@@ -3,6 +3,7 @@ var editorMenuTable1; // جدول الزر الأول
 var editorMenuTable2; // جدول الزر الثاني
 var phoValue = 0; // متغير عالمي ومؤقت يبدأ من الصفر
 var uip = 1;
+var uiw = 0;
 
 Events.on(ClientLoadEvent, () => {
     let table = new Table(); // تم تعريف المتغير بشكل صحيح لتجنب انهيار اللعبة
@@ -33,6 +34,15 @@ function menuWelcome() {
             uip = 1;
             }else{
             	uip = 0;
+            }
+            
+        }).size(200, 80).pad(10).row();
+        
+                    p.button("no winner mark", Icon.add, () => {
+        	    if (uiw == 0) { 
+            uiw = 1;
+            }else{
+            	uiw = 0;
             }
             
         }).size(200, 80).pad(10).row();
@@ -483,4 +493,97 @@ Events.on(ClientLoadEvent, function() {
     });
 
     Core.scene.add(iconTable);
+});
+
+
+// مصفوفة أسماء الصور في الأطلس (بدون .png عادةً، أو بالاسم المسجل في Core.atlas)
+const coreDestroyPhotos = [
+    "cheetah-x-winn1",
+    "cheetah-x-winn2",
+    "cheetah-x-winn3",
+    "cheetah-x-winn4",
+    "cheetah-x-winn5",
+    "cheetah-x-winn6",
+    "cheetah-x-winn7",
+    "cheetah-x-winn8",
+    "cheetah-x-winn9",
+    "cheetah-x-winn9",
+    "cheetah-x-winn10",
+    "cheetah-x-winn10",
+    "cheetah-x-winn11",
+    "cheetah-x-winn9",
+    "cheetah-x-winn9",
+    "cheetah-x-winn10",
+    "cheetah-x-winn10",
+    "cheetah-x-winn11",
+    "cheetah-x-winn11",
+    "cheetah-x-winn11",
+    "cheetah-x-winn11",
+    "cheetah-x-winn11"
+];
+
+var coreSequenceTable = null;
+var coreSequenceRunId = 0;
+
+Events.on(ClientLoadEvent, () => {
+    coreSequenceTable = new Table();
+    coreSequenceTable.center().setFillParent(true);
+    coreSequenceTable.touchable = Touchable.disabled;
+    coreSequenceTable.visible = false;
+    Core.scene.add(coreSequenceTable);
+});
+
+function playCoreDestroySequence(imageNames, intervalSeconds, sizePx) {
+    if (!coreSequenceTable) return;
+    if (!imageNames || imageNames.length === 0) return;
+
+    const stepTicks = Math.max(1, Math.round(intervalSeconds * 60)); // 0.5s -> 30 ticks
+    const currentRunId = ++coreSequenceRunId; // لإلغاء أي تشغيل سابق عند تدمير نواة أخرى بسرعة
+
+    function showAt(index) {
+        // إيقاف العرض إذا بدأ تسلسل جديد أو انتهت المصفوفة
+        if (currentRunId !== coreSequenceRunId) return;
+
+        if (index >= imageNames.length) {
+            coreSequenceTable.clearChildren();
+            coreSequenceTable.visible = false;
+            return;
+        }
+
+        const imgName = imageNames[index];
+        let region = Core.atlas.find(imgName);
+
+        // احتياط في حال تم تمرير الاسم منتهياً بـ .png
+        if ((!region || region === Core.atlas.find("error")) && imgName.endsWith(".png")) {
+            region = Core.atlas.find(imgName.slice(0, -4));
+        }
+
+        coreSequenceTable.clearChildren();
+        coreSequenceTable.visible = true;
+
+        if (region && region !== Core.atlas.find("error")) {
+            coreSequenceTable.image(region).size(sizePx).center();
+        }
+
+        Time.run(stepTicks, () => {
+            showAt(index + 1);
+        });
+    }
+
+    showAt(0);
+}
+
+Events.on(BlockDestroyEvent, event => {
+    if (!event || !event.tile || !event.tile.build) return;
+
+    const build = event.tile.build;
+    const isCore = build instanceof CoreBlock.CoreBuild;
+    if (!isCore) return;
+
+    const playerTeam = (Vars.player && Vars.player.team()) ? Vars.player.team() : Team.sharded;
+    if (build.team === playerTeam) return;
+    if (uiw == 1) {
+    // تشغيل السلسلة: صورة كل 0.5 ثانية بحجم 250 بكسل في وسط الشاشة
+    playCoreDestroySequence(coreDestroyPhotos, 0.06, 560);
+    }
 });
