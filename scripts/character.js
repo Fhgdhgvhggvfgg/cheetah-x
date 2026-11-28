@@ -38,7 +38,7 @@ function menuWelcome() {
             
         }).size(200, 80).pad(10).row();
         
-                    p.button("no winner mark", Icon.add, () => {
+                    p.button("winner mark", Icon.add, () => {
         	    if (uiw == 0) { 
             uiw = 1;
             }else{
